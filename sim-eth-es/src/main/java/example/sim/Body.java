@@ -38,7 +38,10 @@ package example.sim;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.simsilica.es.EntityId;
 import com.simsilica.mathd.*;
+
+import example.es.Position;
 
 /**
  *  A physical body in space.  These are modeled as a "point mass"
@@ -51,9 +54,7 @@ import com.simsilica.mathd.*;
  */
 public class Body {
 
-    private static AtomicLong nextBodyId = new AtomicLong(42);
-
-    public final Long bodyId = nextBodyId.getAndIncrement();
+    public final EntityId bodyId;
     
     public Vec3d pos = new Vec3d();
     public Vec3d velocity = new Vec3d();
@@ -62,13 +63,20 @@ public class Body {
     public AaBBox bounds = new AaBBox(radius);
     
     public Quatd orientation = new Quatd();
-    public volatile ControlDriver driver;
-    
-    public Body() {
+    public volatile ControlDriver driver; 
+ 
+    public Body( EntityId bodyId ) {
+        this.bodyId = bodyId;
     }
     
-    public Body( double x, double y, double z ) {
+    public Body( EntityId bodyId, double x, double y, double z ) {
+        this.bodyId = bodyId;
         pos.set(x, y, z);
+    }
+    
+    public void setPosition( Position pos ) {
+        this.pos.set(pos.getLocation());
+        this.orientation.set(pos.getFacing());
     }
  
     public void integrate( double stepTime ) {

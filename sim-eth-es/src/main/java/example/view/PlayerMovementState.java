@@ -46,6 +46,8 @@ import com.jme3.math.Vector3f;
 import com.jme3.renderer.Camera;
 import com.jme3.scene.Spatial;
 
+import com.simsilica.es.EntityId;
+
 import com.simsilica.lemur.GuiGlobals;
 import com.simsilica.lemur.core.VersionedHolder;
 import com.simsilica.lemur.input.AnalogFunctionListener;
@@ -89,7 +91,7 @@ public class PlayerMovementState extends BaseAppState
     private GameSession session;
 
     // For now we'll do this here but really we probably want a separate camera state
-    private int shipId = -1;
+    private EntityId shipId;
     private ModelViewState models;  
     
     private Vector3f lastPosition = new Vector3f();
@@ -99,11 +101,11 @@ public class PlayerMovementState extends BaseAppState
     public PlayerMovementState() {
     }
 
-    public void setShipId( int shipId ) {
+    public void setShipId( EntityId shipId ) {
         this.shipId = shipId;
     }
     
-    public int getShipId() {
+    public EntityId getShipId() {
         return shipId;
     }
     

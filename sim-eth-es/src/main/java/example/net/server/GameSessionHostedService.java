@@ -60,6 +60,8 @@ import com.simsilica.sim.SimTime;
 
 import com.simsilica.ethereal.EtherealHost;
 
+import com.simsilica.es.EntityId;
+
 import example.net.GameSession;
 import example.net.GameSessionListener;
 import example.net.chat.server.ChatHostedService;
@@ -132,10 +134,14 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
  
     @Override
     public void startHostingOnConnection( HostedConnection conn ) {
+        throw new UnsupportedOperationException("Call the startHostingOnConnection(conn, player) version instead.");
+    }
+    
+    public void startHostingOnConnection( HostedConnection conn, EntityId player ) { 
         
         log.debug("startHostingOnConnection(" + conn + ")");
     
-        GameSessionImpl session = new GameSessionImpl(conn);
+        GameSessionImpl session = new GameSessionImpl(player, conn);
         conn.setAttribute(ATTRIBUTE_SESSION, session);
         
         // Expose the session as an RMI resource to the client
@@ -151,16 +157,11 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
  
         // Setup to start using SimEthereal synching
         getService(EtherealHost.class).startHostingOnConnection(conn);
-        getService(EtherealHost.class).setConnectionObject(conn, (long)session.bodyId, new Vec3d());       
+        getService(EtherealHost.class).setConnectionObject(conn, session.entityId.getId(), new Vec3d());       
  
         // Start hosting on the chat server also
         String name = AccountHostedService.getPlayerName(conn);
         getService(ChatHostedService.class).startHostingOnConnection(conn, name);
-        
-        // Notify all of our sessions
-        for( GameSessionImpl player : players ) {
-            player.playerJoined(session);          
-        }   
     }
  
     protected GameSessionImpl getGameSession( HostedConnection conn ) {
@@ -187,11 +188,6 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
                 playersArray = null;
             }
  
-            // Notify all of our sessions
-            for( GameSessionImpl player : players ) {
-                player.playerLeft(session);          
-            }
-            
             // Clear the session so we know we are logged off
             conn.setAttribute(ATTRIBUTE_SESSION, null);
             
@@ -228,7 +224,7 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
         
         public void onPlayerLoggedOn( AccountEvent event ) {
             log.debug("onPlayerLoggedOn()");
-            startHostingOnConnection(event.getConnection());            
+            startHostingOnConnection(event.getConnection(), event.getPlayerEntity());            
         }
         
         public void onPlayerLoggedOff( AccountEvent event ) {
@@ -244,15 +240,21 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
  
         private HostedConnection conn;
         private GameSessionListener callback;
-        private int bodyId;
+        private EntityId entityId;
         private ShipDriver shipDriver;
         
-        public GameSessionImpl( HostedConnection conn ) {
+        public GameSessionImpl( EntityId entityId, HostedConnection conn ) {
+            this.entityId = entityId;
             this.conn = conn;
             
             // Create a ship for the player
-            this.shipDriver = new ShipDriver(); 
-            this.bodyId = physics.createBody(shipDriver);
+            this.shipDriver = new ShipDriver();
+            
+            // Set the ship driver directly on the Body.  This could
+            // also have been managed with a component-based system but 
+            // that will wait.
+            Body body = physics.getBody(entityId, true);
+            body.driver = shipDriver;
         }
  
         public void initialize() {
@@ -261,21 +263,12 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
         public void close() {
             log.debug("Closing game session for:" + conn);        
             // Remove out physics body
-            physics.removeBody(bodyId);
+            physics.removeBody(entityId);
         }
  
         @Override
-        public int getPlayerObject() {
-
-            // Cheat and tell this player about the other players by
-            // sending late join messages
-            // FIXME - this is a big hack because we're using it as the side-effect
-            // of a remote get.                       
-            for( GameSessionImpl player : players ) {
-                playerJoined(player);          
-            }   
-
-            return bodyId;
+        public EntityId getPlayerObject() {
+            return entityId;
         }
 
         @Override   
@@ -288,18 +281,6 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
             shipDriver.applyMovementState(rotation, thrust);
         }
         
-        public void playerJoined( GameSessionImpl player ) {            
-            getCallback().playerJoined(player.conn.getId(),
-                                       AccountHostedService.getPlayerName(player.conn),
-                                       player.bodyId);
-        } 
-
-        public void playerLeft( GameSessionImpl player ) {
-            getCallback().playerLeft(player.conn.getId(),
-                                     AccountHostedService.getPlayerName(player.conn),
-                                     player.bodyId);
-        } 
- 
         protected GameSessionListener getCallback() {
             if( callback == null ) {
                 RmiRegistry rmi = rmiService.getRmiRegistry(conn);

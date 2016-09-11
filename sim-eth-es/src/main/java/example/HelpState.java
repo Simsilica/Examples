@@ -101,6 +101,7 @@ public class HelpState extends BaseAppState {
             "and hit enter to send.",
             "Hit enter or esc to close."),
         new KeyHelp(MainGameFunctions.F_IN_GAME_MENU, "Opens the in-game menu."),
+        new KeyHelp(MainGameFunctions.F_PLAYER_LIST, "Displays the list of online players."),
         new KeyHelp("PrtScrn", "Takes a screen shot."),
         new KeyHelp("F5", "Toggles display stats."),
         new KeyHelp("F6", "Toggles rendering frame timings."),

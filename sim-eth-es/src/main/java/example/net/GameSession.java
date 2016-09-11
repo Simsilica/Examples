@@ -40,6 +40,7 @@ import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.network.service.rmi.Asynchronous;
 
+import com.simsilica.es.EntityId;
 
 /**
  *  The client's view of the 'game'.  Provides necessary access to the
@@ -52,7 +53,7 @@ public interface GameSession {
     /**
      *  Returns the ID of the player object.
      */
-    public int getPlayerObject();
+    public EntityId getPlayerObject();
  
     /**
      *  Sends information to the game back end about the current

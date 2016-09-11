@@ -47,6 +47,8 @@ import com.jme3.network.service.AbstractClientService;
 import com.jme3.network.service.ClientServiceManager;
 import com.jme3.network.service.rmi.RmiClientService;
 
+import com.simsilica.es.EntityId;
+
 import example.net.GameSession;
 import example.net.GameSessionListener;
 
@@ -71,7 +73,7 @@ public class GameSessionClientService extends AbstractClientService
     }
     
     @Override
-    public int getPlayerObject() {
+    public EntityId getPlayerObject() {
         return getDelegate().getPlayerObject();
     }
     
@@ -147,21 +149,6 @@ public class GameSessionClientService extends AbstractClientService
      */
     private class GameSessionCallback implements GameSessionListener {
  
-        @Override   
-        public void playerJoined( int clientId, String playerName, int shipId ) {
-            log.debug("playerJoined(" + clientId + ", " + playerName + ")");
-            for( GameSessionListener l : listeners ) {
-                l.playerJoined(clientId, playerName, shipId);
-            }
-        }
-        
-        @Override   
-        public void playerLeft( int clientId, String playerName, int shipId  ) {
-            log.debug("playerLeft(" + clientId + ", " + playerName + ")");
-            for( GameSessionListener l : listeners ) {
-                l.playerLeft(clientId, playerName, shipId);
-            }
-        }
     }
 }
 

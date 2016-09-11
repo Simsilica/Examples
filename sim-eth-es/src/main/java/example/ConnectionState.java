@@ -61,6 +61,10 @@ import com.simsilica.state.CompositeAppState;
 import com.simsilica.ethereal.EtherealClient;
 import com.simsilica.ethereal.TimeSource;
 
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
+import com.simsilica.es.client.EntityDataClientService;
+
 import example.net.AccountSessionListener;
 import example.net.client.AccountClientService;
 import example.net.client.GameClient;
@@ -100,6 +104,10 @@ public class ConnectionState extends CompositeAppState {
 
     public TimeSource getRemoteTimeSource() {    
         return getService(EtherealClient.class).getTimeSource();        
+    }
+
+    public EntityData getEntityData() {
+        return getService(EntityDataClientService.class).getEntityData(); 
     }
 
     public <T extends ClientService> T getService( Class<T> type ) {

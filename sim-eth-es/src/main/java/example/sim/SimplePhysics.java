@@ -41,7 +41,10 @@ import java.util.concurrent.*;
 
 import com.jme3.util.SafeArrayList;
 
+import com.simsilica.es.*;
 import com.simsilica.sim.*;
+
+import example.es.*;
 
 /**
  *  Just a basic physics simulation that integrates acceleration, 
@@ -51,10 +54,12 @@ import com.simsilica.sim.*;
  */
 public class SimplePhysics extends AbstractGameSystem {
 
+    private EntityData ed;
+    
     // Single threaded.... we'll have to take care when adding/removing
     // items.
     private SafeArrayList<Body> bodies = new SafeArrayList<>(Body.class);
-    private Map<Long, Body> index = new ConcurrentHashMap<>();
+    private Map<EntityId, Body> index = new ConcurrentHashMap<>();
     
     private ConcurrentLinkedQueue<Body> toAdd = new ConcurrentLinkedQueue<>();
     private ConcurrentLinkedQueue<Body> toRemove = new ConcurrentLinkedQueue<>();
@@ -76,29 +81,37 @@ public class SimplePhysics extends AbstractGameSystem {
     public void removePhysicsListener( PhysicsListener l ) {
         listeners.remove(l);
     }
-    
-    public int createBody() {
-        return createBody(null);        
-    }
-        
-    public int createBody( ControlDriver driver ) {
-        Body result = new Body();
-        result.driver = driver;
-        toAdd.add(result);
-        index.put(result.bodyId, result);
-        return result.bodyId.intValue();       
-    }
-    
-    public boolean removeBody( long id ) {
-        Body body = index.remove(id);
-        if( body == null ) {        
-            return false;
+ 
+    public Body getBody( EntityId entityId, boolean create ) {
+        Body result = index.get(entityId);
+        if( result == null && create ) {
+            synchronized(this) {
+                result = index.get(entityId);
+                if( result != null ) {
+                    return result;
+                }
+                result = new Body(entityId);
+                toAdd.add(result);
+                index.put(entityId, result);         
+            }
         }
-        toRemove.add(body);
-        return true;
+        return result;
+    }
+    
+    public boolean removeBody( EntityId entityId ) {
+        Body result = index.remove(entityId);
+        if( result != null ) {
+            toRemove.add(result);
+            return true;
+        }
+        return false;
     }
     
     protected void initialize() {
+        this.ed = getSystem(EntityData.class);
+        if( ed == null ) {
+            throw new RuntimeException("SimplePhysics system requires an EntityData object.");
+        }
     }
     
     protected void terminate() {
@@ -159,5 +172,33 @@ public class SimplePhysics extends AbstractGameSystem {
             l.endFrame(time);
         }
     }
+
+    /**
+     *  Maps the appropriate entities to physics bodies.
+     */
+    private class BodyContainer extends EntityContainer<Body> {
+ 
+        public BodyContainer( EntityData ed ) {
+            super(ed, Position.class, MassProperties.class, SphereShape.class);
+        }
+        
+        protected Body addObject( Entity e ) {
+            Body newBody = getBody(e.getId(), true);
+            
+            Position pos = e.get(Position.class);
+            newBody.setPosition(pos);
+            return newBody;
+        }
     
+        protected void updateObject( Body object, Entity e ) {
+            // We don't support live-updating mass or shape right now
+        }
+    
+        protected void removeObject( Body object, Entity e ) {
+            removeBody(e.getId());
+        }    
+               
+    }    
 }
+
+

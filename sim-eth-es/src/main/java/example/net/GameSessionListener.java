@@ -47,15 +47,4 @@ import com.jme3.network.service.rmi.Asynchronous;
  */
 public interface GameSessionListener {
  
-    /**
-     *  Called when a new player has joined the game.
-     */
-    @Asynchronous   
-    public void playerJoined( int clientId, String playerName, int shipId );
-    
-    /**
-     *  Called when an existing player has left the game.
-     */   
-    @Asynchronous   
-    public void playerLeft( int clientId, String playerName, int shipId );
 }

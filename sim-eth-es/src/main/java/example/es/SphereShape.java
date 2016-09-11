@@ -34,66 +34,42 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package example.net.server;
+package example.es;
 
-import com.google.common.base.MoreObjects;
+import com.simsilica.es.EntityComponent;
+import com.simsilica.mathd.Vec3d;
 
-import com.jme3.network.HostedConnection;
-
-import com.simsilica.es.EntityId;
-
-import com.simsilica.event.EventType;
 
 /**
- *  Events that are send to the event bus for different account state
- *  related events.  These are server-side only events and are available
- *  to the other hosted services and possible the game systems in some
- *  rarer cases.
+ *
  *
  *  @author    Paul Speed
  */
-public class AccountEvent {
-
+public class SphereShape implements EntityComponent {
+    
+    private double radius;
+    private Vec3d offset;
+    
     /**
-     *  Singals that a player has successfully logged in.
+     *  Creates a new sphere collision shape with the specified
+     *  radius and 'center' relative to the natural origin of
+     *  the object to which it applies.  -CoG in most cases.
      */
-    public static EventType<AccountEvent> playerLoggedOn = EventType.create("PlayerLoggedOn", AccountEvent.class);
-
-    /**
-     *  Singals that a player has logged out.
-     */
-    public static EventType<AccountEvent> playerLoggedOff = EventType.create("PlayerLoggedOff", AccountEvent.class);
-    
-    private HostedConnection conn;
-    private String playerName;
-    private EntityId playerEntity;
-    
-    public AccountEvent( HostedConnection conn, String playerName, EntityId playerEntity ) {
-        this.conn = conn;
-        this.playerName = playerName;
-        this.playerEntity = playerEntity;
+    public SphereShape( double radius, Vec3d centerOffset ) {
+        this.radius = radius;
+        this.offset = centerOffset;
     }
     
-    public HostedConnection getConnection() {
-        return conn;
+    public double getRadius() {
+        return radius;
     }
     
-    public String getPlayerName() {
-        return playerName;
+    public Vec3d getCenterOffset() {
+        return offset;
     }
     
-    public EntityId getPlayerEntity() {
-        return playerEntity;
-    }
- 
-    @Override   
+    @Override
     public String toString() {
-        return MoreObjects.toStringHelper(getClass().getSimpleName())
-                    .add("conn", conn)
-                    .add("playerName", playerName)
-                    .add("playerEntity", playerEntity)
-                    .toString();
-    }   
+        return "SphereShape[radius=" + radius + ", centerOffset=" + offset + "]";
+    }
 }
-
-

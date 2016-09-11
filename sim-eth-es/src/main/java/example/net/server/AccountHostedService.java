@@ -48,6 +48,11 @@ import com.jme3.network.service.rmi.RmiRegistry;
 
 import com.simsilica.event.EventBus;
 
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
+import com.simsilica.es.Name;
+import com.simsilica.es.server.EntityDataHostedService;
+
 import example.net.AccountSession;
 import example.net.AccountSessionListener;
 
@@ -65,10 +70,12 @@ public class AccountHostedService extends AbstractHostedConnectionService {
 
     private static final String ATTRIBUTE_SESSION = "account.session";
     private static final String ATTRIBUTE_PLAYER_NAME = "account.playerName";
+    private static final String ATTRIBUTE_PLAYER_ENTITY = "account.playerEntity";
 
     private RmiHostedService rmiService;
  
     private String serverInfo;
+    private EntityData ed;
     
     public AccountHostedService( String serverInfo ) {
         this.serverInfo = serverInfo;
@@ -76,6 +83,10 @@ public class AccountHostedService extends AbstractHostedConnectionService {
     
     public static String getPlayerName( HostedConnection conn ) {
         return conn.getAttribute(ATTRIBUTE_PLAYER_NAME);   
+    }
+
+    public static EntityId getPlayerEntity( HostedConnection conn ) {
+        return conn.getAttribute(ATTRIBUTE_PLAYER_ENTITY);   
     }
  
     @Override
@@ -85,9 +96,18 @@ public class AccountHostedService extends AbstractHostedConnectionService {
         this.rmiService = getService(RmiHostedService.class);
         if( rmiService == null ) {
             throw new RuntimeException("AccountHostedService requires an RMI service.");
-        }
+        }        
     }
-    
+ 
+    @Override
+    public void start() {    
+        EntityDataHostedService eds = getService(EntityDataHostedService.class);
+        if( eds == null ) {
+            throw new RuntimeException("AccountHostedService requires an EntityDataHostedService");
+        }
+        this.ed = eds.getEntityData();
+    }
+   
     @Override
     public void startHostingOnConnection( HostedConnection conn ) {
         
@@ -104,11 +124,16 @@ public class AccountHostedService extends AbstractHostedConnectionService {
     @Override   
     public void stopHostingOnConnection( HostedConnection conn ) {
         log.debug("stopHostingOnConnection(" + conn + ")");
-        String playerName = getPlayerName(conn);
-        if( playerName != null ) {
+        AccountSessionImpl account = conn.getAttribute(ATTRIBUTE_SESSION);
+        if( account != null ) {
+            String playerName = getPlayerName(conn);        
             log.debug("publishing playerLoggedOff event for:" + conn);
             // Was really logged on before
-            EventBus.publish(AccountEvent.playerLoggedOff, new AccountEvent(conn, playerName));            
+            EventBus.publish(AccountEvent.playerLoggedOff, new AccountEvent(conn, playerName, account.player));
+                                                            
+            // clear the account session info
+            account.dispose();
+            conn.setAttribute(ATTRIBUTE_SESSION, account);            
         }
     }
  
@@ -119,6 +144,7 @@ public class AccountHostedService extends AbstractHostedConnectionService {
  
         private HostedConnection conn;
         private AccountSessionListener callback;
+        private EntityId player;
         
         public AccountSessionImpl( HostedConnection conn ) {
             this.conn = conn;
@@ -147,13 +173,25 @@ public class AccountHostedService extends AbstractHostedConnectionService {
         public void login( String playerName ) {
             log.info("login(" + playerName + ")");
             conn.setAttribute(ATTRIBUTE_PLAYER_NAME, playerName);
+ 
+            // Create the player entity
+            player = ed.createEntity();
+            conn.setAttribute(ATTRIBUTE_PLAYER_ENTITY, player);
+            ed.setComponents(player, new Name(playerName));
+            log.info("Created player entity:" + player + " for:" + playerName);
             
             // And let them know they were successful
             getCallback().notifyLoginStatus(true);
             
             log.debug("publishing playerLoggedOn event for:" + conn);
             // Notify 'logged in' only after we've told the player themselves            
-            EventBus.publish(AccountEvent.playerLoggedOn, new AccountEvent(conn, playerName));            
+            EventBus.publish(AccountEvent.playerLoggedOn, new AccountEvent(conn, playerName, player));            
+        }
+        
+        public void dispose() {
+            // The player is the ship is the entity... so we need to delete
+            // the ship
+            ed.removeEntity(player);
         }
     }    
 }

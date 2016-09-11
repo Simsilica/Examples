@@ -60,12 +60,15 @@ import com.simsilica.ethereal.SharedObject;
 import com.simsilica.ethereal.SharedObjectListener;
 import com.simsilica.ethereal.TimeSource; 
 
+import com.simsilica.es.*;
+
 import com.simsilica.mathd.trans.PositionTransition;
 import com.simsilica.mathd.trans.TransitionBuffer;
 
 import example.ConnectionState;
 import example.GameSessionState;
 import example.Main;
+import example.es.BodyPosition;
 import example.net.GameSessionListener;
 import example.net.client.GameSessionClientService;
 
@@ -78,32 +81,24 @@ public class ModelViewState extends BaseAppState {
 
     static Logger log = LoggerFactory.getLogger(ModelViewState.class);
 
+    private EntityData ed;
+    private TimeSource timeSource;
+    
     private Node modelRoot;
     private Node hudLabelRoot;
     private Camera camera;
     
-    private GameSessionObserver gameSessionObserver = new GameSessionObserver();
-    private Map<Integer, ObjectInfo> index = new ConcurrentHashMap<>();
-    private Map<Integer, PlayerInfo> playerIndex = new ConcurrentHashMap<>();
-    private ConcurrentLinkedQueue<ObjectInfo> toAdd = new ConcurrentLinkedQueue<>();
-    private ConcurrentLinkedQueue<Integer> toRemove = new ConcurrentLinkedQueue<>();   
-
-    private Map<Integer, Spatial> models = new HashMap<>();
-    private SafeArrayList<ObjectInfo> objects = new SafeArrayList<>(ObjectInfo.class); 
-
-    private TimeSource timeSource;
-    private SharedObjectUpdater objectUpdater = new SharedObjectUpdater();
-
+    private MobContainer mobs;
 
     public ModelViewState() {
     }
 
-    public Spatial getModel( Integer id ) {
-        ObjectInfo info = index.get(id);
-        if( info == null ) {
+    public Spatial getModel( EntityId id ) {
+        Mob mob = mobs.getObject(id);
+        if( mob == null ) {
             return null;
         }
-        return info.spatial;
+        return mob.spatial;
     }
 
     @Override
@@ -113,9 +108,6 @@ public class ModelViewState extends BaseAppState {
         
         this.camera = app.getCamera();
  
-        // Add a listener to receive efficient object updates.   
-        getState(ConnectionState.class).getService(EtherealClient.class).addObjectListener(objectUpdater);
-        
         // Retrieve the time source from the network connection
         // The time source will give us a time in recent history that we should be
         // viewing.  This currently defaults to -100 ms but could vary (someday) depending
@@ -125,11 +117,8 @@ public class ModelViewState extends BaseAppState {
         // https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking
         // https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization
         this.timeSource = getState(ConnectionState.class).getRemoteTimeSource();
-        
-        // Still need this listener because it's the only way we know things
-        // like player name which we might use later.
-        getState(ConnectionState.class).getService(GameSessionClientService.class).addGameSessionListener(gameSessionObserver);
-                        
+    
+        this.ed = getState(ConnectionState.class).getEntityData();
     }
 
     @Override
@@ -138,6 +127,10 @@ public class ModelViewState extends BaseAppState {
 
     @Override
     protected void onEnable() {
+        
+        mobs = new MobContainer(ed);
+        mobs.start();
+    
         ((Main)getApplication()).getRootNode().attachChild(modelRoot);
         ((Main)getApplication()).getGuiNode().attachChild(hudLabelRoot);
     }
@@ -146,63 +139,25 @@ public class ModelViewState extends BaseAppState {
     protected void onDisable() {
         modelRoot.removeFromParent();
         hudLabelRoot.removeFromParent();
-    }
-    
-    protected void addModel( ObjectInfo info ) {
- 
-        Spatial model = createShip(-1, "", info.shipId); 
-        models.put(info.shipId, model);       
-        modelRoot.attachChild(model);
         
-        info.spatial = model;
-        objects.add(info);
-        
-        // If the ship is our ship then we'll hide it else it looks bad.
-        if( info.shipId == getState(GameSessionState.class).getShipId() ) {
-            info.localPlayerShip = true;
-            model.setCullHint(Spatial.CullHint.Always);
-        }
-    }
-    
-    protected void removeModel( int id ) {
-        log.info("removeModel(" + id + ")");
-        ObjectInfo info = index.remove(id);
-        if( info != null ) {
-            // Remove it from our iteration list
-            objects.remove(info);
-            info.dispose();
-        }
-        Spatial spatial = models.remove(id);
-        if( spatial != null ) {
-            spatial.removeFromParent();
-        }
+        mobs.stop();
+        mobs = null;
     }
 
     @Override
     public void update( float tpf ) {
-        if( !toAdd.isEmpty() ) {
-            ObjectInfo info;
-            while( (info = toAdd.poll()) != null ) {
-                addModel(info);
-            }
-        }
-        if( !toRemove.isEmpty() ) {
-            Integer id;
-            while( (id = toRemove.poll()) != null ) {
-                removeModel(id);
-            }
-        }
  
         // Grab a consistent time for this frame
         long time = timeSource.getTime();
 
         // Update all of the models
-        for( ObjectInfo info : objects.getArray() ) {
-            info.updateSpatial(time);
-        }
+        mobs.update();
+        for( Mob mob : mobs.getArray() ) {
+            mob.updateSpatial(time);
+        } 
     }
-
-    protected Spatial createShip( int clientId, String playerName, int shipId ) {
+    
+    protected Spatial createShip( Entity entity ) {
     
         AssetManager assetManager = getApplication().getAssetManager();
         
@@ -212,110 +167,45 @@ public class ModelViewState extends BaseAppState {
         Material mat = GuiGlobals.getInstance().createMaterial(texture, false).getMaterial();
         ship.setMaterial(mat);
  
-        Node result = new Node("ship:" + shipId);
+        Node result = new Node("ship:" + entity.getId());
         result.attachChild(ship);        
  
-        result.setUserData("clientId", clientId);
-        result.setUserData("playerName", playerName);
-        result.setUserData("objectId", shipId);
+        result.setUserData("entityId", entity.getId().getId());
         
         return result;
     }
-
-    protected ObjectInfo getObjectInfo( int shipId, boolean create ) {
-        ObjectInfo result = index.get(shipId);
-        if( result == null && create ) {
-            result = new ObjectInfo(shipId);
-            index.put(shipId, result);
-            toAdd.add(result);
-        }
-        return result;
-    }
- 
-    private class PlayerInfo {
-        int clientId;
-        String playerName;
-        int shipId;
-        
-        public PlayerInfo( int clientId, String playerName, int shipId ) {
-            this.clientId = clientId;
-            this.playerName = playerName;
-            this.shipId = shipId;
-        }
-    }
-     
-    private class ObjectInfo {
-        int shipId;
+    
+    private class Mob {
+        Entity entity;
         Spatial spatial;
         boolean visible;
         boolean localPlayerShip;
  
-        // Keep a HUD label.  Why not?  Normally I'd do this in a 
-        // separate state/system but this isn't an ES so let's just
-        // grow the spaghetti!
-        Label shipLabel;
-        float labelOffset = 0.1f;
-        
-        volatile Vector3f updatePos;
-        volatile Quaternion updateRot;
-        
         TransitionBuffer<PositionTransition> buffer;
         
-        public ObjectInfo( int shipId ) {
-            this.shipId = shipId;
-            // A history of 12 should give us about 200 ms of history
-            // through which to interpolate.  12 * 1/60 = 12/60 = 1/5 = 200 ms.
-            this.buffer = new TransitionBuffer<>(12);
-            
-            this.shipLabel = new Label("Ship", new ElementId("ship.label"));
-            shipLabel.setColor(ColorRGBA.Green);
-            shipLabel.setShadowColor(ColorRGBA.Black);
-            
-            // The first valid history entry will turn us visible
-            setVisible(false);
-        }
+        public Mob( Entity entity ) {
+            this.entity = entity;
+
+            this.spatial = createShip(entity);
+            modelRoot.attachChild(spatial);
  
-        public void setPlayerName( String playerName ) {
-            shipLabel.setText(playerName);
-        }
- 
-        protected void setVisible( boolean f ) {
-            if( this.visible == f ) {
-                return;
-            }
-            this.visible = f;
-            if( visible && !localPlayerShip ) {
-                spatial.setCullHint(Spatial.CullHint.Inherit);
-                shipLabel.setCullHint(Spatial.CullHint.Inherit);
-            } else {
+            BodyPosition bodyPos = entity.get(BodyPosition.class);
+            // BodyPosition requires special management to make
+            // sure all instances of BodyPosition are sharing the same
+            // thread-safe history buffer.  Everywhere it's used, it should
+            // be 'initialized'.            
+            bodyPos.initialize(entity.getId(), 12);
+            buffer = bodyPos.getBuffer();
+            
+            // If this is the player's ship then we don't want the model
+            // shown else it looks bad.  A) it's ugly.  B) the model will
+            // always lag the player's turning.
+            if( entity.getId().getId() == getState(GameSessionState.class).getShipId().getId() ) {
+                this.localPlayerShip = true;
                 spatial.setCullHint(Spatial.CullHint.Always);
-                shipLabel.setCullHint(Spatial.CullHint.Always);
             }
         }
-        
-        protected void updateLabelPos( Vector3f shipPos ) {
-            if( !visible || localPlayerShip ) {
-                return;
-            }
-            Vector3f camRelative = shipPos.subtract(camera.getLocation());
-            float distance = camera.getDirection().dot(camRelative);
-            if( distance < 0 ) {
-                // It's behind us
-                shipLabel.removeFromParent();
-                return;
-            }
-            
-            // Calculate the ship's position on screen
-            //Vector3f screen1 = camera.getScreenCoordinates(shipPos);
-            Vector3f screen2 = camera.getScreenCoordinates(shipPos.add(0, labelOffset, 0));
-            
-            Vector3f pref = shipLabel.getPreferredSize();
-            shipLabel.setLocalTranslation(screen2.x - pref.x * 0.5f, screen2.y + pref.y, screen2.z);
-            if( shipLabel.getParent() == null ) {
-                hudLabelRoot.attachChild(shipLabel);
-            }               
-        }
-        
+ 
         public void updateSpatial( long time ) {
  
             // Look back in the brief history that we've kept and
@@ -327,113 +217,54 @@ public class ModelViewState extends BaseAppState {
                 spatial.setLocalTranslation(trans.getPosition(time, true));
                 spatial.setLocalRotation(trans.getRotation(time, true));
                 setVisible(trans.getVisibility(time));
-                
-                updateLabelPos(spatial.getWorldTranslation());
             }            
         }
-                
-        public void addFrame( long endTime, Vector3f pos, Quaternion quat, boolean visible ) {
-            PositionTransition trans = new PositionTransition(endTime, pos, quat, visible);
-            buffer.addTransition(trans);
-        }        
- 
-        public PositionTransition getFrame( long time ) {
-            return buffer.getTransition(time);        
+        
+        protected void updateComponents() {
+        }
+        
+        protected void setVisible( boolean f ) {
+            if( this.visible == f ) {
+                return;
+            }
+            this.visible = f;
+            if( visible && !localPlayerShip ) {
+                spatial.setCullHint(Spatial.CullHint.Inherit);
+            } else {
+                spatial.setCullHint(Spatial.CullHint.Always);
+            }
         }
         
         public void dispose() {
             spatial.removeFromParent();
-            shipLabel.removeFromParent();
-        }
-    }
-     
-    private class GameSessionObserver implements GameSessionListener {
- 
-        @Override
-        public void playerJoined( int clientId, String playerName, int shipId ){
-            log.info("playerJoined(" + clientId + ", " + playerName + ", " + shipId + ")");
-            playerIndex.put(shipId, new PlayerInfo(clientId, playerName, shipId));
-            
-            ObjectInfo shipInfo = getObjectInfo(shipId, true);
-            shipInfo.setPlayerName(playerName);          
-        }
-    
-        @Override
-        public void playerLeft( int clientId, String playerName, int shipId ) {           
-            log.info("playerLeft(" + clientId + ", " + playerName + ", " + shipId + ")");        
-            playerIndex.remove(shipId);
         }
     }
     
-    /**
-     *  Updates our local object views... could/should be split out into
-     *  a separate class but it's convenient here for now.  When this code
-     *  moves to an ES, we'll break this all apart but for now we are modifying
-     *  spatials directly (essentially) and so this is the easiest way.  
-     */
-    private class SharedObjectUpdater implements SharedObjectListener {
-    
-        // Time of the current frame.
-        private long frameTime;
-    
-        public SharedObjectUpdater() {
-        } 
-        
-        @Override
-        public void beginFrame( long time ) {
-            if( log.isTraceEnabled() ) {
-                log.trace("** beginFrame(" + time + ")");
-            }    
-            this.frameTime = time;
+    private class MobContainer extends EntityContainer<Mob> {
+        public MobContainer( EntityData ed ) {
+            super(ed, BodyPosition.class);
         }
     
-        @Override
-        public void objectUpdated( SharedObject obj ) {
-            if( log.isTraceEnabled() ) {
-                log.trace("****** Object moved[t=" + frameTime + "]:" + obj.getEntityId() + "  pos:" + obj.getWorldPosition() + "  removed:" + obj.isMarkedRemoved());    
-            }
-            
-            ObjectInfo info = getObjectInfo(obj.getEntityId().intValue(), true); 
-            if( info != null ) {
-                Vector3f pos = obj.getWorldPosition().toVector3f();
-                Quaternion quat = obj.getWorldRotation().toQuaternion();                
-                info.updatePos = pos;
-                info.updateRot = quat;
- 
-                info.addFrame(frameTime, pos, quat, true);
-            }
-            
+        @Override     
+        protected Mob[] getArray() {
+            return super.getArray();
         }
+    
+        @Override       
+        protected Mob addObject( Entity e ) {
+            return new Mob(e);
+        }
+    
+        @Override       
+        protected void updateObject( Mob object, Entity e ) {
+            object.updateComponents();
+        }
+    
+        @Override       
+        protected void removeObject( Mob object, Entity e ) {
+            object.dispose();   
+        }            
+    }
 
-        @Override
-        public void objectRemoved( SharedObject obj ) {
-            if( log.isTraceEnabled() ) {
-                log.trace("****** Object removed[t=" + frameTime + "]:" + obj.getEntityId());
-            }
-            
-            ObjectInfo info = getObjectInfo(obj.getEntityId().intValue(), true);
-            if( info != null ) {
-                // The object has been removed in the 'now' but we need to keep
-                // it until it's history is used up. 
-                info.addFrame(frameTime,  
-                              obj.getWorldPosition().toVector3f(), 
-                              obj.getWorldRotation().toQuaternion(),
-                              false);
- 
-                // Note that we don't actually delay removal here but if we had
-                // an ES then the actual entity removal would come later.  We
-                // build everything as if we did, though, and that also means
-                // we support history-buffered visibility.
-              
-                toRemove.add(obj.getEntityId().intValue());
-            }
-        }
-
-        @Override
-        public void endFrame() {
-            log.trace("** endFrame()");    
-            this.frameTime = -1;
-        }
-    }
 }
 

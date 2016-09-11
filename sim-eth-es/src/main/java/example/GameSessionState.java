@@ -48,12 +48,15 @@ import com.simsilica.state.CompositeAppState;
 
 import com.simsilica.ethereal.TimeSource;
 
+import com.simsilica.es.EntityId;
+
 import example.debug.TimeSequenceState;
 import example.net.GameSessionListener;
 import example.net.client.GameSessionClientService;
 import example.net.chat.ChatSessionListener;
 import example.net.chat.client.ChatClientService;
 import example.view.ModelViewState;
+import example.view.PlayerListState;
 import example.view.PlayerMovementState;
 import example.view.SkyState;
 import example.view.SpaceGridState;
@@ -75,7 +78,7 @@ public class GameSessionState extends CompositeAppState {
     // Temporary reference FIXME
     private PlayerMovementState us;
     private int clientId;
-    private int shipId = -1;
+    private EntityId shipId;
 
     public GameSessionState() {
         // add normal states on the super-constructor
@@ -97,9 +100,10 @@ public class GameSessionState extends CompositeAppState {
         addChild(new TimeSequenceState(), true); 
 
         addChild(new HelpState(), true); 
+        addChild(new PlayerListState(), true); 
     }
  
-    public int getShipId() {
+    public EntityId getShipId() {
         return shipId;
     }
  
@@ -174,17 +178,6 @@ public class GameSessionState extends CompositeAppState {
      */
     private class GameSessionObserver implements GameSessionListener {
  
-        @Override
-        public void playerJoined( int clientId, String playerName, int shipId ) {
-            // The chat listener does this job now
-            //getState(MessageState.class).addMessage("> " + playerName + " has joined.", ColorRGBA.Yellow);
-        }
-    
-        @Override
-        public void playerLeft( int clientId, String playerName, int shipId ) {
-            // The chat listener does this job now
-            //getState(MessageState.class).addMessage("> " + playerName + " has left.", ColorRGBA.Yellow);  
-        }
     }
  
     /**

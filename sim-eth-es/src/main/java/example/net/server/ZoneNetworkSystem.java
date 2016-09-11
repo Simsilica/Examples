@@ -88,12 +88,12 @@ public class ZoneNetworkSystem extends AbstractGameSystem {
         
         @Override   
         public void updateBody( Body body ) {
-            zones.updateEntity(body.bodyId, true, body.pos, body.orientation, body.bounds);   
+            zones.updateEntity(body.bodyId.getId(), true, body.pos, body.orientation, body.bounds);   
         }
  
         @Override   
         public void removeBody( Body body ) {
-            zones.remove(body.bodyId);
+            zones.remove(body.bodyId.getId());
         }
     
         @Override   

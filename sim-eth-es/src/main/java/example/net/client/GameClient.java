@@ -82,7 +82,8 @@ public class GameClient {
                                          new ChatClientService(GameConstants.CHAT_CHANNEL),
                                          new EtherealClient(GameConstants.OBJECT_PROTOCOL,
                                                             GameConstants.ZONE_GRID,
-                                                            GameConstants.ZONE_RADIUS)                                         
+                                                            GameConstants.ZONE_RADIUS),
+                                         new SharedObjectUpdater()                                         
                                          );
 
         // Can grab this even before started but you won't be able to retrieve

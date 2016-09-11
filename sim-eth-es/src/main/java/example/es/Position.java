@@ -34,66 +34,65 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package example.net.server;
+package example.es;
 
-import com.google.common.base.MoreObjects;
+import com.simsilica.es.EntityComponent;
+import com.simsilica.mathd.Quatd;
+import com.simsilica.mathd.Vec3d;
 
-import com.jme3.network.HostedConnection;
-
-import com.simsilica.es.EntityId;
-
-import com.simsilica.event.EventType;
 
 /**
- *  Events that are send to the event bus for different account state
- *  related events.  These are server-side only events and are available
- *  to the other hosted services and possible the game systems in some
- *  rarer cases.
+ *  The position of static or mostly static objects.  This is the position
+ *  for entities that move infrequently and is the initial position used
+ *  for mobile objects.  A physics listener may also occasionally publish
+ *  updates to the real position of mobile objects. 
  *
  *  @author    Paul Speed
  */
-public class AccountEvent {
+public class Position implements EntityComponent {
+    private Vec3d location;
+    private Quatd facing;
+    
+    // When we want to filter static objects based on position then
+    // this will be very useful and we'll need to generate it whenever the
+    // position changes.
+    //private long cellId;
+    
+    public Position() {
+        this(0, 0);
+    }
+    
+    public Position( double x, double y ) {
+        this(new Vec3d(x, y, 0), new Quatd());
+    }
+    
+    public Position( Vec3d loc ) {
+        this(loc, new Quatd());
+    }
+    
+    public Position( Vec3d loc, Quatd quat ) {
+        this.location = loc;
+        this.facing = quat;
+    }
+    
+    public Position changeLocation( Vec3d location ) {
+        return new Position(location, facing);
+    }
 
-    /**
-     *  Singals that a player has successfully logged in.
-     */
-    public static EventType<AccountEvent> playerLoggedOn = EventType.create("PlayerLoggedOn", AccountEvent.class);
-
-    /**
-     *  Singals that a player has logged out.
-     */
-    public static EventType<AccountEvent> playerLoggedOff = EventType.create("PlayerLoggedOff", AccountEvent.class);
-    
-    private HostedConnection conn;
-    private String playerName;
-    private EntityId playerEntity;
-    
-    public AccountEvent( HostedConnection conn, String playerName, EntityId playerEntity ) {
-        this.conn = conn;
-        this.playerName = playerName;
-        this.playerEntity = playerEntity;
+    public Position changeFacing( Quatd facing ) {
+        return new Position(location, facing);
     }
     
-    public HostedConnection getConnection() {
-        return conn;
+    public Vec3d getLocation() {
+        return location;
     }
     
-    public String getPlayerName() {
-        return playerName;
+    public Quatd getFacing() {
+        return facing;
     }
     
-    public EntityId getPlayerEntity() {
-        return playerEntity;
-    }
- 
-    @Override   
+    @Override
     public String toString() {
-        return MoreObjects.toStringHelper(getClass().getSimpleName())
-                    .add("conn", conn)
-                    .add("playerName", playerName)
-                    .add("playerEntity", playerEntity)
-                    .toString();
-    }   
+        return "Position[location=" + location + ", facing=" + facing + "]";
+    }
 }
-
-

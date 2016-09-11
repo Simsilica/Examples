@@ -42,7 +42,9 @@ import org.slf4j.*;
 
 import com.jme3.network.HostedConnection;
 import com.jme3.network.Network;
-import com.jme3.network.Server;
+import com.jme3.network.Server;                                      
+import com.jme3.network.serializing.Serializer;
+import com.jme3.network.serializing.serializers.FieldSerializer;
 import com.jme3.network.service.rmi.RmiHostedService;
 import com.jme3.network.service.rpc.RpcHostedService;
 
@@ -50,6 +52,7 @@ import com.simsilica.ethereal.EtherealHost;
 import com.simsilica.ethereal.NetworkStateListener;
 
 import com.simsilica.es.EntityData;
+import com.simsilica.es.Name;
 import com.simsilica.es.base.DefaultEntityData;
 import com.simsilica.es.server.EntityDataHostedService;
 import com.simsilica.es.server.EntityUpdater; // from SiO2
@@ -59,6 +62,7 @@ import com.simsilica.sim.GameSystemManager;
 
 import example.GameConstants;
 import example.net.chat.server.ChatHostedService;
+import example.es.*;
 import example.sim.*;
 
 /**
@@ -126,11 +130,28 @@ public class GameServer {
         
         // Add it to the game systems so that we send updates properly
         systems.addSystem(new EntityUpdater(server.getServices().getService(EntityDataHostedService.class)));
+
+        // Add another publisher to post object updates to our server-side
+        // BodyPosition components.  This will also make BodyPosition available
+        // on the clients.
+        systems.addSystem(new BodyPositionPublisher());
+
+        // Register some custom serializers
+        registerSerializers();
+        
+        // Make the EntityData available to other systems
+        systems.register(EntityData.class, ed);
         
         log.info("Initializing game systems...");
         // Initialize the game system manager to prepare to start later
         systems.initialize();        
     }
+    
+    protected void registerSerializers() {
+        Serializer.registerClass(Name.class, new FieldSerializer());
+        
+        Serializer.registerClass(BodyPosition.class, new FieldSerializer());
+    }      
     
     public Server getServer() {
         return server;
