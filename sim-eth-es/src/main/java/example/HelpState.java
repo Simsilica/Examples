@@ -66,29 +66,6 @@ public class HelpState extends BaseAppState {
     private Container helpWindow;
     private boolean movementState = false;
     
-    private String[][] keyHelpStrings = {
-        {"F1", 
-         "Opens this help window."},
-        {"WASD + mouse",
-         "Flies the ship."},
-        {"Q Z", 
-         "Moves the ship up and down."},
-        {"Enter", 
-         "Opens the in-game chat bar.  Type chat messages",
-         "and hit enter to send.",
-         "Hit enter or esc to close."},
-        {"Esc",
-         "Opens in-game menu."},
-        {"PrtScrn",
-         "Takes a screen shot."},
-        {"F5",
-         "Toggles display stats."},
-        {"F6",
-         "Toggles rendering frame timings."},
-        {"F7",
-         "Toggles network timing stats."} 
-    };
-    
     private KeyHelp[] keyHelp = {
         new KeyHelp(MainGameFunctions.F_IN_GAME_HELP, "Opens this help window."),
         new KeyHelp(PlayerMovementFunctions.F_X_ROTATE, "Rotates left/right."),
@@ -146,18 +123,6 @@ public class HelpState extends BaseAppState {
             s = lines.join(help.description);
             keys.addChild(new Label(s, new ElementId("help.description.label")), 1);                     
         }       
-/*        
-        for( String[] help : keyHelp ) {
-            keys.addChild(new Label(help[0], new ElementId("help.key.label")));
-            StringBuilder sb = new StringBuilder();
-            for( int i = 1; i < help.length; i++ ) {
-                if( sb.length() > 0 ) {
-                    sb.append("\n");
-                }
-                sb.append(help[i]);
-            }
-            keys.addChild(new Label(sb.toString(), new ElementId("help.description.label")), 1);
-        }*/
 
         helpWindow.addChild(new ActionButton(new CallMethodAction("Done", this, "close")));
                 

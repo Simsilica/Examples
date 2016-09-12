@@ -55,6 +55,7 @@ import example.net.GameSessionListener;
 import example.net.client.GameSessionClientService;
 import example.net.chat.ChatSessionListener;
 import example.net.chat.client.ChatClientService;
+import example.view.HudLabelState;
 import example.view.ModelViewState;
 import example.view.PlayerListState;
 import example.view.PlayerMovementState;
@@ -87,6 +88,7 @@ public class GameSessionState extends CompositeAppState {
               new SkyState(),
               new ModelViewState(),
               new PlayerMovementState(),
+              new HudLabelState(),
               new SpaceGridState(GameConstants.GRID_CELL_SIZE, 10, new ColorRGBA(0.8f, 1f, 1f, 0.5f))
               //new SpaceGridState(2, 10, ColorRGBA.White) 
               ); 

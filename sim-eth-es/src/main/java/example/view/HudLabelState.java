@@ -73,36 +73,30 @@ import example.net.GameSessionListener;
 import example.net.client.GameSessionClientService;
 
 /**
- *  Displays the models for the various physics objects.
+ *  Displays a HUD label for any entity with a BodyPosition and a Name.
  *
  *  @author    Paul Speed
  */
-public class ModelViewState extends BaseAppState {
+public class HudLabelState extends BaseAppState {
 
-    static Logger log = LoggerFactory.getLogger(ModelViewState.class);
+    static Logger log = LoggerFactory.getLogger(HudLabelState.class);
 
     private EntityData ed;
     private TimeSource timeSource;
     
-    private Node modelRoot;
-    private Node hudLabelRoot;
+    private Node hudLabelRoot;    
+    private Camera camera;
     
-    private MobContainer mobs;
+    private LabelContainer labels;
 
-    public ModelViewState() {
-    }
-
-    public Spatial getModel( EntityId id ) {
-        Mob mob = mobs.getObject(id);
-        if( mob == null ) {
-            return null;
-        }
-        return mob.spatial;
+    public HudLabelState() {
     }
 
     @Override
     protected void initialize( Application app ) {
-        modelRoot = new Node();
+        hudLabelRoot = new Node("HUD labels");
+ 
+        this.camera = app.getCamera();
         
         // Retrieve the time source from the network connection
         // The time source will give us a time in recent history that we should be
@@ -124,18 +118,18 @@ public class ModelViewState extends BaseAppState {
     @Override
     protected void onEnable() {
         
-        mobs = new MobContainer(ed);
-        mobs.start();
+        labels = new LabelContainer(ed);
+        labels.start();
     
-        ((Main)getApplication()).getRootNode().attachChild(modelRoot);
+        ((Main)getApplication()).getGuiNode().attachChild(hudLabelRoot);
     }
 
     @Override
     protected void onDisable() {
-        modelRoot.removeFromParent();
+        hudLabelRoot.removeFromParent();
         
-        mobs.stop();
-        mobs = null;
+        labels.stop();
+        labels = null;
     }
 
     @Override
@@ -145,44 +139,36 @@ public class ModelViewState extends BaseAppState {
         long time = timeSource.getTime();
 
         // Update all of the models
-        mobs.update();
-        for( Mob mob : mobs.getArray() ) {
-            mob.updateSpatial(time);
+        labels.update();
+        for( LabelHolder label : labels.getArray() ) {
+            label.update(time);
         } 
     }
-    
-    protected Spatial createShip( Entity entity ) {
-    
-        AssetManager assetManager = getApplication().getAssetManager();
-        
-        Spatial ship = assetManager.loadModel("Models/fighter.j3o");
-        ship.center();
-        Texture texture = assetManager.loadTexture("Textures/ship1.png");
-        Material mat = GuiGlobals.getInstance().createMaterial(texture, false).getMaterial();
-        ship.setMaterial(mat);
  
-        Node result = new Node("ship:" + entity.getId());
-        result.attachChild(ship);        
- 
-        result.setUserData("entityId", entity.getId().getId());
-        
-        return result;
-    }
-    
-    private class Mob {
+    /**
+     *  Holds the on-screen label and the transition buffer, etc necessary
+     *  for managing the position and state of the label.  If not for the 
+     *  need to poll these once per frame for position updates, we technically
+     *  could have done all management in the EntityContainer and just returned
+     *  Labels directly.  
+     */
+    private class LabelHolder {
         Entity entity;
-        Spatial spatial;
+        Label label;
+        float labelOffset = 0.1f;
+        
         boolean visible;
-        boolean localPlayerShip;
- 
+        boolean isPlayerEntity;        
+        
         TransitionBuffer<PositionTransition> buffer;
         
-        public Mob( Entity entity ) {
+        public LabelHolder( Entity entity ) {
             this.entity = entity;
 
-            this.spatial = createShip(entity);
-            modelRoot.attachChild(spatial);
- 
+            this.label = new Label("Ship", new ElementId("ship.label"));
+            label.setColor(ColorRGBA.Green);
+            label.setShadowColor(ColorRGBA.Black);
+                        
             BodyPosition bodyPos = entity.get(BodyPosition.class);
             // BodyPosition requires special management to make
             // sure all instances of BodyPosition are sharing the same
@@ -195,12 +181,36 @@ public class ModelViewState extends BaseAppState {
             // shown else it looks bad.  A) it's ugly.  B) the model will
             // always lag the player's turning.
             if( entity.getId().getId() == getState(GameSessionState.class).getShipId().getId() ) {
-                this.localPlayerShip = true;
-                spatial.setCullHint(Spatial.CullHint.Always);
+                this.isPlayerEntity = true;
             }
+            
+            // Pick up the current name
+            updateComponents();
         }
- 
-        public void updateSpatial( long time ) {
+
+        protected void updateLabelPos( Vector3f pos ) {
+            if( !visible || isPlayerEntity ) {
+                return;
+            }
+            Vector3f camRelative = pos.subtract(camera.getLocation());
+            float distance = camera.getDirection().dot(camRelative);
+            if( distance < 0 ) {
+                // It's behind us
+                label.removeFromParent();
+                return;
+            }
+            
+            // Calculate the ship's position on screen
+            Vector3f screen2 = camera.getScreenCoordinates(pos.add(0, labelOffset, 0));
+            
+            Vector3f pref = label.getPreferredSize();
+            label.setLocalTranslation(screen2.x - pref.x * 0.5f, screen2.y + pref.y, screen2.z);
+            if( label.getParent() == null ) {
+                hudLabelRoot.attachChild(label);
+            }               
+        }
+        
+        public void update( long time ) {
  
             // Look back in the brief history that we've kept and
             // pull an interpolated value.  To do this, we grab the
@@ -208,13 +218,14 @@ public class ModelViewState extends BaseAppState {
             // represents a starting and an ending pos+rot over a span of time.
             PositionTransition trans = buffer.getTransition(time);
             if( trans != null ) {
-                spatial.setLocalTranslation(trans.getPosition(time, true));
-                spatial.setLocalRotation(trans.getRotation(time, true));
-                setVisible(trans.getVisibility(time));
+                Vector3f pos = trans.getPosition(time, true);
+                setVisible(trans.getVisibility(time));                
+                updateLabelPos(pos);
             }            
         }
-        
+ 
         protected void updateComponents() {
+            label.setText(entity.get(Name.class).getName());
         }
         
         protected void setVisible( boolean f ) {
@@ -222,40 +233,40 @@ public class ModelViewState extends BaseAppState {
                 return;
             }
             this.visible = f;
-            if( visible && !localPlayerShip ) {
-                spatial.setCullHint(Spatial.CullHint.Inherit);
+            if( visible && !isPlayerEntity ) {
+                label.setCullHint(Spatial.CullHint.Inherit);
             } else {
-                spatial.setCullHint(Spatial.CullHint.Always);
+                label.setCullHint(Spatial.CullHint.Always);
             }
         }
         
         public void dispose() {
-            spatial.removeFromParent();
+            label.removeFromParent();
         }
     }
     
-    private class MobContainer extends EntityContainer<Mob> {
-        public MobContainer( EntityData ed ) {
-            super(ed, BodyPosition.class);
+    private class LabelContainer extends EntityContainer<LabelHolder> {
+        public LabelContainer( EntityData ed ) {
+            super(ed, Name.class, BodyPosition.class);
         }
     
         @Override     
-        protected Mob[] getArray() {
+        protected LabelHolder[] getArray() {
             return super.getArray();
         }
     
         @Override       
-        protected Mob addObject( Entity e ) {
-            return new Mob(e);
+        protected LabelHolder addObject( Entity e ) {
+            return new LabelHolder(e);
         }
     
         @Override       
-        protected void updateObject( Mob object, Entity e ) {
+        protected void updateObject( LabelHolder object, Entity e ) {
             object.updateComponents();
         }
     
         @Override       
-        protected void removeObject( Mob object, Entity e ) {
+        protected void removeObject( LabelHolder object, Entity e ) {
             object.dispose();   
         }            
     }

@@ -91,8 +91,6 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
     private AccountObserver accountObserver = new AccountObserver();
 
     private List<GameSessionImpl> players = new CopyOnWriteArrayList<>();
-    // FIXME: remove array when we get rid of the naive listener
-    private volatile GameSessionImpl[] playersArray = null;
  
     public GameSessionHostedService( GameSystemManager gameSystems ) {
     
@@ -148,11 +146,8 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
         RmiRegistry rmi = rmiService.getRmiRegistry(conn);
         rmi.share(session, GameSession.class);
  
-        // FIXME: remove sync when we get rid of the naive listener
-        synchronized( players ) {       
-            players.add(session);
-            playersArray = null;
-        }
+        players.add(session);
+        
         session.initialize();
  
         // Setup to start using SimEthereal synching
@@ -182,11 +177,7 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
             // might get two such calls if the connection is being closed. 
             getService(ChatHostedService.class).stopHostingOnConnection(conn);
         
-            // FIXME: remove sync when we get rid of the naive listener
-            synchronized( players ) {
-                players.remove(session);
-                playersArray = null;
-            }
+            players.remove(session);
  
             // Clear the session so we know we are logged off
             conn.setAttribute(ATTRIBUTE_SESSION, null);
@@ -202,24 +193,6 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
         }   
     }
     
-    private GameSessionImpl[] getPlayerArray() {
-        // Copy the reference so we're sure we are returning
-        // what we null-check.
-        GameSessionImpl[] result = playersArray;
-        if( result != null ) {
-            return result;
-        }
-        
-        synchronized(players) {
-            // Check again
-            if( playersArray == null ) {
-                playersArray = new GameSessionImpl[players.size()];
-                playersArray = players.toArray(playersArray);
-            }
-            return playersArray;
-        }
-    }
-
     private class AccountObserver {
         
         public void onPlayerLoggedOn( AccountEvent event ) {
