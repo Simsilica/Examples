@@ -1,0 +1,21 @@
+MaterialDef AnimateSpriteShader {
+    
+    MaterialParameters {
+        Int numTilesX
+        Int numTilesY
+        Float Speed
+        Int numTilesOffsetX
+        Int numTilesOffsetY
+        Texture2D AniTexMap
+        Float StartTime
+    }
+    Technique {
+        VertexShader GLSL120 :   MatDefs/AnimateMultilineSpriteShader.vert
+        FragmentShader GLSL120 : MatDefs/AnimateMultilineSpriteShader.frag
+
+        WorldParameters {
+            WorldViewProjectionMatrix
+            Time
+        }
+    }
+}

@@ -41,9 +41,9 @@ import com.simsilica.mathd.Vec3d;
 
 
 /**
+ *  Used for physical moving bodies
  *
- *
- *  @author    Paul Speed
+ *  @author    Asser Fahrenholz
  */
 public class SphereShape implements EntityComponent {
     
@@ -64,6 +64,11 @@ public class SphereShape implements EntityComponent {
     public SphereShape( double radius, Vec3d centerOffset ) {
         this.radius = radius;
         this.offset = centerOffset;
+    }
+    
+    public SphereShape(double radius){
+        this.radius = radius;
+        this.offset = new Vec3d();
     }
     
     public double getRadius() {

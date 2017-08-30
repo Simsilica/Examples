@@ -206,6 +206,10 @@ public class ChatHostedService extends AbstractHostedConnectionService {
  
         @Override
         public void sendMessage( String message ) {
+            //TODO: Test command line here
+            //TODO: / for account related
+            //TODO: ~ for server related
+            //TODO: ? for game related
             postMessage(this, message);
         }
 

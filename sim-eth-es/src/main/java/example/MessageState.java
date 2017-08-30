@@ -136,11 +136,10 @@ public class MessageState extends BaseAppState {
         }
     }
        
+    @Override
     public void update( float tpf ) {
 
-        //addTestMessages(tpf);
-        
-        // Add any pending messages
+        // Add any messages
         Message msg = null;
         while( (msg = pendingMessages.poll()) != null ) {
             displayMessage(msg);

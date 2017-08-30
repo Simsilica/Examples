@@ -1,0 +1,18 @@
+MaterialDef StaticSpriteShader {
+    
+    MaterialParameters {
+        Int numTilesX
+        Int numTilesY
+        Int numTilesOffsetX
+        Int numTilesOffsetY
+        Texture2D AniTexMap
+    }
+    Technique {
+        VertexShader GLSL120 :   MatDefs/StaticSpriteShader.vert
+        FragmentShader GLSL120 : MatDefs/StaticSpriteShader.frag
+
+        WorldParameters {
+            WorldViewProjectionMatrix
+        }
+    }
+}

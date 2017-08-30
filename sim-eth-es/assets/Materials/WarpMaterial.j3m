@@ -1,0 +1,14 @@
+Material My Material : MatDefs/AnimateMultilineSpriteShader.j3md {
+    MaterialParameters {
+        AniTexMap : Flip Textures/Subspace/warp.bm2
+        numTilesX : 6
+        numTilesY : 3
+        Speed : 20
+        numTilesOffsetX : 0
+        numTilesOffsetY : 0
+     }
+    AdditionalRenderState {
+      Blend Alpha
+      Wireframe Off
+    }
+}

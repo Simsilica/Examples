@@ -1,0 +1,13 @@
+Material BombMaterial : MatDefs/StaticSpriteShader.j3md {
+     MaterialParameters {
+        AniTexMap : Flip Textures/Subspace/bullets.gif
+        numTilesX : 4
+        numTilesY : 10
+        numTilesOffsetX : 0
+        numTilesOffsetY : 0
+     }
+    AdditionalRenderState {
+      Blend Alpha
+      Wireframe Off
+    }
+}

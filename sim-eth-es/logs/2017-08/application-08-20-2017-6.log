@@ -1,0 +1,119 @@
+20:45:41,382 INFO  [JmeSystem] Running on jMonkeyEngine 3.1-stable
+ * Branch: HEAD
+ * Git Hash: af04bf9
+ * Build Date: 2017-02-13
+20:45:42,274 INFO  [LwjglContext] LWJGL 2.9.3 context running on thread jME3 Main
+ * Graphics Adapter: C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_2a6e383a1adc0e24\nvd3dumx,C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_2a6e383a1adc0e24\nvwgf2umx,C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_2a6e383a1adc0e24\nvwgf2umx,C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_2a6e383a1adc0e24\nvwgf2umx
+ * Driver Version: 21.21.13.7878
+ * Scaling Factor: 1
+20:45:42,296 INFO  [GLRenderer] OpenGL Renderer Information
+ * Vendor: NVIDIA Corporation
+ * Renderer: GeForce GTX 780/PCIe/SSE2
+ * OpenGL Version: 4.5.0 NVIDIA 378.78
+ * GLSL Version: 4.50 NVIDIA
+ * Profile: Compatibility
+20:45:42,326 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.MeshLoader
+20:45:42,327 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.SkeletonLoader
+20:45:42,327 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.MaterialLoader
+20:45:42,327 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.SceneLoader
+20:45:42,328 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.blender.BlenderModelLoader
+20:45:42,330 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.fbx.FbxLoader
+20:45:42,332 WARN  [AssetConfig] Cannot find loader com.jme3.audio.plugins.OGGLoader
+20:45:42,359 WARN  [DefaultControllerEnvironment] Found unknown Windows version: Windows 10
+20:45:42,359 INFO  [DefaultControllerEnvironment] Attempting to use default windows plug-in.
+20:45:42,359 INFO  [DefaultControllerEnvironment] Loading: net.java.games.input.DirectAndRawInputEnvironmentPlugin
+20:45:42,579 INFO  [ALAudioRenderer] Audio Renderer Information
+ * Device: OpenAL Soft
+ * Vendor: OpenAL Community
+ * Renderer: OpenAL Soft
+ * Version: 1.1 ALSOFT 1.15.1
+ * Supported channels: 64
+ * ALC extensions: ALC_ENUMERATE_ALL_EXT ALC_ENUMERATION_EXT ALC_EXT_CAPTURE ALC_EXT_DEDICATED ALC_EXT_disconnect ALC_EXT_EFX ALC_EXT_thread_local_context ALC_SOFT_loopback
+ * AL extensions: AL_EXT_ALAW AL_EXT_DOUBLE AL_EXT_EXPONENT_DISTANCE AL_EXT_FLOAT32 AL_EXT_IMA4 AL_EXT_LINEAR_DISTANCE AL_EXT_MCFORMATS AL_EXT_MULAW AL_EXT_MULAW_MCFORMATS AL_EXT_OFFSET AL_EXT_source_distance_model AL_LOKI_quadriphonic AL_SOFT_buffer_samples AL_SOFT_buffer_sub_data AL_SOFTX_deferred_updates AL_SOFT_direct_channels AL_SOFT_loop_points AL_SOFT_source_latency
+20:45:42,580 WARN  [ALAudioRenderer] Pausing audio device not supported.
+20:45:42,580 INFO  [ALAudioRenderer] Audio effect extension version: 1.0
+20:45:42,580 INFO  [ALAudioRenderer] Audio max auxiliary sends: 4
+20:45:42,661 INFO  [GuiGlobals] Initializing GuiGlobals with:com.simsilica.lemur.GuiGlobals@614422e6
+20:45:42,671 INFO  [GuiGlobals] Lemur build date:20161119
+20:45:42,672 INFO  [BaseStyles] loadStyleResource(com/simsilica/lemur/style/base/glass-styles.groovy)
+20:45:43,053 INFO  [BaseStyles] Loading base resource:jar:file:/C:/Users/Asser/.gradle/caches/modules-2/files-2.1/com.simsilica/lemur/1.9.1/4cf0982db2f5e436577ac723607c8a5d432ac3f1/lemur-1.9.1.jar!/com/simsilica/lemur/style/base/glass-styles.groovy
+20:45:43,519 INFO  [BaseStyles] Loading extension resources for:com/simsilica/lemur/style/base/glass-styles.groovy
+20:45:43,520 INFO  [BaseStyles] Loading extension resource:jar:file:/C:/Users/Asser/.gradle/caches/modules-2/files-2.1/com.simsilica/lemur-proto/1.8.1/c6635fe7ce1dc9abe7283f175c0e62ab3a905fec/lemur-proto-1.8.1.jar!/com/simsilica/lemur/style/base/glass-styles.groovy
+20:45:44,402 INFO  [MainMenuState] Host a game on port:4271
+20:45:44,402 INFO  [MainMenuState] Description:
+20:45:44,402 INFO  [MainMenuState] This a game server.
+There are many like it
+but this one is mine.
+20:45:44,507 INFO  [GameServer] Initializing game systems...
+20:45:44,507 TRACE [GameSystemManager] initialize()
+20:45:44,508 TRACE [GameSystemManager] initializing:com.simsilica.sim.TaskDispatcher@7355385a
+20:45:44,508 TRACE [GameSystemManager] initializing:example.sim.SimplePhysics@4eecd759
+20:45:44,614 TRACE [GameSystemManager] initializing:example.es.states.DecayState@1d6c3164
+20:45:44,614 TRACE [GameSystemManager] initializing:example.es.states.HealthState@36e7822f
+20:45:44,615 TRACE [GameSystemManager] initializing:example.es.states.BountyState@7b47e34c
+20:45:44,616 TRACE [GameSystemManager] initializing:example.es.states.AttackProjectileState@162e72f4
+20:45:44,617 TRACE [GameSystemManager] initializing:example.es.states.ArenaState@45991f1b
+20:45:44,621 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.MeshLoader
+20:45:44,621 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.SkeletonLoader
+20:45:44,622 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.MaterialLoader
+20:45:44,622 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.SceneLoader
+20:45:44,622 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.blender.BlenderModelLoader
+20:45:44,623 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.fbx.FbxLoader
+20:45:44,623 WARN  [AssetConfig] Cannot find loader com.jme3.audio.plugins.OGGLoader
+20:45:44,624 TRACE [GameSystemManager] initializing:example.es.states.MapStateServer@71d28df5
+20:45:44,626 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.MeshLoader
+20:45:44,626 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.SkeletonLoader
+20:45:44,627 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.MaterialLoader
+20:45:44,627 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.SceneLoader
+20:45:44,628 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.blender.BlenderModelLoader
+20:45:44,628 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.fbx.FbxLoader
+20:45:44,629 WARN  [AssetConfig] Cannot find loader com.jme3.audio.plugins.OGGLoader
+20:45:44,629 TRACE [GameSystemManager] initializing:example.es.states.GravityState@5142c24f
+20:45:44,629 TRACE [GameSystemManager] initializing:example.es.states.WarpState@5ff977a8
+20:45:44,630 TRACE [GameSystemManager] initializing:example.es.states.DelayState@7e78afdf
+20:45:44,630 TRACE [GameSystemManager] initializing:example.es.states.ShipFrequencyStateServer@2d3f3e57
+20:45:44,630 TRACE [GameSystemManager] initializing:example.es.states.FlagStateServer@2c38df44
+20:45:44,631 TRACE [GameSystemManager] initializing:example.es.states.BasicSteeringState@17858b4b
+20:45:44,631 TRACE [GameSystemManager] initializing:example.es.states.ResourceState@e79272
+20:45:44,631 TRACE [GameSystemManager] initializing:example.es.states.TowerState@6acfafd5
+20:45:44,632 TRACE [GameSystemManager] initializing:example.es.states.GDXAIState@736e703e
+20:45:44,632 TRACE [GameSystemManager] initializing:example.net.server.ZoneNetworkSystem@4f260823
+20:45:44,632 TRACE [GameSystemManager] initializing:com.simsilica.es.server.EntityUpdater@5800b715
+20:45:44,632 TRACE [GameSystemManager] initializing:example.sim.BodyPositionPublisher@5457e91f
+20:45:44,632 TRACE [GameSystemManager] initializing:example.sim.BasicEnvironment@54b89c2b
+20:45:44,632 INFO  [GameServer] Starting game server...
+20:45:44,633 TRACE [GameSystemManager] start()
+20:45:44,633 TRACE [GameSystemManager] starting:com.simsilica.sim.TaskDispatcher@7355385a
+20:45:44,633 TRACE [GameSystemManager] starting:example.sim.SimplePhysics@4eecd759
+20:45:44,637 TRACE [GameSystemManager] starting:example.es.states.DecayState@1d6c3164
+20:45:44,638 TRACE [GameSystemManager] starting:example.es.states.HealthState@36e7822f
+20:45:44,638 TRACE [GameSystemManager] starting:example.es.states.BountyState@7b47e34c
+20:45:44,638 TRACE [GameSystemManager] starting:example.es.states.AttackProjectileState@162e72f4
+20:45:44,638 TRACE [GameSystemManager] starting:example.es.states.ArenaState@45991f1b
+20:45:44,638 TRACE [GameSystemManager] starting:example.es.states.MapStateServer@71d28df5
+20:45:44,638 TRACE [GameSystemManager] starting:example.es.states.GravityState@5142c24f
+20:45:44,639 TRACE [GameSystemManager] starting:example.es.states.WarpState@5ff977a8
+20:45:44,640 TRACE [GameSystemManager] starting:example.es.states.DelayState@7e78afdf
+20:45:44,640 TRACE [GameSystemManager] starting:example.es.states.ShipFrequencyStateServer@2d3f3e57
+20:45:44,640 TRACE [GameSystemManager] starting:example.es.states.FlagStateServer@2c38df44
+20:45:44,640 TRACE [GameSystemManager] starting:example.es.states.BasicSteeringState@17858b4b
+20:45:44,642 TRACE [GameSystemManager] starting:example.es.states.ResourceState@e79272
+20:45:44,643 TRACE [GameSystemManager] starting:example.es.states.TowerState@6acfafd5
+20:45:44,643 TRACE [GameSystemManager] starting:example.es.states.GDXAIState@736e703e
+20:45:44,651 TRACE [GameSystemManager] starting:example.net.server.ZoneNetworkSystem@4f260823
+20:45:44,651 TRACE [GameSystemManager] starting:com.simsilica.es.server.EntityUpdater@5800b715
+20:45:44,651 TRACE [GameSystemManager] starting:example.sim.BodyPositionPublisher@5457e91f
+20:45:44,651 TRACE [GameSystemManager] starting:example.sim.BasicEnvironment@54b89c2b
+20:45:44,741 INFO  [StateCollector] Starting state collector.
+20:45:44,741 INFO  [GameServer] Game server started.
+20:45:44,777 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at com.badlogic.gdx.ai.steer.behaviors.Seek.calculateRealSteering(Seek.java:55) ~[gdx-ai-1.8.0.jar:?]
+	at com.badlogic.gdx.ai.steer.SteeringBehavior.calculateSteering(SteeringBehavior.java:79) ~[gdx-ai-1.8.0.jar:?]
+	at example.es.states.GDXAIState$MobSeekers.lambda$calculateSteeringAndCreateForces$0(GDXAIState.java:197) ~[main/:?]
+	at java.util.HashMap$EntrySet.forEach(HashMap.java:1043) ~[?:1.8.0_111]
+	at example.es.states.GDXAIState$MobSeekers.calculateSteeringAndCreateForces(GDXAIState.java:192) ~[main/:?]
+	at example.es.states.GDXAIState.update(GDXAIState.java:94) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+20:45:57,040 INFO  [GameServer] Stopping game server...Shutting down.

@@ -68,6 +68,7 @@ import com.simsilica.mathd.trans.TransitionBuffer;
 import example.ConnectionState;
 import example.GameSessionState;
 import example.Main;
+import example.TimeState;
 import example.es.BodyPosition;
 import example.net.GameSessionListener;
 import example.net.client.GameSessionClientService;
@@ -83,6 +84,7 @@ public class HudLabelState extends BaseAppState {
 
     private EntityData ed;
     private TimeSource timeSource;
+    private TimeState timeState;
     
     private Node hudLabelRoot;    
     private Camera camera;
@@ -106,7 +108,8 @@ public class HudLabelState extends BaseAppState {
         // articles at:
         // https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking
         // https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization
-        this.timeSource = getState(ConnectionState.class).getRemoteTimeSource();
+        //this.timeSource = getState(ConnectionState.class).getRemoteTimeSource();
+        this.timeState = getState(TimeState.class);
     
         this.ed = getState(ConnectionState.class).getEntityData();
     }
@@ -122,6 +125,7 @@ public class HudLabelState extends BaseAppState {
         labels.start();
     
         ((Main)getApplication()).getGuiNode().attachChild(hudLabelRoot);
+        //this.timeSource = getState(TimeState.class).getTimeSource();
     }
 
     @Override
@@ -136,7 +140,9 @@ public class HudLabelState extends BaseAppState {
     public void update( float tpf ) {
  
         // Grab a consistent time for this frame
-        long time = timeSource.getTime();
+        long time = timeState.getTime();
+        // Grab a consistent time for this frame
+        //long time = timeSource.getTime();
 
         // Update all of the models
         labels.update();

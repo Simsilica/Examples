@@ -70,7 +70,7 @@ public class Main extends SimpleApplication {
     private Node logo;
 
     public static void main( String... args ) throws Exception {
-        System.out.println("SimEthereal Example 2");
+        System.out.println("Subspace: Infinity");
 
         // Make sure JUL logging goes to our log4j configuration
         LogAdapter.initialize();
@@ -86,9 +86,9 @@ public class Main extends SimpleApplication {
         settings.setHeight(720);
         settings.setVSync(true);
         
-        settings.load("SimEthereal Example 2");
-        settings.setTitle("SimEthereal Example 2");
-        settings.setSettingsDialogImage("/sim-eth-es-splash-512.png");
+        settings.load("Subspace: Infinity");
+        settings.setTitle("Subspace: Infinity");
+        settings.setSettingsDialogImage("/subspace-since-1995-splash.jpg");
         settings.setUseJoysticks(true);
         /*
         try {

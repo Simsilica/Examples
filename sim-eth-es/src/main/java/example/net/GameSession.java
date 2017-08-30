@@ -33,7 +33,6 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package example.net;
 
 import com.jme3.math.Quaternion;
@@ -43,28 +42,54 @@ import com.jme3.network.service.rmi.Asynchronous;
 import com.simsilica.es.EntityId;
 
 /**
- *  The client's view of the 'game'.  Provides necessary access to the
- *  general game interaction and possibly game or player state.
+ * The client's view of the 'game'. Provides necessary access to the general
+ * game interaction and possibly game or player state.
  *
- *  @author    Paul Speed
+ * @author Paul Speed
  */
 public interface GameSession {
- 
+
     /**
-     *  Returns the ID of the ship entity.
+     * Returns the ID of the ship entity.
      */
     public EntityId getShip();
 
     /**
-     *  Returns the ID of the player entity.
+     * Returns the ID of the player entity.
      */
     public EntityId getPlayer();
- 
+
     /**
-     *  Sends information to the game back end about the current
-     *  movement state of the player from user input.  Because this
-     *  state is continuous, it doesn't need to be reliable.  
+     * Sends information to the game back end about the current movement state
+     * of the player from user input. Because this state is continuous, it
+     * doesn't need to be reliable.
      */
-    @Asynchronous(reliable=false)
-    public void move( Quaternion rotation, Vector3f thrust );   
+    @Asynchronous(reliable = false)
+    public void move(Vector3f thrust);
+
+    /**
+     * Sends information about the player wanting to attack
+     *
+     * @param attackType
+     */
+    @Asynchronous(reliable = false)
+    public void attack(String attackType);
+
+    /**
+     * Sends information about editing a map tile
+     *
+     * @param x x-coordinate
+     * @param y y-coordinate
+     */
+    @Asynchronous(reliable = false)
+    public void editMap(double x, double y);
+
+    @Asynchronous(reliable = false)
+    public void chooseShip(byte ship);
+
+    @Asynchronous(reliable = false)
+    public void warp();
+
+    @Asynchronous(reliable = false)
+    public void tower(double x, double y);
 }

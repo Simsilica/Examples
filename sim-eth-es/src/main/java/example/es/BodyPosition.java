@@ -33,7 +33,6 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package example.es;
 
 import com.jme3.math.Quaternion;
@@ -43,57 +42,55 @@ import com.simsilica.es.EntityId;
 import com.simsilica.mathd.trans.PositionTransition;
 import com.simsilica.mathd.trans.TransitionBuffer;
 
-
 /**
- *  A component representing the position of mobile objects that internally 
- *  keeps track of a small history of position, rotation, and visibility changes.   
- *  This is not a normal immutable component and thus manages its own threading.  
- *  Furthermore, special care is taken to make sure that all BodyPosition objecst for
- *  a particular entity share the internal data buffer.
+ * A component representing the position of mobile objects that internally keeps
+ * track of a small history of position, rotation, and visibility changes. This
+ * is not a normal immutable component and thus manages its own threading.
+ * Furthermore, special care is taken to make sure that all BodyPosition objecst
+ * for a particular entity share the internal data buffer.
  *
- *  @author    Paul Speed
+ * @author Paul Speed
  */
 public final class BodyPosition implements EntityComponent {
+
     private transient int size;
     private transient TransitionBuffer<PositionTransition> position;
 
     public BodyPosition() {
     }
-    
-    public BodyPosition( int history ) {
-        this.size = (byte)history;
-        this.position = PositionTransition.createBuffer(history);    
+
+    public BodyPosition(int history) {
+        this.size = (byte) history;
+        this.position = PositionTransition.createBuffer(history);
     }
- 
+
     /**
-     *  Called for a retrieved entity to make sure this BodyPosition
-     *  has it's shared transition buffer.  It must be called for
-     *  all retrieved BodyPosition components before use.
+     * Called for a retrieved entity to make sure this BodyPosition has it's
+     * shared transition buffer. It must be called for all retrieved
+     * BodyPosition components before use.
      */
-    public void initialize( EntityId id, int size ) {
-        if( this.position == null ) {
+    public void initialize(EntityId id, int size) {
+        if (this.position == null) {
             this.size = size;
             this.position = BodyPositionCache.getBuffer(id, size);
         }
     }
-    
+
     public TransitionBuffer<PositionTransition> getBuffer() {
         return position;
     }
- 
-    public void addFrame( long endTime, Vector3f pos, Quaternion quat, boolean visible ) {
+
+    public void addFrame(long endTime, Vector3f pos, Quaternion quat, boolean visible) {
         PositionTransition trans = new PositionTransition(endTime, pos, quat, visible);
         getBuffer().addTransition(trans);
-    }        
- 
-    public PositionTransition getFrame( long time ) {
-        return getBuffer().getTransition(time);        
     }
-    
+
+    public PositionTransition getFrame(long time) {
+        return getBuffer().getTransition(time);
+    }
+
     @Override
     public String toString() {
         return "BodyPosition[" + position + "]";
-    } 
+    }
 }
-
-

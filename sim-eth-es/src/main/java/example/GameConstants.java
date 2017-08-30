@@ -83,13 +83,13 @@ public class GameConstants {
     // zones in a player's view, there is considerably more management involved
     // with each new zone, more network messages, etc..  Finding the sweet spot
     // will depend largely on the game.
-    private static final int gridSize = 64;
+    public static final int GRID_SIZE = 64;
     
     /**
      *  The 3D zone grid definition that defines how space is broken
      *  up into network zones.  
      */
-    public static final ZoneGrid ZONE_GRID = new ZoneGrid(gridSize, gridSize, gridSize);
+    public static final ZoneGrid ZONE_GRID = new ZoneGrid(GRID_SIZE, GRID_SIZE, GRID_SIZE);
  
     public static final float MAX_OBJECT_RADIUS = 5;
     
@@ -102,7 +102,7 @@ public class GameConstants {
      *  borders as objects cross zone boundaries.
      */   
     public static final Vec3Bits POSITION_BITS = new Vec3Bits(-MAX_OBJECT_RADIUS, 
-                                                              gridSize + MAX_OBJECT_RADIUS,
+                                                              GRID_SIZE + MAX_OBJECT_RADIUS,
                                                               16);
  
     /** 
@@ -146,7 +146,43 @@ public class GameConstants {
      *  A total zone radius of (1, 1, 1) means the player can see a total of 27
      *  zones including the zone they are in.
      */           
-    public static final Vec3i ZONE_RADIUS = new Vec3i(1, 1, 1);
+    public static final Vec3i ZONE_RADIUS = new Vec3i(10, 10, 0);
+    
+    
+    
+    
+    //Properties
+    public final static double BASEPROJECTILESPEED = 1;
+    public final static double BOMBPROJECTILESPEED = 25;
+    public final static double BULLETPROJECTILESPEED = 50;
+    public final static double GRAVBOMBPROJECTILESPEED = 15;
+    
+    //Decays
+    public final static long BULLETDECAY = 1500;
+    public final static long BOUNTYDECAY = 1000;
+    
+    //Health
+    public final static int SHIPHEALTH = 100;
+    public final static int BASEHEALTH = 1000;
+    public final static int MOBHEALTH = 100;
+    
+    
+    public final static int BOUNTYVALUE = 10;
+    public final static int BOUNTYMAXCOUNT = 50;
+    
+    public final static long GRAVBOMBDELAY = 1000;
+    public final static long GRAVBOMBDECAY = 4000;
+    public final static double GRAVBOMBWORMHOLEFORCE = 5000;
+    
+    public final static double RESOURCE_UPDATE_INTERVAL = 1;
+    public final static double GOLD_PER_SECOND = 10000;
+    public final static float PATHWAYPOINTDISTANCE = 0.5f;
+    public final static double MOBSPEED = 100;
+    public final static double MOBMAXFORCE = 200;
+    public final static float PATHHELPERHEIGHT = 1000;
+    public final static float PATHHELPERWIDTH = 1000;
+    
+    public final static int TOWERCOST = 1000;
 }
 
 

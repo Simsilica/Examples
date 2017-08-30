@@ -40,7 +40,7 @@ import com.simsilica.ethereal.zone.ZoneManager;
 import com.simsilica.sim.AbstractGameSystem;
 import com.simsilica.sim.SimTime;
 
-import example.sim.Body;
+import example.sim.SimpleBody;
 import example.sim.PhysicsListener;
 import example.sim.SimplePhysics;
 
@@ -82,17 +82,17 @@ public class ZoneNetworkSystem extends AbstractGameSystem {
         }
  
         @Override   
-        public void addBody( Body body ) {
+        public void addBody( SimpleBody body ) {
             // Don't really care about this
         }
         
         @Override   
-        public void updateBody( Body body ) {
+        public void updateBody( SimpleBody body ) {
             zones.updateEntity(body.bodyId.getId(), true, body.pos, body.orientation, body.bounds);   
         }
  
         @Override   
-        public void removeBody( Body body ) {
+        public void removeBody( SimpleBody body ) {
             zones.remove(body.bodyId.getId());
         }
     

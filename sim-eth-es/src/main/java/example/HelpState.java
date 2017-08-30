@@ -68,11 +68,8 @@ public class HelpState extends BaseAppState {
     
     private KeyHelp[] keyHelp = {
         new KeyHelp(MainGameFunctions.F_IN_GAME_HELP, "Opens this help window."),
-        new KeyHelp(PlayerMovementFunctions.F_X_ROTATE, "Rotates left/right."),
-        new KeyHelp(PlayerMovementFunctions.F_Y_ROTATE, "Rotates up/down."),
         new KeyHelp(PlayerMovementFunctions.F_THRUST, "Flies forward and back."),
-        new KeyHelp(PlayerMovementFunctions.F_STRAFE, "Flies side to side."),
-        new KeyHelp(PlayerMovementFunctions.F_ELEVATE, "Flies up or down."),
+        new KeyHelp(PlayerMovementFunctions.F_TURN, "Rotates left/right"),
         new KeyHelp(MainGameFunctions.F_COMMAND_CONSOLE, 
             "Opens the in-game chat bar.  Type chat messages",
             "and hit enter to send.",

@@ -36,6 +36,7 @@
 
 package example.net.client;
 
+import com.jme3.math.Quaternion;
 import java.util.*;
 
 import com.jme3.math.Vector3f;

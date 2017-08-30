@@ -86,6 +86,9 @@ public class ChatClientService extends AbstractClientService
 
     @Override
     public void sendMessage( String message ) {
+        //TODO: Test command line here (only test for '/')
+        //TODO: ? for help related
+        //TODO: * for account related
         getDelegate().sendMessage(message);
     }
 

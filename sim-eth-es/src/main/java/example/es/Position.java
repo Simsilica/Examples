@@ -52,6 +52,7 @@ import com.simsilica.mathd.Vec3d;
 public class Position implements EntityComponent {
     private Vec3d location;
     private Quatd facing;
+    private double rotation;
     
     // When we want to filter static objects based on position then
     // this will be very useful and we'll need to generate it whenever the
@@ -59,29 +60,22 @@ public class Position implements EntityComponent {
     //private long cellId;
     
     public Position() {
-        this(0, 0, 0);
+        this(new Vec3d(), new Quatd(), 0.0);
     }
     
-    public Position( double x, double y, double z ) {
-        this(new Vec3d(x, y, z), new Quatd());
-    }
-    
-    public Position( Vec3d loc ) {
-        this(loc, new Quatd());
-    }
-    
-    public Position( Vec3d loc, Quatd quat ) {
+    public Position( Vec3d loc, Quatd quat, double rotation ) {
         this.location = loc;
         this.facing = quat;
+        this.rotation = rotation;
     }
     
-    public Position changeLocation( Vec3d location ) {
-        return new Position(location, facing);
-    }
+    //public Position changeLocation( Vec3d location ) {
+    //    return new Position(location, facing, 0.0);
+    //}
 
-    public Position changeFacing( Quatd facing ) {
-        return new Position(location, facing);
-    }
+    //public Position changeFacing( Quatd facing ) {
+    //    return new Position(location, facing, 0.0);
+    //}
     
     public Vec3d getLocation() {
         return location;
@@ -91,8 +85,13 @@ public class Position implements EntityComponent {
         return facing;
     }
     
+    public double getRotation(){
+        return rotation;
+    }
+
     @Override
     public String toString() {
-        return "Position[location=" + location + ", facing=" + facing + "]";
+        return "Position{" + "location=" + location + ", facing=" + facing + ", rotation=" + rotation + '}';
     }
+    
 }

@@ -33,7 +33,6 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package example.net.server;
 
 import org.slf4j.*;
@@ -55,14 +54,15 @@ import com.simsilica.es.server.EntityDataHostedService;
 
 import example.net.AccountSession;
 import example.net.AccountSessionListener;
+import java.util.HashMap;
 
 /**
- *  Provides super-basic account services like logging in.  This could
- *  be expanded to be more complicated based on a real game's needs.
- *  The basics have been included here as a minimal example that includes
- *  the basic types of communication necessary.
+ * Provides super-basic account services like logging in. This could be expanded
+ * to be more complicated based on a real game's needs. The basics have been
+ * included here as a minimal example that includes the basic types of
+ * communication necessary.
  *
- *  @author    Paul Speed
+ * @author Paul Speed
  */
 public class AccountHostedService extends AbstractHostedConnectionService {
 
@@ -73,127 +73,144 @@ public class AccountHostedService extends AbstractHostedConnectionService {
     private static final String ATTRIBUTE_PLAYER_ENTITY = "account.playerEntity";
 
     private RmiHostedService rmiService;
- 
+
     private String serverInfo;
     private EntityData ed;
-    
-    public AccountHostedService( String serverInfo ) {
+
+    private HashMap<EntityId, HostedConnection> playerConnectionMap = new HashMap<>();
+
+    public AccountHostedService(String serverInfo) {
         this.serverInfo = serverInfo;
     }
-    
-    public static String getPlayerName( HostedConnection conn ) {
-        return conn.getAttribute(ATTRIBUTE_PLAYER_NAME);   
+
+    public static String getPlayerName(HostedConnection conn) {
+        return conn.getAttribute(ATTRIBUTE_PLAYER_NAME);
     }
 
-    public static EntityId getPlayerEntity( HostedConnection conn ) {
-        return conn.getAttribute(ATTRIBUTE_PLAYER_ENTITY);   
+    public static EntityId getPlayerEntity(HostedConnection conn) {
+        return conn.getAttribute(ATTRIBUTE_PLAYER_ENTITY);
     }
- 
+
     @Override
-    protected void onInitialize( HostedServiceManager s ) {
-        
+    protected void onInitialize(HostedServiceManager s) {
+
         // Grab the RMI service so we can easily use it later        
         this.rmiService = getService(RmiHostedService.class);
-        if( rmiService == null ) {
+        if (rmiService == null) {
             throw new RuntimeException("AccountHostedService requires an RMI service.");
-        }        
+        }
     }
- 
+
     @Override
-    public void start() {    
+    public void start() {
         EntityDataHostedService eds = getService(EntityDataHostedService.class);
-        if( eds == null ) {
+        if (eds == null) {
             throw new RuntimeException("AccountHostedService requires an EntityDataHostedService");
         }
         this.ed = eds.getEntityData();
     }
-   
+
     @Override
-    public void startHostingOnConnection( HostedConnection conn ) {
-        
+    public void startHostingOnConnection(HostedConnection conn) {
+
         log.debug("startHostingOnConnection(" + conn + ")");
-    
+
         AccountSessionImpl session = new AccountSessionImpl(conn);
         conn.setAttribute(ATTRIBUTE_SESSION, session);
-        
+
         // Expose the session as an RMI resource to the client
         RmiRegistry rmi = rmiService.getRmiRegistry(conn);
         rmi.share(session, AccountSession.class);
     }
- 
-    @Override   
-    public void stopHostingOnConnection( HostedConnection conn ) {
+
+    @Override
+    public void stopHostingOnConnection(HostedConnection conn) {
         log.debug("stopHostingOnConnection(" + conn + ")");
         AccountSessionImpl account = conn.getAttribute(ATTRIBUTE_SESSION);
-        if( account != null ) {
-            String playerName = getPlayerName(conn);        
+        if (account != null) {
+            String playerName = getPlayerName(conn);
             log.debug("publishing playerLoggedOff event for:" + conn);
             // Was really logged on before
             EventBus.publish(AccountEvent.playerLoggedOff, new AccountEvent(conn, playerName, account.player));
-                                                            
+
             // clear the account session info
             account.dispose();
-            conn.setAttribute(ATTRIBUTE_SESSION, account);            
+            conn.setAttribute(ATTRIBUTE_SESSION, account);
         }
     }
- 
+
     /**
-     *  The connection-specific 'host' for the AccountSession.
-     */ 
+     * Gets the hosted connection object of the player entity
+     *
+     * @param eId the player EntityId
+     * @return the HostedConnection object for that player if it exists. If no
+     * connection, returns null
+     */
+    public HostedConnection getHostedConnection(EntityId eId) {
+        if (playerConnectionMap.containsKey(eId)) {
+            return playerConnectionMap.get(eId);
+        }
+        return null;
+    }
+
+    /**
+     * The connection-specific 'host' for the AccountSession.
+     */
     private class AccountSessionImpl implements AccountSession {
- 
+
         private HostedConnection conn;
         private AccountSessionListener callback;
         private EntityId player;
-        
-        public AccountSessionImpl( HostedConnection conn ) {
+
+        public AccountSessionImpl(HostedConnection conn) {
             this.conn = conn;
-            
+
             // Note: at this point we won't be able to look up the callback
             // because we haven't received the client's RMI shared objects yet.
         }
- 
+
         protected AccountSessionListener getCallback() {
-            if( callback == null ) {
+            if (callback == null) {
                 RmiRegistry rmi = rmiService.getRmiRegistry(conn);
                 callback = rmi.getRemoteObject(AccountSessionListener.class);
-                if( callback == null ) {
+                if (callback == null) {
                     throw new RuntimeException("Unable to locate client callback for AccountSessionListener");
                 }
             }
             return callback;
-        } 
- 
-        @Override   
+        }
+
+        @Override
         public String getServerInfo() {
             return serverInfo;
-        } 
- 
-        @Override   
-        public void login( String playerName ) {
+        }
+
+        @Override
+        public void login(String playerName) {
             log.info("login(" + playerName + ")");
             conn.setAttribute(ATTRIBUTE_PLAYER_NAME, playerName);
- 
+
             // Create the player entity
             player = ed.createEntity();
             conn.setAttribute(ATTRIBUTE_PLAYER_ENTITY, player);
             ed.setComponents(player, new Name(playerName));
             log.info("Created player entity:" + player + " for:" + playerName);
-            
+
+            playerConnectionMap.put(player, conn);
+
             // And let them know they were successful
             getCallback().notifyLoginStatus(true);
-            
+
             log.debug("publishing playerLoggedOn event for:" + conn);
             // Notify 'logged in' only after we've told the player themselves            
-            EventBus.publish(AccountEvent.playerLoggedOn, new AccountEvent(conn, playerName, player));            
+            EventBus.publish(AccountEvent.playerLoggedOn, new AccountEvent(conn, playerName, player));
         }
-        
+
         public void dispose() {
             // The player is the ship is the entity... so we need to delete
             // the ship
+            playerConnectionMap.remove(player);
             ed.removeEntity(player);
         }
-    }    
+    }
 }
-
-

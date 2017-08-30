@@ -1,3 +1,4 @@
+
 /*
  * $Id$
  * 
@@ -44,5 +45,5 @@ package example.sim;
  */
 public interface ControlDriver {
 
-    public void update( double stepTime, Body body );
+    public void update( double stepTime, SimpleBody body );
 }

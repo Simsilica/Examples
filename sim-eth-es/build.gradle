@@ -1,3 +1,4 @@
+
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'eclipse'
@@ -8,9 +9,12 @@ mainClassName='example.Main'
 repositories {
     mavenLocal()
     jcenter()
+    maven { url "https://jitpack.io" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots"}
+    maven { url "https://oss.sonatype.org/content/repositories/releases/" }
 }
 
-ext.jmeVersion = "3.1.0-beta3" 
+ext.jmeVersion = "3.1.0-stable"
 
 project(":assets") {
     apply plugin: "java"
@@ -28,6 +32,14 @@ project(":assets") {
 
 dependencies {
  
+    //GDX-AI for steering behaviours
+    compile "com.badlogicgames.gdx:gdx-ai:1.8.1:sources"
+    compile "com.badlogicgames.gdx:gdx-ai:1.8.1:javadoc"
+    compile "com.badlogicgames.gdx:gdx-ai:1.8.1"
+    
+    //Mapeditor format support
+    compile 'org.mapeditor:libtiled:0.17-SNAPSHOT'
+    
     // Need at least basic JME
     compile("org.jmonkeyengine:jme3-core:$jmeVersion") {
         // For some reason if I don't do this then it picks up alpha4 instead
@@ -47,16 +59,27 @@ dependencies {
     // And our base code for sim-etheral, SiO2, etc.
     // (many of these need to be built locally and 'gradle install'ed as of this writing)
     compile "com.simsilica:sio2:1.1.0"
-    compile "com.simsilica:sim-math:1.0.2"
-//    compile "com.simsilica:sim-math:1.1.1"  // break sim-ethereal 1.2.1
-    compile "com.simsilica:sim-ethereal:1.2.1"
+    compile "com.simsilica:sim-math:1.1.1"
+    //compile "com.simsilica:sim-ethereal:1.2.2"
+    compile 'com.github.Simsilica:SimEthereal:-SNAPSHOT' //There is an unreleased commit that we need
 
     // Standard utility stuff
     compile 'com.google.guava:guava:19.0'
     compile 'org.slf4j:slf4j-api:1.7.13'
     runtime 'org.apache.logging.log4j:log4j-slf4j-impl:2.5'
     
+    //Dyn4j
+    compile 'org.dyn4j:dyn4j:3.2.3'
+    
+    //HSQLDB
+    runtime 'org.hsqldb:hsqldb:2.3.4'
+    
     runtime project(':assets')    
+    
+    compile 'junit:junit:4.12'
+    
+    //jWalkable for 2d polygonal pathfinding
+    compile 'com.github.implicit-invocation:jwalkable:master-SNAPSHOT'
 }
 
 task wrapper(type: Wrapper) {
@@ -79,8 +102,8 @@ task serverStartScript(type: CreateStartScripts) {
 }
 
 /*applicationDistribution.into("bin") {
-    from(serverStartScript)
-    fileMode = 0755
+from(serverStartScript)
+fileMode = 0755
 }*/
 
 // I think this is ultimately clearer than the above
@@ -97,4 +120,12 @@ distributions {
 // Either way we end up with dupes if we don't do this
 distZip {
     duplicatesStrategy = 'exclude'
+}
+
+def gradle = project.getGradle()
+new File("${gradle.getGradleUserHomeDir().getAbsolutePath()}/daemon/${gradle.getGradleVersion()}").listFiles().each {
+    if (it.getName().endsWith('.out.log')) {
+        logger.debug("Cleaning up daemon log file $it")
+        it.delete()
+    }
 }

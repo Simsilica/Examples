@@ -1,0 +1,1891 @@
+23:43:10,610 WARN  [prefs] Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.
+23:43:12,406 INFO  [JmeSystem] Running on jMonkeyEngine 3.1-stable
+ * Branch: HEAD
+ * Git Hash: af04bf9
+ * Build Date: 2017-02-13
+23:43:13,115 INFO  [LwjglContext] LWJGL 2.9.3 context running on thread jME3 Main
+ * Graphics Adapter: C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_2a6e383a1adc0e24\nvd3dumx,C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_2a6e383a1adc0e24\nvwgf2umx,C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_2a6e383a1adc0e24\nvwgf2umx,C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_2a6e383a1adc0e24\nvwgf2umx
+ * Driver Version: 21.21.13.7878
+ * Scaling Factor: 1
+23:43:13,158 INFO  [GLRenderer] OpenGL Renderer Information
+ * Vendor: NVIDIA Corporation
+ * Renderer: GeForce GTX 780/PCIe/SSE2
+ * OpenGL Version: 4.5.0 NVIDIA 378.78
+ * GLSL Version: 4.50 NVIDIA
+ * Profile: Compatibility
+23:43:13,186 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.MeshLoader
+23:43:13,187 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.SkeletonLoader
+23:43:13,187 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.MaterialLoader
+23:43:13,187 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.ogre.SceneLoader
+23:43:13,187 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.blender.BlenderModelLoader
+23:43:13,189 WARN  [AssetConfig] Cannot find loader com.jme3.scene.plugins.fbx.FbxLoader
+23:43:13,191 WARN  [AssetConfig] Cannot find loader com.jme3.audio.plugins.OGGLoader
+23:43:13,216 WARN  [DefaultControllerEnvironment] Found unknown Windows version: Windows 10
+23:43:13,217 INFO  [DefaultControllerEnvironment] Attempting to use default windows plug-in.
+23:43:13,217 INFO  [DefaultControllerEnvironment] Loading: net.java.games.input.DirectAndRawInputEnvironmentPlugin
+23:43:13,430 INFO  [ALAudioRenderer] Audio Renderer Information
+ * Device: OpenAL Soft
+ * Vendor: OpenAL Community
+ * Renderer: OpenAL Soft
+ * Version: 1.1 ALSOFT 1.15.1
+ * Supported channels: 64
+ * ALC extensions: ALC_ENUMERATE_ALL_EXT ALC_ENUMERATION_EXT ALC_EXT_CAPTURE ALC_EXT_DEDICATED ALC_EXT_disconnect ALC_EXT_EFX ALC_EXT_thread_local_context ALC_SOFT_loopback
+ * AL extensions: AL_EXT_ALAW AL_EXT_DOUBLE AL_EXT_EXPONENT_DISTANCE AL_EXT_FLOAT32 AL_EXT_IMA4 AL_EXT_LINEAR_DISTANCE AL_EXT_MCFORMATS AL_EXT_MULAW AL_EXT_MULAW_MCFORMATS AL_EXT_OFFSET AL_EXT_source_distance_model AL_LOKI_quadriphonic AL_SOFT_buffer_samples AL_SOFT_buffer_sub_data AL_SOFTX_deferred_updates AL_SOFT_direct_channels AL_SOFT_loop_points AL_SOFT_source_latency
+23:43:13,430 WARN  [ALAudioRenderer] Pausing audio device not supported.
+23:43:13,430 INFO  [ALAudioRenderer] Audio effect extension version: 1.0
+23:43:13,431 INFO  [ALAudioRenderer] Audio max auxiliary sends: 4
+23:43:13,496 INFO  [GuiGlobals] Initializing GuiGlobals with:com.simsilica.lemur.GuiGlobals@20925e9b
+23:43:13,504 INFO  [GuiGlobals] Lemur build date:20161119
+23:43:13,505 INFO  [BaseStyles] loadStyleResource(com/simsilica/lemur/style/base/glass-styles.groovy)
+23:43:13,793 INFO  [BaseStyles] Loading base resource:jar:file:/C:/Users/Asser/.gradle/caches/modules-2/files-2.1/com.simsilica/lemur/1.9.1/4cf0982db2f5e436577ac723607c8a5d432ac3f1/lemur-1.9.1.jar!/com/simsilica/lemur/style/base/glass-styles.groovy
+23:43:14,161 INFO  [BaseStyles] Loading extension resources for:com/simsilica/lemur/style/base/glass-styles.groovy
+23:43:14,161 INFO  [BaseStyles] Loading extension resource:jar:file:/C:/Users/Asser/.gradle/caches/modules-2/files-2.1/com.simsilica/lemur-proto/1.8.1/c6635fe7ce1dc9abe7283f175c0e62ab3a905fec/lemur-proto-1.8.1.jar!/com/simsilica/lemur/style/base/glass-styles.groovy
+23:43:15,493 INFO  [MainMenuState] Host a game on port:4271
+23:43:15,493 INFO  [MainMenuState] Description:
+23:43:15,493 INFO  [MainMenuState] This a game server.
+There are many like it
+but this one is mine.
+23:43:15,564 INFO  [GameServer] Initializing game systems...
+23:43:15,564 TRACE [GameSystemManager] initialize()
+23:43:15,565 TRACE [GameSystemManager] initializing:com.simsilica.sim.TaskDispatcher@56106b70
+23:43:15,565 TRACE [GameSystemManager] initializing:example.sim.SimplePhysics@191145
+23:43:15,668 TRACE [GameSystemManager] initializing:example.es.states.DecayState@15c792b
+23:43:15,668 TRACE [GameSystemManager] initializing:example.es.states.HealthState@4cd53f22
+23:43:15,669 TRACE [GameSystemManager] initializing:example.es.states.BountyState@1dee08f1
+23:43:15,669 TRACE [GameSystemManager] initializing:example.es.states.AttackState@27610215
+23:43:15,670 TRACE [GameSystemManager] initializing:example.es.states.MapState@4a252f88
+23:43:15,671 TRACE [GameSystemManager] initializing:example.net.server.ZoneNetworkSystem@7112b4ae
+23:43:15,671 TRACE [GameSystemManager] initializing:com.simsilica.es.server.EntityUpdater@5e4c7133
+23:43:15,671 TRACE [GameSystemManager] initializing:example.sim.BodyPositionPublisher@3df65c1d
+23:43:15,671 TRACE [GameSystemManager] initializing:example.sim.BasicEnvironment@31e6ec15
+23:43:15,672 INFO  [GameServer] Starting game server...
+23:43:15,672 TRACE [GameSystemManager] start()
+23:43:15,672 TRACE [GameSystemManager] starting:com.simsilica.sim.TaskDispatcher@56106b70
+23:43:15,672 TRACE [GameSystemManager] starting:example.sim.SimplePhysics@191145
+23:43:15,673 TRACE [GameSystemManager] starting:example.es.states.DecayState@15c792b
+23:43:15,673 TRACE [GameSystemManager] starting:example.es.states.HealthState@4cd53f22
+23:43:15,673 TRACE [GameSystemManager] starting:example.es.states.BountyState@1dee08f1
+23:43:15,674 TRACE [GameSystemManager] starting:example.es.states.AttackState@27610215
+23:43:15,674 TRACE [GameSystemManager] starting:example.es.states.MapState@4a252f88
+23:43:15,674 TRACE [GameSystemManager] starting:example.net.server.ZoneNetworkSystem@7112b4ae
+23:43:15,674 TRACE [GameSystemManager] starting:com.simsilica.es.server.EntityUpdater@5e4c7133
+23:43:15,674 TRACE [GameSystemManager] starting:example.sim.BodyPositionPublisher@3df65c1d
+23:43:15,674 TRACE [GameSystemManager] starting:example.sim.BasicEnvironment@31e6ec15
+23:43:15,700 INFO  [StateCollector] Starting state collector.
+23:43:15,700 INFO  [GameServer] Game server started.
+23:43:16,943 INFO  [HostState] joinGame()
+23:43:16,951 INFO  [ConnectionState] Creating game client for:127.0.0.1 4271
+23:43:16,952 INFO  [GameClient] Connecting to:127.0.0.1 4271
+23:43:17,020 INFO  [SerializerRegistrationsMessage] Skipping registration of SerializerRegistrationsMessage.
+23:43:17,022 INFO  [GameClient] Adding services...
+23:43:17,030 DEBUG [AccountClientService] onInitialize(com.jme3.network.service.ClientServiceManager[services=[com.jme3.network.service.serializer.ClientSerializerRegistrationsService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], com.jme3.network.service.rpc.RpcClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], com.jme3.network.service.rmi.RmiClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], example.net.client.AccountClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager]]])
+23:43:17,030 DEBUG [AccountClientService] Sharing session callback.
+23:43:17,031 DEBUG [GameSessionClientService] onInitialize(com.jme3.network.service.ClientServiceManager[services=[com.jme3.network.service.serializer.ClientSerializerRegistrationsService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], com.jme3.network.service.rpc.RpcClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], com.jme3.network.service.rmi.RmiClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], example.net.client.AccountClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], example.net.client.GameSessionClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager]]])
+23:43:17,031 DEBUG [GameSessionClientService] Sharing session callback.
+23:43:17,034 DEBUG [ChatClientService] onInitialize(com.jme3.network.service.ClientServiceManager[services=[com.jme3.network.service.serializer.ClientSerializerRegistrationsService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], com.jme3.network.service.rpc.RpcClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], com.jme3.network.service.rmi.RmiClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], example.net.client.AccountClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], example.net.client.GameSessionClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], com.simsilica.es.client.EntityDataClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager], example.net.chat.client.ChatClientService[serviceManager.class=class com.jme3.network.service.ClientServiceManager]]])
+23:43:17,034 DEBUG [ChatClientService] Sharing session callback.
+23:43:17,037 INFO  [SharedObjectUpdater] onInitialize()
+23:43:17,037 INFO  [ConnectionState] Connection established:example.net.client.GameClient@293d8171
+23:43:17,038 INFO  [ConnectionState] Starting client...
+23:43:17,038 INFO  [GameClient] start()
+23:43:17,040 INFO  [ConnectionState] Client started.
+23:43:17,042 INFO  [ConnectionState] Connection established:example.net.client.GameClient@293d8171
+23:43:17,046 INFO  [MessageDebugger] Received:com.jme3.network.message.SerializerRegistrationsMessage@44f83c2d
+23:43:17,046 INFO  [SerializerRegistrationsMessage] Skipping registration as registry is locked, presumably by a local server process.
+23:43:17,545 DEBUG [AccountHostedService] startHostingOnConnection(Connection[ id=0, reliable=NioEndpoint[1, java.nio.channels.SocketChannel[connected local=/127.0.0.1:4271 remote=/127.0.0.1:63456]], fast=UdpEndpoint[1, /127.0.0.1:61252] ])
+23:43:17,548 INFO  [MessageDebugger] Received:RpcCallMessage[#-1, channel=-2, async, objId=-1, procId=0, args.length=1]
+23:43:17,548 INFO  [MessageDebugger] Received:RpcCallMessage[#-1, channel=-2, async, objId=-1, procId=1, args.length=4]
+23:43:17,551 DEBUG [AccountClientService] start()
+23:43:17,551 DEBUG [AccountClientService] delegate:RemoteObject[#1, example.net.AccountSession]
+23:43:17,551 DEBUG [GameSessionClientService] start()
+23:43:17,551 DEBUG [ChatClientService] start()
+23:43:17,552 INFO  [SharedObjectUpdater] start()
+23:43:17,553 INFO  [ConnectionState] clientConnected(com.jme3.network.base.DefaultClient@3c0c7ba0)
+23:43:17,555 INFO  [MessageDebugger] Received:EntityDataMessage[0, [ComponentData[EntityId[66], [BodyPosition[null]]]]]
+23:43:17,559 INFO  [ConnectionState] onConnected()
+23:43:17,562 INFO  [MessageDebugger] Received:RpcResponseMessage[#0, result=This a game server.
+There are many like it
+but this one is mine.]
+23:43:17,562 DEBUG [ConnectionState] Server info:This a game server.
+There are many like it
+but this one is mine.
+23:43:18,110 INFO  [ConnectionState] join(Asser)
+23:43:18,111 INFO  [AccountHostedService] login(Asser)
+23:43:18,111 INFO  [AccountHostedService] Created player entity:EntityId[131] for:Asser
+23:43:18,111 DEBUG [AccountHostedService] publishing playerLoggedOn event for:Connection[ id=0, reliable=NioEndpoint[1, java.nio.channels.SocketChannel[connected local=/127.0.0.1:4271 remote=/127.0.0.1:63456]], fast=UdpEndpoint[1, /127.0.0.1:61252] ]
+23:43:18,111 DEBUG [GameSessionHostedService] onPlayerLoggedOn()
+23:43:18,111 INFO  [MessageDebugger] Received:RpcCallMessage[#-1, channel=-2, async, objId=1, procId=0, args.length=1]
+23:43:18,112 DEBUG [GameSessionHostedService] startHostingOnConnection(Connection[ id=0, reliable=NioEndpoint[1, java.nio.channels.SocketChannel[connected local=/127.0.0.1:4271 remote=/127.0.0.1:63456]], fast=UdpEndpoint[1, /127.0.0.1:61252] ])
+23:43:18,114 INFO  [MessageDebugger] Received:RpcCallMessage[#-1, channel=-2, async, objId=-1, procId=0, args.length=1]
+23:43:18,114 INFO  [MessageDebugger] Received:RpcCallMessage[#-1, channel=-2, async, objId=-1, procId=1, args.length=4]
+23:43:18,115 DEBUG [ChatHostedService] startHostingOnConnection(Connection[ id=0, reliable=NioEndpoint[1, java.nio.channels.SocketChannel[connected local=/127.0.0.1:4271 remote=/127.0.0.1:63456]], fast=UdpEndpoint[1, /127.0.0.1:61252] ])
+23:43:18,117 INFO  [MessageDebugger] Received:RpcCallMessage[#-1, channel=-2, async, objId=-1, procId=0, args.length=1]
+23:43:18,117 INFO  [MessageDebugger] Received:RpcCallMessage[#-1, channel=-2, async, objId=-1, procId=1, args.length=4]
+23:43:18,124 INFO  [MessageDebugger] Object state updates started.
+23:43:18,126 INFO  [MessageDebugger] Received:EntityDataMessage[0, [ComponentData[EntityId[132], [BodyPosition[null]]]]]
+23:43:18,126 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[132], BodyPosition[null], class example.es.BodyPosition]]]
+23:43:18,254 INFO  [PlayerMovementState] initialize()
+23:43:18,255 INFO  [MessageDebugger] Received:EntityDataMessage[1, [ComponentData[EntityId[66], [ObjectType[type=3], BodyPosition[null]]], ComponentData[EntityId[132], [ObjectType[type=5], BodyPosition[null]]]]]
+23:43:18,256 INFO  [PlayerMovementState] onEnable()
+23:43:18,260 INFO  [MessageDebugger] Received:EntityDataMessage[2, [ComponentData[EntityId[0], [ObjectType[type=0], Position{location=Vec3[0.0, 0.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}]], ComponentData[EntityId[1], [ObjectType[type=1], Position{location=Vec3[-384.0, -384.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[2], [ObjectType[type=1], Position{location=Vec3[-384.0, -384.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[3], [ObjectType[type=1], Position{location=Vec3[-384.0, -384.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[4], [ObjectType[type=1], Position{location=Vec3[-384.0, -384.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[132], [ObjectType[type=5], Position{location=Vec3[0.0, 0.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}]], ComponentData[EntityId[5], [ObjectType[type=1], Position{location=Vec3[-384.0, -128.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[6], [ObjectType[type=1], Position{location=Vec3[-384.0, -128.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[7], [ObjectType[type=1], Position{location=Vec3[-384.0, -128.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[8], [ObjectType[type=1], Position{location=Vec3[-384.0, -128.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[9], [ObjectType[type=1], Position{location=Vec3[-384.0, 128.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[10], [ObjectType[type=1], Position{location=Vec3[-384.0, 128.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[11], [ObjectType[type=1], Position{location=Vec3[-384.0, 128.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[12], [ObjectType[type=1], Position{location=Vec3[-384.0, 128.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[13], [ObjectType[type=1], Position{location=Vec3[-384.0, 384.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[14], [ObjectType[type=1], Position{location=Vec3[-384.0, 384.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[15], [ObjectType[type=1], Position{location=Vec3[-384.0, 384.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[16], [ObjectType[type=1], Position{location=Vec3[-384.0, 384.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[17], [ObjectType[type=1], Position{location=Vec3[-128.0, -384.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[18], [ObjectType[type=1], Position{location=Vec3[-128.0, -384.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[19], [ObjectType[type=1], Position{location=Vec3[-128.0, -384.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]]]]
+23:43:18,264 INFO  [MessageDebugger] Received:EntityDataMessage[2, [ComponentData[EntityId[20], [ObjectType[type=1], Position{location=Vec3[-128.0, -384.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[21], [ObjectType[type=1], Position{location=Vec3[-128.0, -128.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[22], [ObjectType[type=1], Position{location=Vec3[-128.0, -128.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[23], [ObjectType[type=1], Position{location=Vec3[-128.0, -128.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[24], [ObjectType[type=1], Position{location=Vec3[-128.0, -128.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[25], [ObjectType[type=1], Position{location=Vec3[-128.0, 128.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[26], [ObjectType[type=1], Position{location=Vec3[-128.0, 128.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[27], [ObjectType[type=1], Position{location=Vec3[-128.0, 128.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[28], [ObjectType[type=1], Position{location=Vec3[-128.0, 128.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[29], [ObjectType[type=1], Position{location=Vec3[-128.0, 384.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[30], [ObjectType[type=1], Position{location=Vec3[-128.0, 384.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[31], [ObjectType[type=1], Position{location=Vec3[-128.0, 384.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[32], [ObjectType[type=1], Position{location=Vec3[-128.0, 384.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[33], [ObjectType[type=1], Position{location=Vec3[128.0, -384.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[34], [ObjectType[type=1], Position{location=Vec3[128.0, -384.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[35], [ObjectType[type=1], Position{location=Vec3[128.0, -384.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[36], [ObjectType[type=1], Position{location=Vec3[128.0, -384.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[37], [ObjectType[type=1], Position{location=Vec3[128.0, -128.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[38], [ObjectType[type=1], Position{location=Vec3[128.0, -128.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[39], [ObjectType[type=1], Position{location=Vec3[128.0, -128.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[40], [ObjectType[type=1], Position{location=Vec3[128.0, -128.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]]]]
+23:43:18,265 INFO  [MessageDebugger] Received:EntityDataMessage[2, [ComponentData[EntityId[41], [ObjectType[type=1], Position{location=Vec3[128.0, 128.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[42], [ObjectType[type=1], Position{location=Vec3[128.0, 128.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[43], [ObjectType[type=1], Position{location=Vec3[128.0, 128.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[44], [ObjectType[type=1], Position{location=Vec3[128.0, 128.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[45], [ObjectType[type=1], Position{location=Vec3[128.0, 384.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[46], [ObjectType[type=1], Position{location=Vec3[128.0, 384.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[47], [ObjectType[type=1], Position{location=Vec3[128.0, 384.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[48], [ObjectType[type=1], Position{location=Vec3[128.0, 384.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[49], [ObjectType[type=1], Position{location=Vec3[384.0, -384.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[50], [ObjectType[type=1], Position{location=Vec3[384.0, -384.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[51], [ObjectType[type=1], Position{location=Vec3[384.0, -384.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[52], [ObjectType[type=1], Position{location=Vec3[384.0, -384.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[53], [ObjectType[type=1], Position{location=Vec3[384.0, -128.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[54], [ObjectType[type=1], Position{location=Vec3[384.0, -128.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[55], [ObjectType[type=1], Position{location=Vec3[384.0, -128.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[56], [ObjectType[type=1], Position{location=Vec3[384.0, -128.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[57], [ObjectType[type=1], Position{location=Vec3[384.0, 128.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[58], [ObjectType[type=1], Position{location=Vec3[384.0, 128.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[59], [ObjectType[type=1], Position{location=Vec3[384.0, 128.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[60], [ObjectType[type=1], Position{location=Vec3[384.0, 128.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[61], [ObjectType[type=1], Position{location=Vec3[384.0, 384.0, -384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]]]]
+23:43:18,265 INFO  [MessageDebugger] Received:EntityDataMessage[2, [ComponentData[EntityId[62], [ObjectType[type=1], Position{location=Vec3[384.0, 384.0, -128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[63], [ObjectType[type=1], Position{location=Vec3[384.0, 384.0, 128.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[64], [ObjectType[type=1], Position{location=Vec3[384.0, 384.0, 384.0], facing=Quatd[-0.7071067811865475, 0.0, 0.0, 0.7071067811865476], rotation=0.0}]], ComponentData[EntityId[65], [ObjectType[type=2], Position{location=Vec3[5.0, 5.0, 0.0], facing=Quatd[-0.0, -0.0, -0.8043269783846636, -0.5941869334162417], rotation=0.0}]], ComponentData[EntityId[66], [ObjectType[type=3], Position{location=Vec3[-5.0, -5.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}]]]]
+23:43:18,266 INFO  [MessageDebugger] Received:EntityDataMessage[3, [ComponentData[EntityId[132], [Name[Asser], BodyPosition[null]]]]]
+23:43:18,267 INFO  [PlayerMovementState] initialize()
+23:43:18,267 INFO  [PlayerMovementState] onEnable
+23:43:18,303 INFO  [GameSessionState] initialize()
+23:43:18,304 DEBUG [GameSessionClientService] delegate:RemoteObject[#2, example.net.GameSession]
+23:43:18,305 INFO  [MessageDebugger] Received:RpcResponseMessage[#1, result=EntityId[131]]
+23:43:18,305 INFO  [MessageDebugger] Received:RpcResponseMessage[#2, result=EntityId[132]]
+23:43:18,305 INFO  [GameSessionState] Player object:EntityId[132]
+23:43:18,328 INFO  [MessageDebugger] Received:StringIdMessage[id=null, string=arena]
+23:43:18,329 INFO  [MessageDebugger] Received:StringIdMessage[id=null, string=gravSphere]
+23:43:18,330 INFO  [MessageDebugger] Received:ReturnComponentsMessage[2, EntityId[1], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,355 INFO  [MessageDebugger] Received:ReturnComponentsMessage[3, EntityId[2], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,358 INFO  [MessageDebugger] Received:ReturnComponentsMessage[4, EntityId[3], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,362 INFO  [MessageDebugger] Received:ReturnComponentsMessage[5, EntityId[4], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,365 INFO  [MessageDebugger] Received:StringIdMessage[id=null, string=ship]
+23:43:18,409 INFO  [MessageDebugger] Received:ReturnComponentsMessage[7, EntityId[5], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,413 INFO  [MessageDebugger] Received:ReturnComponentsMessage[8, EntityId[6], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,416 INFO  [MessageDebugger] Received:ReturnComponentsMessage[9, EntityId[7], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,420 INFO  [MessageDebugger] Received:ReturnComponentsMessage[10, EntityId[8], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,424 INFO  [MessageDebugger] Received:ReturnComponentsMessage[11, EntityId[9], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,427 INFO  [MessageDebugger] Received:ReturnComponentsMessage[12, EntityId[10], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,431 INFO  [MessageDebugger] Received:ReturnComponentsMessage[13, EntityId[11], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,434 INFO  [MessageDebugger] Received:ReturnComponentsMessage[14, EntityId[12], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,437 INFO  [MessageDebugger] Received:ReturnComponentsMessage[15, EntityId[13], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,440 INFO  [MessageDebugger] Received:ReturnComponentsMessage[16, EntityId[14], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,444 INFO  [MessageDebugger] Received:ReturnComponentsMessage[17, EntityId[15], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,448 INFO  [MessageDebugger] Received:ReturnComponentsMessage[18, EntityId[16], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,451 INFO  [MessageDebugger] Received:ReturnComponentsMessage[19, EntityId[17], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,454 INFO  [MessageDebugger] Received:ReturnComponentsMessage[20, EntityId[18], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,458 INFO  [MessageDebugger] Received:ReturnComponentsMessage[21, EntityId[19], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,461 INFO  [MessageDebugger] Received:ReturnComponentsMessage[22, EntityId[20], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,464 INFO  [MessageDebugger] Received:ReturnComponentsMessage[23, EntityId[21], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,468 INFO  [MessageDebugger] Received:ReturnComponentsMessage[24, EntityId[22], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,470 INFO  [MessageDebugger] Received:ReturnComponentsMessage[25, EntityId[23], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,472 INFO  [MessageDebugger] Received:ReturnComponentsMessage[26, EntityId[24], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,475 INFO  [MessageDebugger] Received:ReturnComponentsMessage[27, EntityId[25], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,476 INFO  [MessageDebugger] Received:ReturnComponentsMessage[28, EntityId[26], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,478 INFO  [MessageDebugger] Received:ReturnComponentsMessage[29, EntityId[27], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,480 INFO  [MessageDebugger] Received:ReturnComponentsMessage[30, EntityId[28], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,482 INFO  [MessageDebugger] Received:ReturnComponentsMessage[31, EntityId[29], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,484 INFO  [MessageDebugger] Received:ReturnComponentsMessage[32, EntityId[30], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,486 INFO  [MessageDebugger] Received:ReturnComponentsMessage[33, EntityId[31], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,487 INFO  [MessageDebugger] Received:ReturnComponentsMessage[34, EntityId[32], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,489 INFO  [MessageDebugger] Received:ReturnComponentsMessage[35, EntityId[33], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,491 INFO  [MessageDebugger] Received:ReturnComponentsMessage[36, EntityId[34], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,493 INFO  [MessageDebugger] Received:ReturnComponentsMessage[37, EntityId[35], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,496 INFO  [MessageDebugger] Received:ReturnComponentsMessage[38, EntityId[36], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,498 INFO  [MessageDebugger] Received:ReturnComponentsMessage[39, EntityId[37], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,500 INFO  [MessageDebugger] Received:ReturnComponentsMessage[40, EntityId[38], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,503 INFO  [MessageDebugger] Received:ReturnComponentsMessage[41, EntityId[39], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,505 INFO  [MessageDebugger] Received:ReturnComponentsMessage[42, EntityId[40], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,506 INFO  [MessageDebugger] Received:ReturnComponentsMessage[43, EntityId[41], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,508 INFO  [MessageDebugger] Received:ReturnComponentsMessage[44, EntityId[42], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,509 INFO  [MessageDebugger] Received:ReturnComponentsMessage[45, EntityId[43], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,510 INFO  [MessageDebugger] Received:ReturnComponentsMessage[46, EntityId[44], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,512 INFO  [MessageDebugger] Received:ReturnComponentsMessage[47, EntityId[45], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,514 INFO  [MessageDebugger] Received:ReturnComponentsMessage[48, EntityId[46], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,516 INFO  [MessageDebugger] Received:ReturnComponentsMessage[49, EntityId[47], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,518 INFO  [MessageDebugger] Received:ReturnComponentsMessage[50, EntityId[48], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,519 INFO  [MessageDebugger] Received:ReturnComponentsMessage[51, EntityId[49], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,521 INFO  [MessageDebugger] Received:ReturnComponentsMessage[52, EntityId[50], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,522 INFO  [MessageDebugger] Received:ReturnComponentsMessage[53, EntityId[51], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,524 INFO  [MessageDebugger] Received:ReturnComponentsMessage[54, EntityId[52], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,525 INFO  [MessageDebugger] Received:ReturnComponentsMessage[55, EntityId[53], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,527 INFO  [MessageDebugger] Received:ReturnComponentsMessage[56, EntityId[54], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,528 INFO  [MessageDebugger] Received:ReturnComponentsMessage[57, EntityId[55], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,530 INFO  [MessageDebugger] Received:ReturnComponentsMessage[58, EntityId[56], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,531 INFO  [MessageDebugger] Received:ReturnComponentsMessage[59, EntityId[57], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,533 INFO  [MessageDebugger] Received:ReturnComponentsMessage[60, EntityId[58], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,534 INFO  [MessageDebugger] Received:ReturnComponentsMessage[61, EntityId[59], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,535 INFO  [MessageDebugger] Received:ReturnComponentsMessage[62, EntityId[60], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,536 INFO  [MessageDebugger] Received:ReturnComponentsMessage[63, EntityId[61], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,538 INFO  [MessageDebugger] Received:ReturnComponentsMessage[64, EntityId[62], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,539 INFO  [MessageDebugger] Received:ReturnComponentsMessage[65, EntityId[63], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,541 INFO  [MessageDebugger] Received:ReturnComponentsMessage[66, EntityId[64], [SphereShape[radius=10.0, centerOffset=Vec3[0.0, 0.0, 0.0]]]]
+23:43:18,543 INFO  [MessageDebugger] Received:StringIdMessage[id=null, string=explosion2]
+23:43:18,566 INFO  [MessageDebugger] Received:StringIdMessage[id=null, string=blackhole]
+23:43:20,859 INFO  [HealthState] Applying 0 to:Entity[EntityId[132], values=[HitPoints[100]]] result:HitPoints[100]
+23:43:20,859 INFO  [MessageDebugger] Received:EntityDataMessage[0, [ComponentData[EntityId[133], [BodyPosition[null]]]]]
+23:43:20,859 INFO  [MessageDebugger] Received:EntityDataMessage[1, [ComponentData[EntityId[133], [ObjectType[type=6], BodyPosition[null]]]]]
+23:43:20,859 INFO  [MessageDebugger] Received:EntityDataMessage[2, [ComponentData[EntityId[133], [ObjectType[type=6], Position{location=Vec3[-2.0272742519773437, -2.211370413854201, 0.0], facing=Quatd[0.0, 0.0, 0.9319665957760326, 0.36254415504546905], rotation=2.3996000000000004}]]]]
+23:43:20,860 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[133], ObjectType[type=6], class example.es.ObjectType], EntityChange[EntityId[133], Position{location=Vec3[-2.0272742519773437, -2.211370413854201, 0.0], facing=Quatd[0.0, 0.0, 0.9319665957760326, 0.36254415504546905], rotation=2.3996000000000004}, class example.es.Position], EntityChange[EntityId[133], BodyPosition[null], class example.es.BodyPosition]]]
+23:43:20,860 INFO  [MessageDebugger] Received:StringIdMessage[id=null, string=bomb]
+23:43:20,975 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:20,993 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:21,008 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:21,025 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:21,041 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:21,059 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[133], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[133], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[133], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[133], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[133], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]
+23:43:22,258 INFO  [HealthState] Applying 0 to:Entity[EntityId[132], values=[HitPoints[100]]] result:HitPoints[100]
+23:43:22,259 INFO  [MessageDebugger] Received:EntityDataMessage[0, [ComponentData[EntityId[135], [BodyPosition[null]]]]]
+23:43:22,259 INFO  [MessageDebugger] Received:EntityDataMessage[1, [ComponentData[EntityId[135], [ObjectType[type=6], BodyPosition[null]]]]]
+23:43:22,259 INFO  [MessageDebugger] Received:EntityDataMessage[2, [ComponentData[EntityId[135], [ObjectType[type=6], Position{location=Vec3[-2.3349261218479507, -1.883645403336862, 0.0], facing=Quatd[0.0, 0.0, 0.9021867326424966, 0.4313456843922938], rotation=2.249625}]]]]
+23:43:22,259 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[135], ObjectType[type=6], class example.es.ObjectType], EntityChange[EntityId[135], Position{location=Vec3[-2.3349261218479507, -1.883645403336862, 0.0], facing=Quatd[0.0, 0.0, 0.9021867326424966, 0.4313456843922938], rotation=2.249625}, class example.es.Position], EntityChange[EntityId[135], BodyPosition[null], class example.es.BodyPosition]]]
+23:43:22,358 INFO  [MessageDebugger] Received:EntityDataMessage[2, [ComponentData[EntityId[137], [ObjectType[type=2], Position{location=Vec3[-26.95545768737793, -29.399492263793945, 0.0], facing=Quatd[0.0, 0.0, -0.9984554359089577, 0.0555584602365228], rotation=0.0}]]]]
+23:43:22,358 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[137], ObjectType[type=2], class example.es.ObjectType], EntityChange[EntityId[137], Position{location=Vec3[-26.95545768737793, -29.399492263793945, 0.0], facing=Quatd[0.0, 0.0, -0.9984554359089577, 0.0555584602365228], rotation=0.0}, class example.es.Position], EntityChange[EntityId[133], null, class example.es.BodyPosition], EntityChange[EntityId[133], null, class example.es.Position], EntityChange[EntityId[133], null, class example.es.ObjectType]]]
+23:43:22,391 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:22,407 DEBUG [SharedObjectUpdater] No entity yet for:133
+23:43:22,407 DEBUG [SharedObjectUpdater] ****** Object removed[t=25362586369879]:133
+23:43:22,407 DEBUG [SharedObjectUpdater] No entity for removed object for:133
+23:43:22,408 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:22,425 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[135], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[135], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]
+23:43:23,759 INFO  [MessageDebugger] Received:EntityDataMessage[2, [ComponentData[EntityId[138], [ObjectType[type=2], Position{location=Vec3[-31.197206497192383, -25.16759490966797, 0.0], facing=Quatd[0.0, 0.0, 0.26142661133837103, 0.9652233559566077], rotation=0.0}]]]]
+23:43:23,759 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[138], ObjectType[type=2], class example.es.ObjectType], EntityChange[EntityId[138], Position{location=Vec3[-31.197206497192383, -25.16759490966797, 0.0], facing=Quatd[0.0, 0.0, 0.26142661133837103, 0.9652233559566077], rotation=0.0}, class example.es.Position], EntityChange[EntityId[135], null, class example.es.BodyPosition], EntityChange[EntityId[135], null, class example.es.Position], EntityChange[EntityId[135], null, class example.es.ObjectType]]]
+23:43:23,771 DEBUG [SharedObjectUpdater] No entity yet for:135
+23:43:23,771 DEBUG [SharedObjectUpdater] No entity yet for:135
+23:43:23,771 DEBUG [SharedObjectUpdater] No entity yet for:135
+23:43:23,822 DEBUG [SharedObjectUpdater] ****** Object removed[t=25363986416773]:135
+23:43:23,822 DEBUG [SharedObjectUpdater] No entity for removed object for:135
+23:43:31,642 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,658 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,675 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,692 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,708 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,725 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,742 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,758 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,775 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,792 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,808 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,825 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,842 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,858 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,875 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,892 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,908 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,925 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,941 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,958 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,975 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:31,991 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,008 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,025 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,041 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,058 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,075 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,091 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,108 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,125 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,141 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,158 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,175 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,191 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,208 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,225 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,241 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,258 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,275 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,291 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,308 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,325 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,341 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,358 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,375 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,391 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,408 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,425 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,441 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,458 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,475 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,491 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,508 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,525 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,542 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,558 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,575 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,592 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,608 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,625 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,642 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,658 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,675 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,692 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,708 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,725 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,742 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,758 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,775 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,792 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,808 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,825 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,842 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,858 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,875 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,892 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,908 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,925 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,942 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,958 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,975 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:32,992 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,008 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,025 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,042 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,058 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,075 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,092 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,108 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,125 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,142 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,158 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,175 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,192 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,208 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,225 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,242 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,258 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,275 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,292 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,308 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,325 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,341 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,358 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,375 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,391 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,408 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,425 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,441 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,458 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,475 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,491 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,508 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,525 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,541 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,558 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,575 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,591 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,608 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,625 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,641 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,658 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,675 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,691 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,708 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,725 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,741 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,758 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,775 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,791 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,808 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,825 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,841 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,858 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,875 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,891 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,908 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,925 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,942 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,958 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,975 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:33,992 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,008 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,025 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,042 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,058 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,075 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,092 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,108 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,125 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,142 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,158 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,175 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,192 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,208 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,225 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,242 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,258 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,275 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,292 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,308 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,325 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,342 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,358 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,375 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,392 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,408 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,425 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,442 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,458 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,475 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,492 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,508 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,525 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,542 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,558 ERROR [GameSystemManager] Error updating systems
+java.lang.NullPointerException
+	at example.sim.SimplePhysics.collision(SimplePhysics.java:295) ~[main/:?]
+	at org.dyn4j.dynamics.World.detect(World.java:703) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.step(World.java:617) ~[dyn4j-3.2.3.jar:3.2.3]
+	at org.dyn4j.dynamics.World.update(World.java:304) ~[dyn4j-3.2.3.jar:3.2.3]
+	at example.sim.SimplePhysics.update(SimplePhysics.java:244) ~[main/:?]
+	at com.simsilica.sim.GameSystemManager.update(GameSystemManager.java:288) [sio2-1.1.0.jar:?]
+	at com.simsilica.sim.GameLoop$Runner.run(GameLoop.java:167) [sio2-1.1.0.jar:?]
+23:43:34,576 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]
+23:43:34,577 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]
+23:43:34,577 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]
+23:43:34,578 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]
+23:43:34,578 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]
+23:43:34,578 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]
+23:43:34,578 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]
+23:43:34,579 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]
+23:43:34,579 INFO  [MessageDebugger] Received:ComponentChangeMessage[[EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position], EntityChange[EntityId[132], Position{location=Vec3[10.0, 10.0, 0.0], facing=Quatd[0.0, 0.0, 0.0, 1.0], rotation=0.0}, class example.es.Position]]]

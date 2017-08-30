@@ -1,0 +1,101 @@
+19:05:53,695 INFO  [GameServer] Initializing game systems...
+19:05:53,703 TRACE [GameSystemManager] initialize()
+19:05:53,706 TRACE [GameSystemManager] initializing:com.simsilica.sim.TaskDispatcher@2cbb3d47
+19:05:53,706 TRACE [GameSystemManager] initializing:example.sim.SimplePhysics@527e5409
+19:05:53,802 TRACE [GameSystemManager] initializing:example.es.states.DecayState@1677d1
+19:05:53,803 TRACE [GameSystemManager] initializing:example.es.states.HealthState@6ac13091
+19:05:53,803 TRACE [GameSystemManager] initializing:example.es.states.BountyState@75329a49
+19:05:53,804 TRACE [GameSystemManager] initializing:example.es.states.AttackProjectileState@7f010382
+19:05:53,805 TRACE [GameSystemManager] initializing:example.es.states.ArenaState@2b6faea6
+19:05:53,853 TRACE [GameSystemManager] initializing:example.es.states.MapStateServer@c33b74f
+19:05:53,859 TRACE [GameSystemManager] initializing:example.es.states.GravityState@68999068
+19:05:53,859 TRACE [GameSystemManager] initializing:example.es.states.WarpState@7722c3c3
+19:05:53,860 TRACE [GameSystemManager] initializing:example.es.states.DelayState@243c4f91
+19:05:53,860 TRACE [GameSystemManager] initializing:example.es.states.ShipFrequencyStateServer@61df66b6
+19:05:53,861 TRACE [GameSystemManager] initializing:example.es.states.FlagStateServer@50eac852
+19:05:53,861 TRACE [GameSystemManager] initializing:example.es.states.PathfinderState@16ec5519
+19:05:53,882 TRACE [GameSystemManager] initializing:example.es.states.BasicSteeringState@a514af7
+19:05:53,883 TRACE [GameSystemManager] initializing:example.es.states.GoldTimeState@3e58a80e
+19:05:53,883 TRACE [GameSystemManager] initializing:example.es.states.TowerState@4fb61f4a
+19:05:53,883 TRACE [GameSystemManager] initializing:example.net.server.ZoneNetworkSystem@79924b
+19:05:53,883 TRACE [GameSystemManager] initializing:com.simsilica.es.server.EntityUpdater@7b9a4292
+19:05:53,883 TRACE [GameSystemManager] initializing:example.sim.BodyPositionPublisher@4a94ee4
+19:05:53,883 TRACE [GameSystemManager] initializing:example.sim.BasicEnvironment@4cc451f2
+19:05:53,883 INFO  [GameServer] Starting game server...
+19:05:53,883 TRACE [GameSystemManager] start()
+19:05:53,883 TRACE [GameSystemManager] starting:com.simsilica.sim.TaskDispatcher@2cbb3d47
+19:05:53,884 TRACE [GameSystemManager] starting:example.sim.SimplePhysics@527e5409
+19:05:53,886 TRACE [GameSystemManager] starting:example.es.states.DecayState@1677d1
+19:05:53,886 TRACE [GameSystemManager] starting:example.es.states.HealthState@6ac13091
+19:05:53,886 TRACE [GameSystemManager] starting:example.es.states.BountyState@75329a49
+19:05:53,886 TRACE [GameSystemManager] starting:example.es.states.AttackProjectileState@7f010382
+19:05:53,887 TRACE [GameSystemManager] starting:example.es.states.ArenaState@2b6faea6
+19:05:53,887 TRACE [GameSystemManager] starting:example.es.states.MapStateServer@c33b74f
+19:05:53,887 TRACE [GameSystemManager] starting:example.es.states.GravityState@68999068
+19:05:53,888 TRACE [GameSystemManager] starting:example.es.states.WarpState@7722c3c3
+19:05:53,888 TRACE [GameSystemManager] starting:example.es.states.DelayState@243c4f91
+19:05:53,888 TRACE [GameSystemManager] starting:example.es.states.ShipFrequencyStateServer@61df66b6
+19:05:53,888 TRACE [GameSystemManager] starting:example.es.states.FlagStateServer@50eac852
+19:05:53,888 TRACE [GameSystemManager] starting:example.es.states.PathfinderState@16ec5519
+19:05:53,891 TRACE [GameSystemManager] starting:example.es.states.BasicSteeringState@a514af7
+19:05:53,892 TRACE [GameSystemManager] starting:example.es.states.GoldTimeState@3e58a80e
+19:05:53,892 TRACE [GameSystemManager] starting:example.es.states.TowerState@4fb61f4a
+19:05:53,892 TRACE [GameSystemManager] starting:example.net.server.ZoneNetworkSystem@79924b
+19:05:53,892 TRACE [GameSystemManager] starting:com.simsilica.es.server.EntityUpdater@7b9a4292
+19:05:53,892 TRACE [GameSystemManager] starting:example.sim.BodyPositionPublisher@4a94ee4
+19:05:53,892 TRACE [GameSystemManager] starting:example.sim.BasicEnvironment@4cc451f2
+19:05:53,964 INFO  [StateCollector] Starting state collector.
+19:05:53,964 INFO  [GameServer] Game server started.
+19:05:54,009 INFO  [PathfinderState] [-5.0, 5.0, 3.1840515, 0.18695068, 3.3082886, 0.12506104, 3.690979, 0.048950195, 4.309021, 0.048950195, 4.6917114, 0.12506104, 4.8967896, 0.2399292, 5.3967896, 0.60321045, 5.500763, 0.690094, 10.0, 5.0]
+19:05:54,010 INFO  [PathfinderState] [-10.0, -10.0, 4.875458, 0.22485352, 4.8967896, 0.2399292, 5.3967896, 0.60321045, 5.500763, 0.690094, 10.0, 5.0]
+19:05:54,011 INFO  [PathfinderState] [-20.0, -30.0, 10.0, 5.0]
+19:05:54,011 INFO  [PathfinderState] [10.0, -5.0, 10.0, 5.0]
+19:05:54,011 INFO  [PathfinderState] [20.0, -20.0, 10.0, 5.0]
+19:05:54,012 INFO  [PathfinderState] [15.0, -10.0, 10.0, 5.0]
+19:18:54,394 INFO  [GameServer] Stopping game server...null
+19:18:54,395 TRACE [GameSystemManager] stop()
+19:18:54,395 TRACE [GameSystemManager] stopping:com.simsilica.sim.TaskDispatcher@2cbb3d47
+19:18:54,395 TRACE [GameSystemManager] stopping:example.sim.SimplePhysics@527e5409
+19:18:54,395 TRACE [GameSystemManager] stopping:example.es.states.DecayState@1677d1
+19:18:54,395 TRACE [GameSystemManager] stopping:example.es.states.HealthState@6ac13091
+19:18:54,395 TRACE [GameSystemManager] stopping:example.es.states.BountyState@75329a49
+19:18:54,395 TRACE [GameSystemManager] stopping:example.es.states.AttackProjectileState@7f010382
+19:18:54,395 TRACE [GameSystemManager] stopping:example.es.states.ArenaState@2b6faea6
+19:18:54,395 TRACE [GameSystemManager] stopping:example.es.states.MapStateServer@c33b74f
+19:18:54,396 TRACE [GameSystemManager] stopping:example.es.states.GravityState@68999068
+19:18:54,396 TRACE [GameSystemManager] stopping:example.es.states.WarpState@7722c3c3
+19:18:54,396 TRACE [GameSystemManager] stopping:example.es.states.DelayState@243c4f91
+19:18:54,396 TRACE [GameSystemManager] stopping:example.es.states.ShipFrequencyStateServer@61df66b6
+19:18:54,396 TRACE [GameSystemManager] stopping:example.es.states.FlagStateServer@50eac852
+19:18:54,396 TRACE [GameSystemManager] stopping:example.es.states.PathfinderState@16ec5519
+19:18:54,402 TRACE [GameSystemManager] stopping:example.es.states.BasicSteeringState@a514af7
+19:18:54,402 TRACE [GameSystemManager] stopping:example.es.states.GoldTimeState@3e58a80e
+19:18:54,402 TRACE [GameSystemManager] stopping:example.es.states.TowerState@4fb61f4a
+19:18:54,402 TRACE [GameSystemManager] stopping:example.net.server.ZoneNetworkSystem@79924b
+19:18:54,402 TRACE [GameSystemManager] stopping:com.simsilica.es.server.EntityUpdater@7b9a4292
+19:18:54,402 TRACE [GameSystemManager] stopping:example.sim.BodyPositionPublisher@4a94ee4
+19:18:54,402 TRACE [GameSystemManager] stopping:example.sim.BasicEnvironment@4cc451f2
+19:18:54,403 TRACE [GameSystemManager] terminate()
+19:18:54,403 TRACE [GameSystemManager] terminating:com.simsilica.sim.TaskDispatcher@2cbb3d47
+19:18:54,403 TRACE [GameSystemManager] terminating:example.sim.SimplePhysics@527e5409
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.DecayState@1677d1
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.HealthState@6ac13091
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.BountyState@75329a49
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.AttackProjectileState@7f010382
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.ArenaState@2b6faea6
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.MapStateServer@c33b74f
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.GravityState@68999068
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.WarpState@7722c3c3
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.DelayState@243c4f91
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.ShipFrequencyStateServer@61df66b6
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.FlagStateServer@50eac852
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.PathfinderState@16ec5519
+19:18:54,403 TRACE [GameSystemManager] terminating:example.es.states.BasicSteeringState@a514af7
+19:18:54,404 TRACE [GameSystemManager] terminating:example.es.states.GoldTimeState@3e58a80e
+19:18:54,404 TRACE [GameSystemManager] terminating:example.es.states.TowerState@4fb61f4a
+19:18:54,404 TRACE [GameSystemManager] terminating:example.net.server.ZoneNetworkSystem@79924b
+19:18:54,404 TRACE [GameSystemManager] terminating:com.simsilica.es.server.EntityUpdater@7b9a4292
+19:18:54,404 TRACE [GameSystemManager] terminating:example.sim.BodyPositionPublisher@4a94ee4
+19:18:54,404 TRACE [GameSystemManager] terminating:example.sim.BasicEnvironment@4cc451f2
+19:18:54,404 INFO  [StateCollector] Shuttong down state collector.
+19:18:54,406 INFO  [GameServer] Game server stopped.
