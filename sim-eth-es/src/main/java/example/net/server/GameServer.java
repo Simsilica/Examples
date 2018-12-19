@@ -61,6 +61,7 @@ import com.simsilica.es.Name;
 import com.simsilica.es.base.DefaultEntityData;
 import com.simsilica.es.server.EntityDataHostedService;
 import com.simsilica.es.server.EntityUpdater; // from SiO2
+import com.simsilica.ethereal.TimeSource;
 
 import com.simsilica.sim.GameLoop;
 import com.simsilica.sim.GameSystemManager;
@@ -134,6 +135,12 @@ public class GameServer {
         EtherealHost ethereal = new EtherealHost(GameConstants.OBJECT_PROTOCOL, 
                                                  GameConstants.ZONE_GRID,
                                                  GameConstants.ZONE_RADIUS);
+        ethereal.setTimeSource(new TimeSource() {
+            @Override
+            public long getTime() {
+                return systems.getStepTime().getUnlockedTime(System.nanoTime());
+            }
+        });
         server.getServices().addService(ethereal);
         
         // Add the various game services to the GameSystemManager 
