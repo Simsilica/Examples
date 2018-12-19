@@ -65,6 +65,7 @@ import example.TimeState;
 import com.simsilica.ethereal.Statistics;
 import com.simsilica.ethereal.Statistics.Sequence;
 import com.simsilica.ethereal.Statistics.Tracker;
+import com.simsilica.ethereal.SynchedTimeSource;
 
 
 
@@ -237,7 +238,7 @@ public class TimeSequenceState extends BaseAppState {
         long delta = ((timeState.getRealTime() - baseTime) / 1000000) / 3;
         realTime.setLocalTranslation(delta, 0, -1);
 
-        delta = (-timeState.getTimeSource().getOffset() / 1000000) / 3;
+        delta = (-((SynchedTimeSource) timeState.getTimeSource()).getOffset() / 1000000) / 3;
         offsetTime.setLocalTranslation(delta, 0, -1);
 
         for( SequenceEntry e : sequences ) {
