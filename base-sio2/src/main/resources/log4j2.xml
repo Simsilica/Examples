@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="MyApp" packages="">
+  <Appenders>
+    <RollingFile name="RollingFile" fileName="application.log" ignoreExceptions="false"
+                 filePattern="logs/$${date:yyyy-MM}/application-%d{MM-dd-yyyy}-%i.log.gz">
+      <PatternLayout>
+        <Pattern>%d{ABSOLUTE} %-5p (%t) [%c{1}] %m%n</Pattern>
+      </PatternLayout>
+      <OnStartupTriggeringPolicy />
+    </RollingFile>
+
+    <Console name="STDOUT" target="SYSTEM_OUT" ignoreExceptions="false">
+      <PatternLayout pattern="%d{ABSOLUTE} %-5p (%t) [%c{1}] %m%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Logger name="example" level="DEBUG"/>    
+    <Logger name="diagnostics" level="WARN" />
+    
+    <Root level="INFO">
+      <AppenderRef ref="RollingFile"/>
+      <AppenderRef ref="STDOUT"/>
+    </Root>
+  </Loggers>
+</Configuration>
