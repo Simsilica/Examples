@@ -54,7 +54,8 @@ public class PlayerMovementFunctions {
 
     public static final String IN_GAME = "In Game";
     public static final FunctionId F_P1_THRUST = new FunctionId(IN_GAME, "P1 Thrust");   
-    public static final FunctionId F_P1_TURN = new FunctionId(IN_GAME, "P1 Turn");   
+    public static final FunctionId F_P1_TURN = new FunctionId(IN_GAME, "P1 Turn");
+    public static final FunctionId F_P1_SHOOT_MAIN = new FunctionId(IN_GAME, "P1 Shoot");    
     
     public static void initializeDefaultMappings( InputMapper inputMapper ) {
   
@@ -65,7 +66,9 @@ public class PlayerMovementFunctions {
         
         inputMapper.map(F_P1_TURN, KeyInput.KEY_D);
         inputMapper.map(F_P1_TURN, InputState.Negative, KeyInput.KEY_A);
-        inputMapper.map(F_P1_TURN, Axis.JOYSTICK_LEFT_X); 
+        inputMapper.map(F_P1_TURN, Axis.JOYSTICK_LEFT_X);
+        
+        inputMapper.map(F_P1_SHOOT_MAIN, KeyInput.KEY_SPACE); 
     }
 }
 

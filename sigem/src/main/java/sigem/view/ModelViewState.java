@@ -254,23 +254,27 @@ public class ModelViewState extends BaseAppState {
         return result;
     }
     
-    protected Spatial createThrust( Entity entity ) {
- 
+    protected Geometry createQuad( float size, String asset, BlendMode blendMode ) {
         GuiGlobals globals = GuiGlobals.getInstance(); 
-    
-        Node result = new Node("thrust");
-    
-        Quad quad = new Quad(2, 2);
+        Quad quad = new Quad(size, size);
         Geometry geom = new Geometry("quad", quad);
-        Texture texture = globals.loadTexture("Textures/neon-puff256.png", false, false);
+        Texture texture = globals.loadTexture(asset, false, false);
         //Material mat = globals.createMaterial(ColorRGBA.Blue, false).getMaterial();
         Material mat = globals.createMaterial(texture, false).getMaterial();
-        mat.getAdditionalRenderState().setBlendMode(BlendMode.AlphaAdditive);
+        mat.getAdditionalRenderState().setBlendMode(blendMode);
         geom.setQueueBucket(Bucket.Transparent);
         geom.rotate(-FastMath.HALF_PI, 0, 0);
         geom.setMaterial(mat);
         geom.center();
+        return geom;
+    }
+    
+    protected Spatial createThrust( Entity entity ) {
+     
+        Node result = new Node("thrust");    
+        Geometry geom = createQuad(2, "Textures/neon-puff256.png", BlendMode.AlphaAdditive);
         geom.move(0, -1, 0);
+        Material mat = geom.getMaterial();
         
         ColorRGBA color = new ColorRGBA(2, 2, 0, 1);
         mat.setColor("Color", color);
@@ -278,6 +282,25 @@ public class ModelViewState extends BaseAppState {
         // Fade it out over five seconds.  We could have created a system to do
         // this based on decay, blah blah... but this is really easy.
         getState(AnimationState.class).add(new ColorTween(color, ColorRGBA.White, new ColorRGBA(1, 1, 1, 0), 5));
+        
+        result.attachChild(geom);
+        
+        return result;   
+    }
+
+    protected Spatial createMissile( Entity entity ) {
+     
+        Node result = new Node("thrust");    
+        Geometry geom = createQuad(4, "Textures/missile.png", BlendMode.AlphaAdditive);
+        geom.move(0, -1, 0);
+        Material mat = geom.getMaterial();
+        
+        //ColorRGBA color = new ColorRGBA(2, 2, 0, 1);
+        //mat.setColor("Color", color);
+        
+        // Fade it out over five seconds.  We could have created a system to do
+        // this based on decay, blah blah... but this is really easy.
+        //getState(AnimationState.class).add(new ColorTween(color, ColorRGBA.White, new ColorRGBA(1, 1, 1, 0), 5));
         
         result.attachChild(geom);
         
@@ -302,6 +325,8 @@ public class ModelViewState extends BaseAppState {
             result = createAsteroid(entity);
         } else if( typeName.equals("thrust") ) {
             result = createThrust(entity);        
+        } else if( typeName.equals("missile") ) {
+            result = createMissile(entity);        
         } else {
             throw new RuntimeException("Unknown spatial type:" + typeName); 
         }

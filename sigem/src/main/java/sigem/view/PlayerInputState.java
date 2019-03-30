@@ -73,7 +73,8 @@ public class PlayerInputState extends BaseAppState {
         this.ship1 = gameSession.createShip("Player 1", new Vec3d(-195, 0, 100));        
         this.handler1 = new ShipHandler(ship1, 
                                         PlayerMovementFunctions.F_P1_THRUST,
-                                        PlayerMovementFunctions.F_P1_TURN);                    
+                                        PlayerMovementFunctions.F_P1_TURN,
+                                        PlayerMovementFunctions.F_P1_SHOOT_MAIN);                    
     }
     
     @Override
@@ -104,11 +105,16 @@ public class PlayerInputState extends BaseAppState {
         private Vec3d thrust = new Vec3d();
         private FunctionId fThrust;
         private FunctionId fTurn;
+        private FunctionId fMain;
         
-        public ShipHandler( EntityId ship, FunctionId fThrust, FunctionId fTurn ) {        
+        private double shotInterval = 0.5;
+        private double shotTimer;
+        
+        public ShipHandler( EntityId ship, FunctionId fThrust, FunctionId fTurn, FunctionId fMain ) {        
             this.ship = ship;
             this.fThrust = fThrust;
             this.fTurn = fTurn;
+            this.fMain = fMain;
         }
 
         public void update() {
@@ -116,13 +122,13 @@ public class PlayerInputState extends BaseAppState {
         }
         
         public void addListeners( InputMapper inputMapper ) {
-            inputMapper.addAnalogListener(this, fThrust, fTurn);
-            //inputMapper.addStateListener(this, ... )           
+            inputMapper.addAnalogListener(this, fThrust, fTurn, fMain);
+            inputMapper.addStateListener(this, fMain);           
         }
 
         public void removeListeners( InputMapper inputMapper ) {
-            inputMapper.removeAnalogListener(this, fThrust, fTurn);           
-            //inputMapper.removeStateListener(this, ... )           
+            inputMapper.removeAnalogListener(this, fThrust, fTurn, fMain);           
+            inputMapper.removeStateListener(this, fMain);
         }
     
         @Override
@@ -130,6 +136,11 @@ public class PlayerInputState extends BaseAppState {
             if( log.isTraceEnabled() ) {
                 log.trace("valueChanged:" + func + "  value:" + value);
             }
+            //log.info("value changed:" + func + "  value:" + value);
+            if( func == fMain ) {
+                // Shoot immediately when the button is pressed
+                shotTimer = shotInterval;
+            }  
         }
 
         @Override
@@ -141,7 +152,14 @@ public class PlayerInputState extends BaseAppState {
                 thrust.z = value;
             } else if( func == fTurn ) {
                 thrust.x = value;
-            }  
+            } else if( func == fMain ) {
+                shotTimer += tpf;
+                if( shotTimer > shotInterval ) {
+                    shotTimer = 0;
+                    gameSession.shootMain(ship);
+                }
+            }
+            //log.info("value active:" + func + "  value:" + value);  
         }
     }
 

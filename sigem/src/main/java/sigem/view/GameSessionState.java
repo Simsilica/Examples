@@ -46,10 +46,12 @@ import com.jme3.math.*;
 
 import com.simsilica.es.*;
 import com.simsilica.es.base.DefaultEntityData;
+import com.simsilica.es.common.Decay;
 import com.simsilica.event.*;
 import com.simsilica.lemur.GuiGlobals;
 import com.simsilica.lemur.input.InputMapper;
 import com.simsilica.mathd.*;
+import com.simsilica.sim.SimTime;
 import com.simsilica.sim.common.DecaySystem;
 import com.simsilica.state.*;
 
@@ -166,6 +168,25 @@ public class GameSessionState extends CompositeAppState {
             new Name(name)
             );
         return ship;
+    }
+ 
+    public void shootMain( EntityId shooter ) {
+        log.info("Bang");
+        Position pos = ed.getComponent(shooter, Position.class);
+        Vec3d dir = pos.getFacing().mult(Vec3d.UNIT_Z); 
+        Vec3d loc = pos.getLocation().add(dir.mult(2));
+        SimTime time = systems.getStepTime();
+        
+        EntityId missile = ed.createEntity();
+        ed.setComponents(missile,
+            new Position(loc),
+            new MassProperties(0),
+            ObjectType.create("missile", ed),
+            new SphereShape(0, new Vec3d()),
+            new CreatedBy(shooter),
+            new Impulse(dir.mult(20), new Vec3d()),
+            new Decay(time.getTime(), time.getFutureTime(5)) 
+            );        
     }
  
     public void pause() {
