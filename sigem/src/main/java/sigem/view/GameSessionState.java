@@ -36,6 +36,8 @@
 
 package sigem.view;
 
+import java.util.Random;
+
 import org.slf4j.*;
 
 import com.jme3.app.Application;
@@ -96,12 +98,13 @@ public class GameSessionState extends CompositeAppState {
         
         systems.register(SimplePhysics.class, new SimplePhysics());
         systems.addSystem(new PlanetGravity());
+        systems.addSystem(new CollisionSystem());
         systems.addSystem(new PositionPublisher());
         systems.addSystem(new ShipInputSystem());
         systems.addSystem(new ArenaBoundary(GameConstants.ARENA_EXTENTS));   
         
         // Create some sample entities
-        EntityId ship = ed.createEntity();
+        /*EntityId ship = ed.createEntity();
         ed.setComponents(ship,
             new Position(100, 0, 100),
             new MassProperties(1/50.0),
@@ -110,7 +113,8 @@ public class GameSessionState extends CompositeAppState {
             //new Impulse(new Vec3d(-5, 0, -5), new Vec3d(0, 1, 0)),
             //new ShipInput(new Vec3d(1, 0, 1))
             new ShipInput(new Vec3d())
-            );
+            );*/
+        EntityId ship = createShip("Test", new Vec3d(100, 0, 100)); 
             
         EntityId planet = ed.createEntity();
         ed.setComponents(planet,
@@ -120,14 +124,34 @@ public class GameSessionState extends CompositeAppState {
             new SphereShape(8, new Vec3d())
             );
             
-        EntityId asteroid = ed.createEntity();
-        ed.setComponents(asteroid,
-            new Position(-20, 0, -20),
-            new MassProperties(1/5.0),
-            ObjectType.create("asteroid", ed),
-            new SphereShape(3, new Vec3d()),
-            new Impulse(new Vec3d(-4, 0, -4), new Vec3d(1, 0.5, 0))
-            );
+        Random rand = new Random(0);
+        int asteroidCount = 5;
+        Vec3d extents = GameConstants.ARENA_EXTENTS;
+        for( int i = 0; i < asteroidCount; i++ ) {
+            double x = rand.nextDouble() * extents.x * 2 - extents.x;     
+            double z = rand.nextDouble() * extents.z * 2 - extents.z;
+            
+            double xImp = rand.nextDouble() * 8 - 4;     
+            double zImp = rand.nextDouble() * 8 - 4;     
+                        
+            EntityId asteroid = ed.createEntity();
+            ed.setComponents(asteroid,
+                new Position(x, 0, z),
+                new MassProperties(1/5.0),
+                ObjectType.create("asteroid", ed),
+                new SphereShape(3, new Vec3d()),
+                new Impulse(new Vec3d(xImp, 0, zImp), new Vec3d(rand.nextDouble() + 1, rand.nextDouble(), 0))
+                );
+        }
+
+            /*EntityId asteroid = ed.createEntity();
+            ed.setComponents(asteroid,
+                new Position(x, 0, z),
+                new MassProperties(1/5.0),
+                ObjectType.create("asteroid", ed),
+                new SphereShape(3, new Vec3d()),
+                new Impulse(new Vec3d(-4, 0, -4), new Vec3d(2, 0.5, 0))
+                );*/
             
     }
  

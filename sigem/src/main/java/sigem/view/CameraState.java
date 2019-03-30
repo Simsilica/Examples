@@ -129,7 +129,7 @@ public class CameraState extends BaseAppState {
         
         Texture texture = globals.loadTexture("Textures/starmap.png", true, true);
         quad = new Quad(w * 3, h * 3);
-        quad.scaleTextureCoordinates(new Vector2f(3, 3));
+        quad.scaleTextureCoordinates(new Vector2f(6, 6));
         geom = new Geometry("starfield", quad);
         geom.setMaterial(globals.createMaterial(texture, false).getMaterial());
         geom.rotate(-FastMath.HALF_PI, 0, 0);
@@ -180,7 +180,7 @@ public class CameraState extends BaseAppState {
         Vec3d max = new Vec3d(Double.NEGATIVE_INFINITY, 0, Double.NEGATIVE_INFINITY); 
         for( Entity e : ships.getArray() ) {
             Position pos = e.get(Position.class);
-//log.info("pos:" + pos.getLocation());            
+            //log.info("pos:" + pos.getLocation());            
             min.minLocal(pos.getLocation());
             max.maxLocal(pos.getLocation());
         }
@@ -220,7 +220,6 @@ public class CameraState extends BaseAppState {
         minClip.set(averagePos).subtractLocal(maxViewSize);
         maxClip.set(averagePos).addLocal(maxViewSize);
  
-log.info("w:" + w + "  d:" + d);
         for( Vec3d selector : heightSelection ) {
             if( w < selector.x && d < selector.z ) {
                 targetHeight = (float)selector.y;
@@ -229,9 +228,9 @@ log.info("w:" + w + "  d:" + d);
         }       
 
         if( camHeight < targetHeight ) {
-            camHeight = Math.min(targetHeight, camHeight + tpf * 800);
+            camHeight = Math.min(targetHeight, camHeight + tpf * 1000);
         } else if( camHeight > targetHeight ) {
-            camHeight = Math.max(targetHeight, camHeight - tpf * 800);
+            camHeight = Math.max(targetHeight, camHeight - tpf * 1000);
         }
 
         cam.setLocation(new Vector3f((float)averagePos.x, camHeight, (float)averagePos.z));

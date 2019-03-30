@@ -90,6 +90,7 @@ public class Body {
         // Integrate position
         pos.addScaledVectorLocal(velocity, stepTime);
         orientation.addScaledVectorLocal(rotVelocity, stepTime);
+        orientation.normalizeLocal();
  
         // That's it.  That's a physics engine.
         

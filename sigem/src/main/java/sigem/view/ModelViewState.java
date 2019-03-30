@@ -51,6 +51,7 @@ import com.jme3.material.RenderState.BlendMode;
 import com.jme3.renderer.Camera;
 import com.jme3.renderer.queue.RenderQueue.Bucket;
 import com.jme3.scene.*;
+import com.jme3.scene.Spatial.CullHint;
 import com.jme3.scene.shape.*;
 import com.jme3.texture.Texture;
 import com.jme3.util.SafeArrayList;
@@ -134,7 +135,7 @@ public class ModelViewState extends BaseAppState {
         
         // Clamp the spatials to the current viewport
         for( Spatial s : models.getArray() ) {
-            Vector3f v = s.getLocalTranslation();
+            Vector3f v = s.getLocalTranslation().clone();
             if( v.x < minClip.x ) {
                 v.x = (float)(maxClip.x - (minClip.x - v.x));
             } else if( v.x > maxClip.x ) {
@@ -146,6 +147,13 @@ public class ModelViewState extends BaseAppState {
                 v.z = (float)(minClip.z + (v.z - maxClip.z));
             }
             s.setLocalTranslation(v);
+ 
+            /*if( s instanceof Node ) {           
+                Spatial child = ((Node)s).getChild("rock");
+                if( child != null ) {
+                    log.info("child loc:" + child.getLocalTranslation());
+                }
+            }*/
         }
     }
     
@@ -178,7 +186,8 @@ public class ModelViewState extends BaseAppState {
             geom.setMaterial(mat);
             geom.rotate(FastMath.HALF_PI, 0, 0);
             geom.setQueueBucket(Bucket.Transparent);
-            //result.attachChild(geom);
+            geom.setCullHint(CullHint.Always);
+            result.attachChild(geom);
         }
         
         return result;
@@ -213,6 +222,7 @@ public class ModelViewState extends BaseAppState {
         AssetManager assetManager = getApplication().getAssetManager();
         
         Spatial rock = assetManager.loadModel("Models/Rock1/Rock1.j3o");
+        rock.setName("rock");
         //rock.setLocalScale(50);
         rock.center();
         Texture texture = assetManager.loadTexture("Models/Rock1/textures/Rock02LV3_1_1024.jpg");
@@ -238,7 +248,8 @@ public class ModelViewState extends BaseAppState {
             geom.setMaterial(mat);
             geom.rotate(FastMath.HALF_PI, 0, 0);
             geom.setQueueBucket(Bucket.Transparent);
-            //result.attachChild(geom);
+            geom.setCullHint(CullHint.Always);
+            result.attachChild(geom);
         }
         
         return result;
