@@ -75,6 +75,7 @@ public class CameraState extends BaseAppState {
     private Vec3d averagePos = new Vec3d();
 
     private float camHeight = 200;
+    private float targetHeight = 200;
     //private float camHeight = 500;
     //private float camHeight = 100;
 
@@ -82,6 +83,14 @@ public class CameraState extends BaseAppState {
     // player ships are farther apart than this then we will have
     // to wrap things.
     private Vec3d maxViewSize = GameConstants.ARENA_EXTENTS; 
+
+    // When the distance between ships is in the range of
+    // these entries then the camera is set to their y value.
+    private Vec3d[] heightSelection = new Vec3d[] {
+            new Vec3d(50, 50, 40),
+            new Vec3d(100, 100, 80),
+            new Vec3d(100000, 200, 10000)
+        };
 
     public CameraState() {        
     }
@@ -178,6 +187,8 @@ public class CameraState extends BaseAppState {
         
         // If the span is wider than the max viewable area then we need to
         // wrap the display
+        double w = max.x - min.x;
+        double d = max.z - min.z;  
          
         if( max.x - min.x > maxViewSize.x ) {
             if( Math.abs(max.x) < Math.abs(min.x) ) {
@@ -187,6 +198,7 @@ public class CameraState extends BaseAppState {
                 // Min is closer to the origin so we'll move max
                 max.x -= maxViewSize.x * 2;
             }
+            w = min.x - max.x;
         }
         if( max.z - min.z > maxViewSize.z ) {
             if( Math.abs(max.z) < Math.abs(min.z) ) {
@@ -196,6 +208,7 @@ public class CameraState extends BaseAppState {
                 // Min is closer to the origin so we'll move max
                 max.z -= maxViewSize.z * 2;
             }
+            d = min.z - max.z;
         }
         
         averagePos.set(max).addLocal(min);
@@ -206,6 +219,20 @@ public class CameraState extends BaseAppState {
         Vec3d maxClip = getState(ModelViewState.class).getMaxClip();
         minClip.set(averagePos).subtractLocal(maxViewSize);
         maxClip.set(averagePos).addLocal(maxViewSize);
+ 
+log.info("w:" + w + "  d:" + d);
+        for( Vec3d selector : heightSelection ) {
+            if( w < selector.x && d < selector.z ) {
+                targetHeight = (float)selector.y;
+                break;
+            }
+        }       
+
+        if( camHeight < targetHeight ) {
+            camHeight = Math.min(targetHeight, camHeight + tpf * 800);
+        } else if( camHeight > targetHeight ) {
+            camHeight = Math.max(targetHeight, camHeight - tpf * 800);
+        }
 
         cam.setLocation(new Vector3f((float)averagePos.x, camHeight, (float)averagePos.z));
     }
