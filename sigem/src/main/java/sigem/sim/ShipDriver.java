@@ -53,6 +53,8 @@ public class ShipDriver implements ControlDriver {
  
     static Logger log = LoggerFactory.getLogger(ShipDriver.class);
  
+    private Body body;
+ 
     // Keep track of what the player has provided.
     private volatile Vec3d thrust = new Vec3d();
  
@@ -62,9 +64,25 @@ public class ShipDriver implements ControlDriver {
     private float maxSpeed = 10;
     private float turnSpeed = 1;   
     private double lateralBraking = 0.9;
+    
+    public ShipDriver() {
+    }
+ 
+    public Body getBody() {
+        return body;
+    }
+ 
+    public Vec3d getThrust() {
+        return thrust;
+    }
  
     public void applyControlInput( ShipInput input ) {
         this.thrust = input.getThrust();
+    }
+    
+    @Override
+    public void initialize( Body body ) {
+        this.body = body;
     } 
  
     @Override

@@ -41,6 +41,8 @@ import java.util.*;
 import org.slf4j.*;
 
 import com.simsilica.es.*;
+import com.simsilica.es.common.Decay;
+import com.simsilica.mathd.*;
 import com.simsilica.sim.*;
 
 import sigem.es.*;
@@ -59,6 +61,9 @@ public class ShipInputSystem extends AbstractGameSystem {
     private SimplePhysics phys;
     
     private ShipContainer ships;
+    
+    private double nextPuff = 0;
+    private double puffInterval = 0.05; //0.2; 
         
     public ShipInputSystem() {
     }
@@ -93,12 +98,39 @@ public class ShipInputSystem extends AbstractGameSystem {
 
     @Override
     public void update( SimTime time ) {
-        ships.update(); 
+        ships.update();
+        
+        // Could have done this with a separate system but
+        // it was convenient to do it here.
+        double t = time.getTimeInSeconds(); 
+        if( t > nextPuff ) {
+            nextPuff = t + puffInterval;
+            
+            for( ShipDriver ship : ships.getArray() ) {
+                if( ship.getThrust().z == 0 ) {
+                    continue;
+                }
+                // Else the thrusters are on and we can puff
+                Body body = ship.getBody();
+                // Make it appear 2 units behind the ship
+                Vec3d loc = body.pos.subtract(body.orientation.mult(Vec3d.UNIT_Z.mult(2)));
+                EntityId puff = ed.createEntity();
+                ed.setComponents(puff,
+                    new Position(loc),
+                    ObjectType.create("thrust", ed),
+                    new Decay(time.getTime(), time.getFutureTime(5.0))
+                    );
+            } 
+        } 
     }
     
     private class ShipContainer extends EntityContainer<ShipDriver> {
         public ShipContainer( EntityData ed ) {
             super(ed, ShipInput.class);
+        }
+        
+        public ShipDriver[] getArray() {
+            return super.getArray();
         }
  
         @Override       

@@ -96,6 +96,7 @@ public class SimplePhysics extends AbstractGameSystem {
             Body current = getBody(entityId);
             if( current != null ) {
                 current.driver = driver;
+                driver.initialize(current);
             }
         }
     }
@@ -118,6 +119,9 @@ public class SimplePhysics extends AbstractGameSystem {
                 
                 // Hookup the driver if it has one waiting
                 result.driver = driverIndex.get(entityId);
+                if( result.driver != null ) {
+                    result.driver.initialize(result);
+                }
  
                 // Give it any initial impulse that it might have
                 Impulse imp = ed.getComponent(entityId, Impulse.class);

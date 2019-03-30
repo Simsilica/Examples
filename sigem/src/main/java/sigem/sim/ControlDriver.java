@@ -44,5 +44,7 @@ package sigem.sim;
  */
 public interface ControlDriver {
 
+    public void initialize( Body body );
+
     public void update( double stepTime, Body body );
 }

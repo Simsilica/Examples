@@ -58,6 +58,7 @@ import com.jme3.util.SafeArrayList;
 
 import com.simsilica.es.*;
 import com.simsilica.lemur.*;
+import com.simsilica.lemur.anim.*;
 import com.simsilica.lemur.style.ElementId;
 import com.simsilica.mathd.*;
 import com.simsilica.state.*;
@@ -75,6 +76,7 @@ public class ModelViewState extends BaseAppState {
     static Logger log = LoggerFactory.getLogger(ModelViewState.class);
 
     private EntityData ed;
+    private AssetManager assets;
     
     private Node modelRoot;
  
@@ -103,6 +105,7 @@ public class ModelViewState extends BaseAppState {
     @Override
     protected void initialize( Application app ) {
         modelRoot = new Node();
+        assets = app.getAssetManager();
         
         this.ed = getState(GameSystemsState.class).get(EntityData.class);
     }
@@ -159,11 +162,9 @@ public class ModelViewState extends BaseAppState {
     
     protected Spatial createShip( Entity entity ) {
     
-        AssetManager assetManager = getApplication().getAssetManager();
-        
-        Spatial ship = assetManager.loadModel("Models/fighter.j3o");
+        Spatial ship = assets.loadModel("Models/fighter.j3o");
         ship.center();
-        Texture texture = assetManager.loadTexture("Textures/ship1.png");
+        Texture texture = assets.loadTexture("Textures/ship1.png");
         Material mat = GuiGlobals.getInstance().createMaterial(texture, false).getMaterial();
         mat.setTexture("ColorMap", texture);
         ship.setMaterial(mat);
@@ -219,13 +220,11 @@ public class ModelViewState extends BaseAppState {
 
     protected Spatial createAsteroid( Entity entity ) {
     
-        AssetManager assetManager = getApplication().getAssetManager();
-        
-        Spatial rock = assetManager.loadModel("Models/Rock1/Rock1.j3o");
+        Spatial rock = assets.loadModel("Models/Rock1/Rock1.j3o");
         rock.setName("rock");
         //rock.setLocalScale(50);
         rock.center();
-        Texture texture = assetManager.loadTexture("Models/Rock1/textures/Rock02LV3_1_1024.jpg");
+        Texture texture = assets.loadTexture("Models/Rock1/textures/Rock02LV3_1_1024.jpg");
         Material mat = GuiGlobals.getInstance().createMaterial(texture, false).getMaterial();
         //mat.setTexture("ColorMap", texture);
         rock.setMaterial(mat);
@@ -254,6 +253,36 @@ public class ModelViewState extends BaseAppState {
         
         return result;
     }
+    
+    protected Spatial createThrust( Entity entity ) {
+ 
+        GuiGlobals globals = GuiGlobals.getInstance(); 
+    
+        Node result = new Node("thrust");
+    
+        Quad quad = new Quad(2, 2);
+        Geometry geom = new Geometry("quad", quad);
+        Texture texture = globals.loadTexture("Textures/neon-puff256.png", false, false);
+        //Material mat = globals.createMaterial(ColorRGBA.Blue, false).getMaterial();
+        Material mat = globals.createMaterial(texture, false).getMaterial();
+        mat.getAdditionalRenderState().setBlendMode(BlendMode.AlphaAdditive);
+        geom.setQueueBucket(Bucket.Transparent);
+        geom.rotate(-FastMath.HALF_PI, 0, 0);
+        geom.setMaterial(mat);
+        geom.center();
+        geom.move(0, -1, 0);
+        
+        ColorRGBA color = new ColorRGBA(2, 2, 0, 1);
+        mat.setColor("Color", color);
+        
+        // Fade it out over five seconds.  We could have created a system to do
+        // this based on decay, blah blah... but this is really easy.
+        getState(AnimationState.class).add(new ColorTween(color, ColorRGBA.White, new ColorRGBA(1, 1, 1, 0), 5));
+        
+        result.attachChild(geom);
+        
+        return result;   
+    }
 
     protected Spatial createModel( Entity entity ) {
         // Check to see if one already exists
@@ -271,6 +300,8 @@ public class ModelViewState extends BaseAppState {
             result = createPlanet(entity);
         } else if( typeName.equals("asteroid") ) {
             result = createAsteroid(entity);
+        } else if( typeName.equals("thrust") ) {
+            result = createThrust(entity);        
         } else {
             throw new RuntimeException("Unknown spatial type:" + typeName); 
         }
@@ -336,7 +367,39 @@ public class ModelViewState extends BaseAppState {
                 log.trace("removeObject(" + e + ")");
             }        
             removeModel(object, e);
-        }                   
+        }
     }
+    
+    /**
+     *  Lemur does not yet provide one of these so we will do it ourselves.
+     */
+    private class ColorTween extends AbstractTween {
+
+        private final ColorRGBA target;
+        private final ColorRGBA from;
+        private final ColorRGBA to;
+        private final ColorRGBA value;
+
+        public ColorTween( ColorRGBA target, ColorRGBA from, ColorRGBA to, double length ) {
+            super(length);
+            this.target = target;
+            this.from = from.clone();
+            this.to = to.clone();
+            this.value = new ColorRGBA(from);
+        }
+
+        @Override
+        protected void doInterpolate( double t ) {
+            // Interpolate
+            value.interpolateLocal(from, to, (float)t);
+            target.set(value);
+        }
+        
+        @Override
+        public String toString() {
+            return getClass().getSimpleName() + "[target=" + target + ", from=" + from + ", to=" + to + ", length=" + getLength() + "]";
+        }
+    }
+
 }
 
