@@ -18,7 +18,7 @@
     <Logger name="diagnostics" level="WARN" />
 
     <!-- Remove/comment out if sim TRACE logging gets too verbose --> 
-    <Logger name="com.simsilica.sim" level="TRACE" />
+    <!-- <Logger name="com.simsilica.sim" level="TRACE" /> -->
     
     <Root level="INFO">
       <AppenderRef ref="RollingFile"/>
