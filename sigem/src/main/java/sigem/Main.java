@@ -36,6 +36,8 @@
 
 package sigem;
 
+import org.slf4j.*;
+
 import com.jme3.app.*;
 import com.jme3.app.state.ScreenshotAppState;
 import com.jme3.math.ColorRGBA;
@@ -62,6 +64,8 @@ import sigem.view.PlayerMovementFunctions;
  *  @author    Paul Speed
  */
 public class Main extends SimpleApplication {
+
+    static Logger log = LoggerFactory.getLogger(Main.class);
 
     public static void main( String... args ) throws Exception {
         Main main = new Main();
@@ -131,6 +135,15 @@ public class Main extends SimpleApplication {
                                              stateManager.getState(CommandConsoleState.class),
                                              "toggleConsole");
  
+        globals.getInputMapper().addDelegate(MainGameFunctions.F_TEST1,
+                                             this, "test1", true);
+        globals.getInputMapper().addDelegate(MainGameFunctions.F_TEST2,
+                                             this, "test2", true);
+        globals.getInputMapper().addDelegate(MainGameFunctions.F_TEST3,
+                                             this, "test3", true);
+        globals.getInputMapper().addDelegate(MainGameFunctions.F_TEST4,
+                                             this, "test4", true);
+ 
         // Disable/enable the states we've added that should be
         // disabled when the game session is active... like the main
         // menu and the spinning logo
@@ -142,6 +155,22 @@ public class Main extends SimpleApplication {
         if( inputManager.hasMapping(INPUT_MAPPING_EXIT) ) {
             inputManager.deleteMapping(INPUT_MAPPING_EXIT);
         }                             
+    }
+ 
+    public void test1( com.simsilica.lemur.input.InputState state ) {
+        log.info("test1(" + state + ")");
+    }
+
+    public void test2( com.simsilica.lemur.input.InputState state ) {
+        log.info("test2(" + state + ")");
+    }
+
+    public void test3( com.simsilica.lemur.input.InputState state ) {
+        log.info("test3(" + state + ")");
+    }
+
+    public void test4( com.simsilica.lemur.input.InputState state ) {
+        log.info("test4(" + state + ")");
     }
     
     protected void sessionStarted( GameSessionEvent event ) {

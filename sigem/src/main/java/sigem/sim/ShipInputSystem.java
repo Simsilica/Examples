@@ -63,7 +63,8 @@ public class ShipInputSystem extends AbstractGameSystem {
     private ShipContainer ships;
     
     private double nextPuff = 0;
-    private double puffInterval = 0.05; //0.2; 
+    //private double puffInterval = 0.05; //0.2; 
+    private double puffInterval = 0.0125; //0.2; 
         
     public ShipInputSystem() {
     }
@@ -107,7 +108,7 @@ public class ShipInputSystem extends AbstractGameSystem {
             nextPuff = t + puffInterval;
             
             for( ShipDriver ship : ships.getArray() ) {
-                if( ship.getThrust().z == 0 ) {
+                if( ship.getThrust().z <= 0.25 ) {
                     continue;
                 }
                 // Else the thrusters are on and we can puff
@@ -118,7 +119,7 @@ public class ShipInputSystem extends AbstractGameSystem {
                 ed.setComponents(puff,
                     new Position(loc),
                     ObjectType.create("thrust", ed),
-                    new Decay(time.getTime(), time.getFutureTime(5.0))
+                    new Decay(time.getTime(), time.getFutureTime(2.5))
                     );
             } 
         } 

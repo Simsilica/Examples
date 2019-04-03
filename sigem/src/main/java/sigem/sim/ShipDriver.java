@@ -61,8 +61,10 @@ public class ShipDriver implements ControlDriver {
     private Vec3d dir = new Vec3d();
     private Vec3d targetVel = new Vec3d();
     private Vec3d left = new Vec3d();
-    private float maxSpeed = 10;
-    private float turnSpeed = 1;   
+    //private float maxSpeed = 10;
+    //private float turnSpeed = 1;   
+    private float maxSpeed = 20;
+    private float turnSpeed = 2;   
     private double lateralBraking = 0.9;
     
     public ShipDriver() {
@@ -91,8 +93,10 @@ public class ShipDriver implements ControlDriver {
         // Grab local versions of the player settings in case another
         // thread sets them while we are calculating.
         Vec3d vec = thrust;
-                
-        if( thrust.z > 0 ) {
+ 
+        // Add a threshold to thrust to make it easier to turn with the
+        // gamepads without engaging forward thrust.               
+        if( thrust.z > 0.2 ) {
             // Localize the direction vector
             body.orientation.mult(Vec3d.UNIT_Z, dir); 
             body.orientation.mult(Vec3d.UNIT_X, left); 

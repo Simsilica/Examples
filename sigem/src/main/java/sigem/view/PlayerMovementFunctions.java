@@ -40,6 +40,7 @@ import com.jme3.input.KeyInput;
 import com.simsilica.lemur.input.Axis;
 import com.simsilica.lemur.input.Button;
 import com.simsilica.lemur.input.FunctionId;
+import com.simsilica.lemur.input.InputDevice;
 import com.simsilica.lemur.input.InputMapper;
 import com.simsilica.lemur.input.InputState;
 
@@ -56,19 +57,32 @@ public class PlayerMovementFunctions {
     public static final FunctionId F_P1_THRUST = new FunctionId(IN_GAME, "P1 Thrust");   
     public static final FunctionId F_P1_TURN = new FunctionId(IN_GAME, "P1 Turn");
     public static final FunctionId F_P1_SHOOT_MAIN = new FunctionId(IN_GAME, "P1 Shoot");    
+
+    public static final FunctionId F_P2_THRUST = new FunctionId(IN_GAME, "P2 Thrust");   
+    public static final FunctionId F_P2_TURN = new FunctionId(IN_GAME, "P2 Turn");
+    public static final FunctionId F_P2_SHOOT_MAIN = new FunctionId(IN_GAME, "P2 Shoot");    
     
     public static void initializeDefaultMappings( InputMapper inputMapper ) {
-  
+ 
+        InputDevice joy1 = InputDevice.JOYSTICK1;         
         inputMapper.map(F_P1_THRUST, KeyInput.KEY_W);
         // The joystick Y axes are backwards on game pads... forward
         // is negative.  So we'll flip it over in the mapping.
-        inputMapper.map(F_P1_THRUST, InputState.Negative, Axis.JOYSTICK_LEFT_Y);
+        inputMapper.map(F_P1_THRUST, InputState.Negative, joy1.axis(Axis.JOYSTICK_LEFT_Y));
         
         inputMapper.map(F_P1_TURN, KeyInput.KEY_D);
         inputMapper.map(F_P1_TURN, InputState.Negative, KeyInput.KEY_A);
-        inputMapper.map(F_P1_TURN, Axis.JOYSTICK_LEFT_X);
+        inputMapper.map(F_P1_TURN, joy1.axis(Axis.JOYSTICK_LEFT_X));
         
         inputMapper.map(F_P1_SHOOT_MAIN, KeyInput.KEY_SPACE); 
+        inputMapper.map(F_P1_SHOOT_MAIN, joy1.button(Button.JOYSTICK_BUTTON1));
+         
+        InputDevice joy2 = InputDevice.JOYSTICK2;         
+        // The joystick Y axes are backwards on game pads... forward
+        // is negative.  So we'll flip it over in the mapping.
+        inputMapper.map(F_P2_THRUST, InputState.Negative, joy2.axis(Axis.JOYSTICK_LEFT_Y));        
+        inputMapper.map(F_P2_TURN, joy2.axis(Axis.JOYSTICK_LEFT_X));
+        inputMapper.map(F_P2_SHOOT_MAIN, joy2.button(Button.JOYSTICK_BUTTON1)); 
     }
 }
 

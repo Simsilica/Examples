@@ -62,6 +62,9 @@ public class PlayerInputState extends BaseAppState {
     private EntityId ship1;
     private ShipHandler handler1;
 
+    private EntityId ship2;
+    private ShipHandler handler2;
+
     public PlayerInputState() {        
     }
     
@@ -75,6 +78,12 @@ public class PlayerInputState extends BaseAppState {
                                         PlayerMovementFunctions.F_P1_THRUST,
                                         PlayerMovementFunctions.F_P1_TURN,
                                         PlayerMovementFunctions.F_P1_SHOOT_MAIN);                    
+                                        
+        this.ship2 = gameSession.createShip("Player 2", new Vec3d(100, 0, 100));        
+        this.handler2 = new ShipHandler(ship2, 
+                                        PlayerMovementFunctions.F_P2_THRUST,
+                                        PlayerMovementFunctions.F_P2_TURN,
+                                        PlayerMovementFunctions.F_P2_SHOOT_MAIN);                    
     }
     
     @Override
@@ -86,17 +95,20 @@ public class PlayerInputState extends BaseAppState {
         InputMapper inputMapper = GuiGlobals.getInstance().getInputMapper();
  
         handler1.addListeners(inputMapper);       
+        handler2.addListeners(inputMapper);       
     }
     
     @Override
     protected void onDisable() {
         InputMapper inputMapper = GuiGlobals.getInstance().getInputMapper();
         handler1.removeListeners(inputMapper);       
+        handler2.removeListeners(inputMapper);       
     }
     
     @Override
     public void update( float tpf ) {
         handler1.update();
+        handler2.update();
     }
     
     private class ShipHandler implements AnalogFunctionListener, StateFunctionListener {
@@ -159,7 +171,6 @@ public class PlayerInputState extends BaseAppState {
                     gameSession.shootMain(ship);
                 }
             }
-            //log.info("value active:" + func + "  value:" + value);  
         }
     }
 

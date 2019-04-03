@@ -116,7 +116,7 @@ public class GameSessionState extends CompositeAppState {
             //new ShipInput(new Vec3d(1, 0, 1))
             new ShipInput(new Vec3d())
             );*/
-        EntityId ship = createShip("Test", new Vec3d(100, 0, 100)); 
+        //EntityId ship = createShip("Test", new Vec3d(100, 0, 100)); 
             
         EntityId planet = ed.createEntity();
         ed.setComponents(planet,
@@ -176,16 +176,19 @@ public class GameSessionState extends CompositeAppState {
         Vec3d dir = pos.getFacing().mult(Vec3d.UNIT_Z); 
         Vec3d loc = pos.getLocation().add(dir.mult(2));
         SimTime time = systems.getStepTime();
+ 
+        double shotSpeed = 50;
+        double shotTime = 2;
         
         EntityId missile = ed.createEntity();
         ed.setComponents(missile,
             new Position(loc),
-            new MassProperties(0),
+            new MassProperties(1/5.0),
             ObjectType.create("missile", ed),
             new SphereShape(0, new Vec3d()),
             new CreatedBy(shooter),
-            new Impulse(dir.mult(20), new Vec3d()),
-            new Decay(time.getTime(), time.getFutureTime(5)) 
+            new Impulse(dir.mult(shotSpeed), new Vec3d()),
+            new Decay(time.getTime(), time.getFutureTime(shotTime)) 
             );        
     }
  

@@ -39,6 +39,7 @@ package sigem;
 import com.jme3.input.KeyInput;
 import com.simsilica.lemur.input.Button;
 import com.simsilica.lemur.input.FunctionId;
+import com.simsilica.lemur.input.InputDevice;
 import com.simsilica.lemur.input.InputMapper;
 
 
@@ -55,6 +56,11 @@ public class MainGameFunctions {
     public static final FunctionId F_IN_GAME_HELP = new FunctionId(IN_GAME, "In-Game Help");
         
     public static final FunctionId F_COMMAND_CONSOLE = new FunctionId("Command Console"); 
+ 
+    public static final FunctionId F_TEST1 = new FunctionId("test 1");
+    public static final FunctionId F_TEST2 = new FunctionId("test 2");
+    public static final FunctionId F_TEST3 = new FunctionId("test 3");
+    public static final FunctionId F_TEST4 = new FunctionId("test 4");
     
     public static void initializeDefaultMappings( InputMapper inputMapper ) {
     
@@ -64,5 +70,18 @@ public class MainGameFunctions {
         inputMapper.map(F_IN_GAME_HELP, KeyInput.KEY_F1);
 
         inputMapper.map(F_COMMAND_CONSOLE, KeyInput.KEY_GRAVE);
+        
+//        inputMapper.map(F_TEST1, KeyInput.KEY_A);
+//        inputMapper.map(F_TEST2, KeyInput.KEY_LSHIFT);
+//        inputMapper.map(F_TEST3, KeyInput.KEY_LSHIFT, KeyInput.KEY_A);
+        
+//        inputMapper.map(F_TEST4, KeyInput.KEY_B, KeyInput.KEY_RSHIFT);
+ 
+        inputMapper.map(F_TEST1, Button.JOYSTICK_SELECT);
+        inputMapper.map(F_TEST2, InputDevice.JOYSTICK1.button(Button.JOYSTICK_SELECT));
+        inputMapper.map(F_TEST3, InputDevice.JOYSTICK2.button(Button.JOYSTICK_SELECT));
+        
+        //inputMapper.map(F_TEST4, GamepadId.GAMEPAD1);
+        
     }
 }

@@ -281,7 +281,8 @@ public class ModelViewState extends BaseAppState {
         
         // Fade it out over five seconds.  We could have created a system to do
         // this based on decay, blah blah... but this is really easy.
-        getState(AnimationState.class).add(new ColorTween(color, ColorRGBA.White, new ColorRGBA(1, 1, 1, 0), 5));
+        //getState(AnimationState.class).add(new ColorTween(color, ColorRGBA.White, new ColorRGBA(1, 1, 1, 0), 5));
+        getState(AnimationState.class).add(new ColorTween(color, ColorRGBA.White, new ColorRGBA(1, 1, 1, 0), 2.5));
         
         result.attachChild(geom);
         

@@ -16,7 +16,8 @@ repositories {
     }
 }
 
-ext.jmeVersion = "[3.2,)" 
+//ext.jmeVersion = "[3.2,)" 
+ext.jmeVersion = "3.3.0-SNAPSHOT" 
 
 project(":assets") {
     apply plugin: "java"
@@ -40,7 +41,7 @@ dependencies {
     compile "org.jmonkeyengine:jme3-lwjgl:$jmeVersion"
 
     // For a UI and input mapping 
-    compile "com.simsilica:lemur:1.12.1-SNAPSHOT"
+    compile "com.simsilica:lemur:1.13.0-SNAPSHOT"
     compile "com.simsilica:lemur-proto:1.11.0-SNAPSHOT"
 
     // General utilities
