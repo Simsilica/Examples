@@ -72,6 +72,7 @@ public class GameSessionState extends CompositeAppState {
 
     private GameSystemsState systems;
     private EntityData ed;
+    private GameEntities gameEntities;
 
     public GameSessionState() {
         super(new GameSystemsState(),
@@ -97,10 +98,12 @@ public class GameSessionState extends CompositeAppState {
         
         // Add some systems
         systems.addSystem(new DecaySystem());
-        
+ 
+        systems.register(GameEntities.class, gameEntities = new GameEntities(ed));       
         systems.register(SimplePhysics.class, new SimplePhysics());
         systems.addSystem(new PlanetGravity());
-        systems.addSystem(new CollisionSystem());
+        systems.register(CollisionSystem.class, new CollisionSystem());
+        systems.register(AsteroidHitListener.class, new AsteroidHitListener());
         systems.addSystem(new PositionPublisher());
         systems.addSystem(new ShipInputSystem());
         systems.addSystem(new ArenaBoundary(GameConstants.ARENA_EXTENTS));   
@@ -163,8 +166,9 @@ public class GameSessionState extends CompositeAppState {
     }
  
     public EntityId createAsteroid( Vec3d location, Vec3d linVelocity, Vec3d angVelocity, double size ) {
-    
-        double mass = size * size * size * 5;
+ 
+        return gameEntities.createAsteroid(location, linVelocity, angVelocity, size);   
+        /*double mass = size * size * size * 5;
     
         EntityId asteroid = ed.createEntity();
         ed.setComponents(asteroid,
@@ -175,7 +179,7 @@ public class GameSessionState extends CompositeAppState {
             new Impulse(linVelocity, angVelocity)
             );    
             
-        return asteroid;
+        return asteroid;*/
     }
  
     public EntityId createShip( String name, Vec3d location ) {

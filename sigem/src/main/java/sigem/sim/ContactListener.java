@@ -1,7 +1,7 @@
 /*
  * $Id$
  * 
- * Copyright (c) 2016, Simsilica, LLC
+ * Copyright (c) 2019, Simsilica, LLC
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -34,50 +34,14 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package sigem.es;
-
-import com.simsilica.es.EntityComponent;
-import com.simsilica.es.EntityData;
+package sigem.sim;
 
 
 /**
- *  For visible game objects, this is the type of object.
+ *  Notified about contacts produced by the collision system.
  *
  *  @author    Paul Speed
  */
-public class ObjectType implements EntityComponent {
-
-    public static final String TYPE_SHIP = "ship";
-    public static final String TYPE_PLANET = "planet";
-    public static final String TYPE_ASTEROID = "asteroid";
-    public static final String TYPE_ASTEROID_CHUNK = "asteroidChunk";
-    public static final String TYPE_THRUST = "thrust";
-    public static final String TYPE_MISSILE = "missile";
-    public static final String TYPE_PLASMA_EXPLOSION = "plasmaExplosion";
-            
-    private int type;
- 
-    protected ObjectType() {
-    }
-    
-    public ObjectType( int type ) {
-        this.type = type;
-    }
-    
-    public static ObjectType create( String typeName, EntityData ed ) {
-        return new ObjectType(ed.getStrings().getStringId(typeName, true));
-    }
-    
-    public int getType() {
-        return type;
-    }
-    
-    public String getTypeName( EntityData ed ) {
-        return ed.getStrings().getString(type);                 
-    }
- 
-    @Override   
-    public String toString() {
-        return getClass().getSimpleName() + "[type=" + type + "]";
-    }     
+public interface ContactListener {
+    public void newContact( Contact c );
 }

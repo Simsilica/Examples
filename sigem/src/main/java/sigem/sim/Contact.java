@@ -36,6 +36,8 @@
 
 package sigem.sim;
 
+import com.google.common.base.MoreObjects;
+
 import com.simsilica.mathd.*;
 
 /**
@@ -54,5 +56,17 @@ public class Contact {
     public Contact( Body b1, Body b2 ) {
         this.b1 = b1;
         this.b2 = b2;
+    }
+    
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(getClass().getSimpleName())
+            .add("b1", b1)
+            .add("b2", b2)
+            .add("pen", pen)
+            .add("cp", cp)
+            .add("cn", cn)
+            .add("energy", energy)
+            .toString();
     }
 }

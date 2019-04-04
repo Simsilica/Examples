@@ -38,6 +38,8 @@ package sigem.sim;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.google.common.base.MoreObjects;
+
 import com.simsilica.es.EntityId;
 import com.simsilica.mathd.*;
 
@@ -97,5 +99,18 @@ public class Body {
         // Update the bounds since it's easy to do here and helps
         // other things know where the object is for real
         bounds.setCenter(pos);
+    }
+    
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(getClass().getSimpleName())
+            .add("bodyId", bodyId)
+            .add("pos", pos)
+            .add("velocity", velocity)
+            .add("acceleration", acceleration)
+            .add("radius", radius)
+            .add("invMass", invMass)
+            .add("driver", driver)
+            .toString();
     }
 }

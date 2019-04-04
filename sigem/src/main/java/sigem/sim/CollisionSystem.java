@@ -64,7 +64,17 @@ public class CollisionSystem extends AbstractGameSystem
     
     private SafeArrayList<Body> bodies = new SafeArrayList<>(Body.class);
     
+    private SafeArrayList<ContactListener> listeners = new SafeArrayList<>(ContactListener.class);
+    
     public CollisionSystem() { 
+    }
+ 
+    public void addContactListener( ContactListener l ) {
+        listeners.add(l);
+    }
+    
+    public void removeContactListener( ContactListener l ) {
+        listeners.remove(l);
     }
  
     @Override
@@ -77,6 +87,12 @@ public class CollisionSystem extends AbstractGameSystem
     @Override
     protected void terminate() {
         getSystem(SimplePhysics.class).removePhysicsListener(this);
+    }
+
+    protected void fireNewContact( Contact c ) {
+        for( ContactListener l : listeners.getArray() ) {
+            l.newContact(c);
+        }
     }
    
     @Override
@@ -136,6 +152,14 @@ public class CollisionSystem extends AbstractGameSystem
                 contact.energy = energy;
 //log.info("speed1:" + speed1 + "  speed2:" + speed2 + "  energy:" + energy);
 
+                // Notiy the listeners about the contact... this gives
+                // them a chance to adjust contact parameters before
+                // we deal with energy
+                fireNewContact(contact);
+                if( contact.energy == 0 ) {
+                    continue;
+                }
+
                 // We want the collisions to be elastic... if we only
                 // use the exact energy it will only be enough to stop
                 // the objects, not separate them with a bounce.
@@ -181,6 +205,14 @@ public class CollisionSystem extends AbstractGameSystem
         c.cn.y = 0; // just in case
         c.cn.divideLocal(dist);
         c.pen = dist - b1.radius - b2.radius;
+    
+        if( c.pen < 0 ) {       
+            // Put the contact point halfway between the bounaries        
+            c.cp = b1.pos.add(c.cn.mult(b1.radius + c.pen * 0.5));
+        } else {
+            // Put the conact point on b1's surface
+            c.cp = b1.pos.add(c.cn.mult(b1.radius));
+        }        
         
         return c;
     }

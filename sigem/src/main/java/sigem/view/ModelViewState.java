@@ -309,6 +309,28 @@ public class ModelViewState extends BaseAppState {
         return result;   
     }
 
+    protected Spatial createPlasmaExplosion( Entity entity ) {
+     
+        Node result = new Node("thrust");    
+        Geometry geom = createQuad(4, "Textures/white-puff256.png", BlendMode.AlphaAdditive);
+        geom.move(0, -1, 0);
+        Material mat = geom.getMaterial();
+        
+        ColorRGBA color = new ColorRGBA(2, 1, 1, 2);
+        ColorRGBA color1 = new ColorRGBA(2, 1, 1, 2);
+        ColorRGBA color2 = new ColorRGBA(2, 1, 1, 0);
+        mat.setColor("Color", color);
+        
+        // Fade it out over five seconds.  We could have created a system to do
+        // this based on decay, blah blah... but this is really easy.
+        //getState(AnimationState.class).add(new ColorTween(color, ColorRGBA.White, new ColorRGBA(1, 1, 1, 0), 5));
+        getState(AnimationState.class).add(new ColorTween(color, color1, color2, 2));
+        
+        result.attachChild(geom);
+        
+        return result;   
+    }
+
     protected Spatial createModel( Entity entity ) {
         // Check to see if one already exists
         Spatial result = modelIndex.get(entity.getId());
@@ -327,6 +349,7 @@ public class ModelViewState extends BaseAppState {
                 result = createPlanet(entity);
                 break;
             case ObjectType.TYPE_ASTEROID:
+            case ObjectType.TYPE_ASTEROID_CHUNK:
                 result = createAsteroid(entity);
                 break;
             case ObjectType.TYPE_THRUST:
@@ -334,6 +357,9 @@ public class ModelViewState extends BaseAppState {
                 break;
             case ObjectType.TYPE_MISSILE:
                 result = createMissile(entity);
+                break;
+            case ObjectType.TYPE_PLASMA_EXPLOSION:
+                result = createPlasmaExplosion(entity);
                 break;
             default:        
                 throw new RuntimeException("Unknown spatial type:" + typeName); 
