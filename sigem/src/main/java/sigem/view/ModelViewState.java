@@ -248,7 +248,7 @@ public class ModelViewState extends BaseAppState {
             geom.setMaterial(mat);
             geom.rotate(FastMath.HALF_PI, 0, 0);
             geom.setQueueBucket(Bucket.Transparent);
-            //geom.setCullHint(CullHint.Always);
+            geom.setCullHint(CullHint.Always);
             result.attachChild(geom);
         }
         
