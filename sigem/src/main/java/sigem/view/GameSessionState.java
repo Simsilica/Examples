@@ -127,7 +127,7 @@ public class GameSessionState extends CompositeAppState {
             );
             
         Random rand = new Random(0);
-        int asteroidCount = 5;
+        int asteroidCount = 20;
         Vec3d extents = GameConstants.ARENA_EXTENTS;
         for( int i = 0; i < asteroidCount; i++ ) {
             double x = rand.nextDouble() * extents.x * 2 - extents.x;     
@@ -136,14 +136,19 @@ public class GameSessionState extends CompositeAppState {
             double xImp = rand.nextDouble() * 8 - 4;     
             double zImp = rand.nextDouble() * 8 - 4;     
                         
-            EntityId asteroid = ed.createEntity();
+            /*EntityId asteroid = ed.createEntity();
             ed.setComponents(asteroid,
                 new Position(x, 0, z),
                 new MassProperties(1/5.0),
                 ObjectType.create("asteroid", ed),
                 new SphereShape(3, new Vec3d()),
                 new Impulse(new Vec3d(xImp, 0, zImp), new Vec3d(rand.nextDouble() + 1, rand.nextDouble(), 0))
-                );
+                );*/
+            int size = rand.nextInt(5) + 1;                
+            createAsteroid(new Vec3d(x, 0, z), 
+                           new Vec3d(xImp, 0, zImp),
+                           new Vec3d(rand.nextDouble() + 1, rand.nextDouble(), 0),
+                           size);                  
         }
 
             /*EntityId asteroid = ed.createEntity();
@@ -157,6 +162,22 @@ public class GameSessionState extends CompositeAppState {
             
     }
  
+    public EntityId createAsteroid( Vec3d location, Vec3d linVelocity, Vec3d angVelocity, double size ) {
+    
+        double mass = size * size * size * 5;
+    
+        EntityId asteroid = ed.createEntity();
+        ed.setComponents(asteroid,
+            new Position(location),
+            new MassProperties(1/mass),
+            ObjectType.create("asteroid", ed),
+            new SphereShape(size, new Vec3d()),
+            new Impulse(linVelocity, angVelocity)
+            );    
+            
+        return asteroid;
+    }
+ 
     public EntityId createShip( String name, Vec3d location ) {
         EntityId ship = ed.createEntity();
         ed.setComponents(ship,
@@ -168,7 +189,7 @@ public class GameSessionState extends CompositeAppState {
             new Name(name)
             );
         return ship;
-    }
+    }    
  
     public void shootMain( EntityId shooter ) {
         log.info("Bang");

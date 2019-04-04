@@ -235,9 +235,10 @@ public class ModelViewState extends BaseAppState {
         result.setUserData("entityId", entity.getId().getId());
 
         SphereShape shape = ed.getComponent(entity.getId(), SphereShape.class);
-        if( shape != null ) {
+        if( shape != null ) {        
             // Add a debug shape for a sec
             float radius = (float)shape.getRadius();
+            rock.setLocalScale(radius / 3);
             
             Sphere sphere = new Sphere(3, 10, radius);
             Geometry geom = new Geometry("debug", sphere);            
@@ -247,7 +248,7 @@ public class ModelViewState extends BaseAppState {
             geom.setMaterial(mat);
             geom.rotate(FastMath.HALF_PI, 0, 0);
             geom.setQueueBucket(Bucket.Transparent);
-            geom.setCullHint(CullHint.Always);
+            //geom.setCullHint(CullHint.Always);
             result.attachChild(geom);
         }
         
