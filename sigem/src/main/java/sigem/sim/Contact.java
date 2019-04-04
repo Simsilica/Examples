@@ -49,6 +49,7 @@ public class Contact {
     public double pen;
     public Vec3d cp;
     public Vec3d cn;
+    public double energy;
     
     public Contact( Body b1, Body b2 ) {
         this.b1 = b1;

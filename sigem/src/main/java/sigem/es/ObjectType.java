@@ -46,7 +46,13 @@ import com.simsilica.es.EntityData;
  *  @author    Paul Speed
  */
 public class ObjectType implements EntityComponent {
-    
+
+    public static final String TYPE_SHIP = "ship";
+    public static final String TYPE_PLANET = "planet";
+    public static final String TYPE_ASTEROID = "asteroid";
+    public static final String TYPE_THRUST = "thrust";
+    public static final String TYPE_MISSILE = "missile";
+            
     private int type;
  
     protected ObjectType() {

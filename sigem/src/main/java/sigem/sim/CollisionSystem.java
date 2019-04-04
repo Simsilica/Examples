@@ -133,6 +133,7 @@ public class CollisionSystem extends AbstractGameSystem
                 // and one overtakes the other then the speeds will have the
                 // same signs... and we still need the difference.
                 double energy = Math.abs(speed2 - speed1);
+                contact.energy = energy;
 //log.info("speed1:" + speed1 + "  speed2:" + speed2 + "  energy:" + energy);
 
                 // We want the collisions to be elastic... if we only
@@ -171,16 +172,17 @@ public class CollisionSystem extends AbstractGameSystem
             z -= arenaSize.z;
         }
         double dist = Math.sqrt(x * x + z * z);
-        if( dist < b1.radius + b2.radius ) {
-            log.info("contact:" + b1.bodyId + " and:" + b2.bodyId);
-            Contact c = new Contact(b1, b2);
-            c.cn = b2.pos.subtract(b1.pos);
-            c.cn.y = 0; // just in case
-            c.cn.divideLocal(dist);
-            c.pen = dist - b1.radius - b2.radius;
-            return c;
-        }
-        return null; 
+        if( dist >= b1.radius + b2.radius ) {
+            return null;
+        } 
+        log.info("contact:" + b1.bodyId + " and:" + b2.bodyId);
+        Contact c = new Contact(b1, b2);
+        c.cn = b2.pos.subtract(b1.pos);
+        c.cn.y = 0; // just in case
+        c.cn.divideLocal(dist);
+        c.pen = dist - b1.radius - b2.radius;
+        
+        return c;
     }
 }
 

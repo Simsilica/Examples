@@ -318,18 +318,24 @@ public class ModelViewState extends BaseAppState {
         // Else figure out what type to create... 
         ObjectType type = entity.get(ObjectType.class);
         String typeName = type.getTypeName(ed);
-        if( typeName.equals("ship") ) {
-            result = createShip(entity);
-        } else if( typeName.equals("planet") ) {
-            result = createPlanet(entity);
-        } else if( typeName.equals("asteroid") ) {
-            result = createAsteroid(entity);
-        } else if( typeName.equals("thrust") ) {
-            result = createThrust(entity);        
-        } else if( typeName.equals("missile") ) {
-            result = createMissile(entity);        
-        } else {
-            throw new RuntimeException("Unknown spatial type:" + typeName); 
+        switch( typeName ) {
+            case ObjectType.TYPE_SHIP:
+                result = createShip(entity);
+                break;
+            case ObjectType.TYPE_PLANET:
+                result = createPlanet(entity);
+                break;
+            case ObjectType.TYPE_ASTEROID:
+                result = createAsteroid(entity);
+                break;
+            case ObjectType.TYPE_THRUST:
+                result = createThrust(entity);        
+                break;
+            case ObjectType.TYPE_MISSILE:
+                result = createMissile(entity);
+                break;
+            default:        
+                throw new RuntimeException("Unknown spatial type:" + typeName); 
         }
         
         // Add it to the index
