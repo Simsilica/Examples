@@ -104,6 +104,7 @@ public class GameSessionState extends CompositeAppState {
         systems.addSystem(new PlanetGravity());
         systems.register(CollisionSystem.class, new CollisionSystem());
         systems.register(AsteroidHitListener.class, new AsteroidHitListener());
+        systems.register(MissileHitListener.class, new MissileHitListener());
         systems.addSystem(new PositionPublisher());
         systems.addSystem(new ShipInputSystem());
         systems.addSystem(new ArenaBoundary(GameConstants.ARENA_EXTENTS));   

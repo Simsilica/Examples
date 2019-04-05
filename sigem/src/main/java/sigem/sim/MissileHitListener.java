@@ -36,6 +36,7 @@
 
 package sigem.sim;
 
+import java.util.Objects;
 import java.util.Random;
 
 import org.slf4j.*;
@@ -47,21 +48,21 @@ import com.simsilica.sim.*;
 import sigem.es.*;
 
 /**
- *  Checks for missile-asteroid hits or high energy asteroid
- *  hits and implements asteroid damage.
+ *  Checks for any missile hits to create the hit effect and destroy
+ *  the missile entity.  It's up to other listeners to deal with the damage.
  *
  *  @author    Paul Speed
  */
-public class AsteroidHitListener extends AbstractGameSystem  
+public class MissileHitListener extends AbstractGameSystem  
                                  implements ContactListener {
                                  
-    static Logger log = LoggerFactory.getLogger(AsteroidHitListener.class);
+    static Logger log = LoggerFactory.getLogger(MissileHitListener.class);
  
     private EntityData ed;
     private GameEntities gameEntities;
     private Random rand = new Random(0);
                                  
-    public AsteroidHitListener() {
+    public MissileHitListener() {
     }
 
     @Override
@@ -79,78 +80,37 @@ public class AsteroidHitListener extends AbstractGameSystem
 
     @Override
     public void newContact( Contact c ) {
+        
+        if( c.energy == 0 ) {
+            // An early listener already said this wasn't a real contact
+            return;
+        }
+    
         ObjectType type1 = ed.getComponent(c.b1.bodyId, ObjectType.class);
         ObjectType type2 = ed.getComponent(c.b2.bodyId, ObjectType.class);
         
+        // Entities may have already been removed
         String t1 = type1 == null ? null : type1.getTypeName(ed);
         String t2 = type2 == null ? null : type2.getTypeName(ed);  
-        
-        if( !ObjectType.TYPE_ASTEROID.equals(t1) && !ObjectType.TYPE_ASTEROID.equals(t2) ) {
-            // Neither side is an asteroid... nothing to do
+ 
+        if( Objects.equals(t1, t2) ) {
+            // Missiles or not, we don't care if they are the same... even
+            // missiles can pass each other by.
             return;
         }
-
-        // If either side is a chunk then we'll negate the energy
-        if( ObjectType.TYPE_ASTEROID_CHUNK.equals(t1) || ObjectType.TYPE_ASTEROID_CHUNK.equals(t2) ) {
-            c.energy = 0;
-            return;
-        } 
-        
-        log.info("contact:" + c + "  types:" + t1 + ", " + t2);        
         
         if( ObjectType.TYPE_MISSILE.equals(t1) ) {
             // Blow up b2
-            missileHit(c.b1, c.b2, c);
+            missileHit(c.b1, c);
         } else if( ObjectType.TYPE_MISSILE.equals(t2) ) {
             // Blow up b1
-            missileHit(c.b2, c.b1, c);
+            missileHit(c.b2, c);
         } 
         
     }
     
-    protected void missileHit( Body missile, Body asteroid, Contact contact ) {
-        EntityId shooter = ed.getComponent(missile.bodyId, CreatedBy.class).getCreatorId();
-        log.info("Shooter:" + shooter + "  name:" + ed.getComponent(shooter, Name.class));
- 
-        Vec3d debrisLoc = missile.pos;
-        
-        if( asteroid.radius > 1 ) {
-            // Need to break it up
-            
-            // Figure out which way the pieces go
-            Vec3d offset = contact.cn.cross(Vec3d.UNIT_Y);
-            offset.multLocal(1 + rand.nextDouble());
-            
-            double size = Math.max(1, asteroid.radius / 2);
- 
-            Vec3d loc1 = asteroid.pos.add(offset.mult(asteroid.radius * 0.5));
-            Vec3d loc2 = asteroid.pos.subtract(offset.mult(asteroid.radius * 0.5));
- 
-            EntityId ast1 = gameEntities.createAsteroid(loc1, offset.add(asteroid.velocity), 
-                                        new Vec3d(rand.nextDouble() + 1, rand.nextDouble(), 0),
-                                        size);
-            EntityId ast2 = gameEntities.createAsteroid(loc2, offset.subtract(asteroid.velocity), 
-                                        new Vec3d(rand.nextDouble() + 1, rand.nextDouble(), 0),
-                                        size);
-            
-        } else {
-            debrisLoc = asteroid.pos;
-        }
-
-        // Create some asteroid debris
-        int count = rand.nextInt((int)(3 * asteroid.radius)) + 3;
-        for( int i = 0; i < count; i++ ) {
-            double x = rand.nextDouble() * 2 - 1;
-            double z = rand.nextDouble() * 2 - 1;
-            Vec3d dir = new Vec3d(x, 0, z);
-            double size = 0.2 + rand.nextDouble() * 0.4;
-            
-            EntityId chunk = gameEntities.createAsteroidChunk(debrisLoc.add(dir), dir,
-                                        new Vec3d(rand.nextDouble() + 1, rand.nextDouble(), 0),
-                                        size);            
-        }     
- 
-        // And remove the old one       
-        ed.removeEntity(asteroid.bodyId);
+    protected void missileHit( Body missile, Contact contact ) {
+        ed.removeEntity(missile.bodyId);
+        gameEntities.createExplosion(missile.pos, 1);           
     }
 }
