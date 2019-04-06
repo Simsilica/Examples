@@ -54,6 +54,8 @@ public class ObjectType implements EntityComponent {
     public static final String TYPE_THRUST = "thrust";
     public static final String TYPE_MISSILE = "missile";
     public static final String TYPE_PLASMA_EXPLOSION = "plasmaExplosion";
+    public static final String TYPE_FUEL_DROP = "fuelDrop";
+    public static final String TYPE_SHIELD_DROP = "shieldDrop";
             
     private int type;
  

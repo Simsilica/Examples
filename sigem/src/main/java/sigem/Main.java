@@ -113,7 +113,7 @@ public class Main extends SimpleApplication {
     }
     
     public void simpleInitApp() {
-        
+
         setPauseOnLostFocus(false);
         setDisplayFps(false);
         setDisplayStatView(false);

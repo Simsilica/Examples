@@ -96,7 +96,7 @@ public class AsteroidHitListener extends AbstractGameSystem
             return;
         } 
         
-        log.info("contact:" + c + "  types:" + t1 + ", " + t2);        
+        //log.info("contact:" + c + "  types:" + t1 + ", " + t2);        
         
         if( ObjectType.TYPE_MISSILE.equals(t1) ) {
             // Blow up b2
@@ -149,6 +149,8 @@ public class AsteroidHitListener extends AbstractGameSystem
                                         new Vec3d(rand.nextDouble() + 1, rand.nextDouble(), 0),
                                         size);            
         }     
+ 
+        gameEntities.lootDrop(ObjectType.TYPE_ASTEROID, debrisLoc, 1/asteroid.radius);
  
         // And remove the old one       
         ed.removeEntity(asteroid.bodyId);

@@ -263,6 +263,7 @@ public class ModelViewState extends BaseAppState {
         //Material mat = globals.createMaterial(ColorRGBA.Blue, false).getMaterial();
         Material mat = globals.createMaterial(texture, false).getMaterial();
         mat.getAdditionalRenderState().setBlendMode(blendMode);
+        mat.setFloat("AlphaDiscardThreshold", 0.01f);
         geom.setQueueBucket(Bucket.Transparent);
         geom.rotate(-FastMath.HALF_PI, 0, 0);
         geom.setMaterial(mat);
@@ -321,14 +322,58 @@ public class ModelViewState extends BaseAppState {
         ColorRGBA color2 = new ColorRGBA(2, 1, 1, 0);
         mat.setColor("Color", color);
         
-        // Fade it out over five seconds.  We could have created a system to do
-        // this based on decay, blah blah... but this is really easy.
-        //getState(AnimationState.class).add(new ColorTween(color, ColorRGBA.White, new ColorRGBA(1, 1, 1, 0), 5));
         getState(AnimationState.class).add(new ColorTween(color, color1, color2, 2));
         
         result.attachChild(geom);
         
         return result;   
+    }
+    
+    protected Spatial createDrop( Entity entity, ColorRGBA color ) {
+        Node result = new Node("thrust");
+        Geometry geom;
+        Material mat;
+        ColorRGBA pupColor, base, start, end;
+        
+        geom = createQuad(10, "Textures/light-burst.png", BlendMode.AlphaAdditive);
+        geom.move(0, -0.01f, 0);
+        mat = geom.getMaterial();
+        LayerComparator.setLayer(geom, 1);
+        
+        pupColor = color.clone();
+        base = new ColorRGBA(0.25f, 1f, 1f, 1);        
+        pupColor.interpolateLocal(base, 0.5f);
+            
+        start = pupColor.clone();
+        start.a = 1;
+        end = pupColor.clone();
+        end.a = 0;                       
+        mat.setColor("Color", pupColor);
+        
+        getState(AnimationState.class).add(Tweens.delay(10), new ColorTween(pupColor, start, end, 5));
+        
+        result.attachChild(geom);
+
+        geom = createQuad(2, "Textures/power-up.png", BlendMode.Alpha);
+        geom.move(0, 0, 0);
+        mat = geom.getMaterial();
+        LayerComparator.setLayer(geom, 2);
+        
+        pupColor = color.clone();
+        base = new ColorRGBA(0.75f, 0.75f, 0.75f, 1);        
+        pupColor.interpolateLocal(base, 0.5f);
+            
+        start = pupColor.clone();
+        start.a = 1;
+        end = pupColor.clone();
+        end.a = 0;                       
+        mat.setColor("Color", pupColor);
+        
+        getState(AnimationState.class).add(Tweens.delay(10), new ColorTween(pupColor, start, end, 5));
+
+        result.attachChild(geom);
+        
+        return result;        
     }
 
     protected Spatial createModel( Entity entity ) {
@@ -360,6 +405,12 @@ public class ModelViewState extends BaseAppState {
                 break;
             case ObjectType.TYPE_PLASMA_EXPLOSION:
                 result = createPlasmaExplosion(entity);
+                break;
+            case ObjectType.TYPE_FUEL_DROP:
+                result = createDrop(entity, new ColorRGBA(1, 0.4f, 0.95f, 1));
+                break;
+            case ObjectType.TYPE_SHIELD_DROP:
+                result = createDrop(entity, new ColorRGBA(0.2f, 0.9f, 1f, 1));
                 break;
             default:        
                 throw new RuntimeException("Unknown spatial type:" + typeName); 

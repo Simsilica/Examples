@@ -199,7 +199,7 @@ public class CollisionSystem extends AbstractGameSystem
         if( dist >= b1.radius + b2.radius ) {
             return null;
         } 
-        log.info("contact:" + b1.bodyId + " and:" + b2.bodyId);
+        //log.info("contact:" + b1.bodyId + " and:" + b2.bodyId);
         Contact c = new Contact(b1, b2);
         c.cn = b2.pos.subtract(b1.pos);
         c.cn.y = 0; // just in case

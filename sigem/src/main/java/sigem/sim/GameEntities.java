@@ -36,6 +36,8 @@
 
 package sigem.sim;
 
+import java.util.*;
+
 import org.slf4j.*;
 
 import com.simsilica.es.*;
@@ -55,6 +57,7 @@ public class GameEntities extends AbstractGameSystem {
     static Logger log = LoggerFactory.getLogger(GameEntities.class);
 
     private EntityData ed;
+    private Random rand = new Random(0);
                                        
     public GameEntities( EntityData ed ) {
         this.ed = ed;
@@ -114,6 +117,43 @@ public class GameEntities extends AbstractGameSystem {
             new Decay(time.getTime(), time.getFutureTime(2))
             );
         return result;
+    }
+
+    private static String[] LOOT_TYPES = new String[] {
+            ObjectType.TYPE_FUEL_DROP,
+            ObjectType.TYPE_SHIELD_DROP
+        };    
+
+    public void lootDrop( String type, Vec3d location, double chance ) {
+        
+        // Always do it for testing
+        if( rand.nextDouble() >= chance ) {
+            return;
+        }
+
+        SimTime time = getManager().getStepTime();
+        
+        int count = rand.nextInt(2) + 1;
+log.info("loot count:" + count);        
+        for( int i = 0; i < count; i++ ) {
+            double x = rand.nextDouble() * 2 - 1;
+            double z = rand.nextDouble() * 2 - 1;
+            
+            Vec3d v = location.add(x, 0, z);
+            
+            String lootType = LOOT_TYPES[i];
+log.info("creating loot drop:" + lootType);            
+            EntityId loot = ed.createEntity();
+            ed.setComponents(loot,
+                new Position(v),
+                new SphereShape(0, new Vec3d()),
+                new MassProperties(1/5.0),
+                ObjectType.create(lootType, ed),
+                new Impulse(new Vec3d(x, 0, z), new Vec3d(0, 8, 0)),
+                new Decay(time.getTime(), time.getFutureTime(15))
+                ); 
+        }        
+            
     }
 }
 
