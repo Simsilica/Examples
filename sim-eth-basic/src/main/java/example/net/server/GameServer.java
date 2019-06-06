@@ -48,6 +48,7 @@ import com.jme3.network.service.rpc.RpcHostedService;
 
 import com.simsilica.ethereal.EtherealHost;
 import com.simsilica.ethereal.NetworkStateListener;
+import com.simsilica.ethereal.TimeSource;
 
 import com.simsilica.sim.GameLoop;
 import com.simsilica.sim.GameSystemManager;
@@ -100,6 +101,12 @@ public class GameServer {
         EtherealHost ethereal = new EtherealHost(GameConstants.OBJECT_PROTOCOL, 
                                                  GameConstants.ZONE_GRID,
                                                  GameConstants.ZONE_RADIUS);
+        ethereal.setTimeSource(new TimeSource() {
+            @Override
+            public long getTime() {
+                return systems.getStepTime().getUnlockedTime(System.nanoTime());
+            }
+        });
         server.getServices().addService(ethereal);
         
         // Add the various game services to the GameSystemManager 
