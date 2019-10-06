@@ -35,8 +35,8 @@ dependencies {
     compile "org.jmonkeyengine:jme3-lwjgl:$jmeVersion"
  
     // We definitely want a UI
-    compile "com.simsilica:lemur:1.9.1"
-    compile "com.simsilica:lemur-proto:1.8.1"
+    compile "com.simsilica:lemur:1.13.0"
+    compile "com.simsilica:lemur-proto:1.11.0"
 
     // And our base code for sim-etheral, SiO2, etc.
     // (many of these need to be built locally and 'gradle install'ed as of this writing)
@@ -55,4 +55,6 @@ dependencies {
 task wrapper(type: Wrapper) {
 }
 
-
+tasks.withType(JavaCompile) {
+    options.compilerArgs = ["-Xlint:unchecked", "-Xlint:deprecation"]
+}
