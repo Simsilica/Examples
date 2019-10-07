@@ -39,9 +39,6 @@ dependencies {
     compile("org.jmonkeyengine:jme3-networking:$jmeVersion") {
         force = true;
     }
-    compile "org.jmonkeyengine:jme3-plugins:$jmeVersion"
-    compile "org.jmonkeyengine:jme3-blender:$jmeVersion"
-    compile "org.jmonkeyengine:jme3-jogg:$jmeVersion"
  
     // We definitely want a UI
     compile "com.simsilica:lemur:1.13.0"
