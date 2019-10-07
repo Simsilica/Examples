@@ -10,7 +10,7 @@ repositories {
     jcenter()
 }
 
-ext.jmeVersion = "[3.1,)" 
+ext.jmeVersion = "[3.3,)" 
 
 project(":assets") {
     apply plugin: "java"
@@ -33,6 +33,13 @@ dependencies {
     compile "org.jmonkeyengine:jme3-core:$jmeVersion"
     compile "org.jmonkeyengine:jme3-desktop:$jmeVersion"
     compile "org.jmonkeyengine:jme3-lwjgl:$jmeVersion"
+    //Had to add this to get networking to update. Might be gradle bug from this version.
+    compile("org.jmonkeyengine:jme3-networking:$jmeVersion") {
+        force = true;
+    }
+    compile "org.jmonkeyengine:jme3-plugins:$jmeVersion"
+    compile "org.jmonkeyengine:jme3-blender:$jmeVersion"
+    compile "org.jmonkeyengine:jme3-jogg:$jmeVersion"     
  
     // We definitely want a UI
     compile "com.simsilica:lemur:1.13.0"
@@ -56,5 +63,5 @@ task wrapper(type: Wrapper) {
 }
 
 tasks.withType(JavaCompile) {
-    options.compilerArgs = ["-Xlint:unchecked", "-Xlint:deprecation"]
+    options.compilerArgs = ["-Xlint:deprecation"]
 }
