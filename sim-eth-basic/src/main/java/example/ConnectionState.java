@@ -45,7 +45,6 @@ import com.google.common.base.Strings;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.AppState;
-import com.jme3.app.state.BaseAppState;
 import com.jme3.network.Client;
 import com.jme3.network.ClientStateListener;
 import com.jme3.network.ClientStateListener.DisconnectInfo;

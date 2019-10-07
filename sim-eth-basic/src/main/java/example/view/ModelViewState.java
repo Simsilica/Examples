@@ -45,7 +45,6 @@ import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
 import com.jme3.asset.AssetManager;
 import com.jme3.math.*;
-import com.jme3.renderer.Camera;
 import com.jme3.material.Material;
 import com.jme3.renderer.Camera;
 import com.jme3.scene.*;
@@ -58,9 +57,8 @@ import com.simsilica.lemur.style.ElementId;
 import com.simsilica.ethereal.EtherealClient;
 import com.simsilica.ethereal.SharedObject;
 import com.simsilica.ethereal.SharedObjectListener;
-import com.simsilica.ethereal.TimeSource; 
 
-import com.simsilica.mathd.trans.PositionTransition;
+import com.simsilica.mathd.trans.PositionTransition3f;
 import com.simsilica.mathd.trans.TransitionBuffer;
 
 import example.ConnectionState;
@@ -272,7 +270,7 @@ public class ModelViewState extends BaseAppState {
         volatile Vector3f updatePos;
         volatile Quaternion updateRot;
         
-        TransitionBuffer<PositionTransition> buffer;
+        TransitionBuffer<PositionTransition3f> buffer;
         
         public ObjectInfo( int shipId ) {
             this.shipId = shipId;
@@ -342,7 +340,7 @@ public class ModelViewState extends BaseAppState {
             // pull an interpolated value.  To do this, we grab the
             // span of time that contains the time we want.  PositionTransition
             // represents a starting and an ending pos+rot over a span of time.
-            PositionTransition trans = buffer.getTransition(time);
+            PositionTransition3f trans = buffer.getTransition(time);
             if( trans != null ) {
                 spatial.setLocalTranslation(trans.getPosition(time, true));
                 spatial.setLocalRotation(trans.getRotation(time, true));
@@ -353,11 +351,11 @@ public class ModelViewState extends BaseAppState {
         }
                 
         public void addFrame( long endTime, Vector3f pos, Quaternion quat, boolean visible ) {
-            PositionTransition trans = new PositionTransition(endTime, pos, quat, visible);
+            PositionTransition3f trans = new PositionTransition3f(endTime, pos, quat, visible);
             buffer.addTransition(trans);
         }        
  
-        public PositionTransition getFrame( long time ) {
+        public PositionTransition3f getFrame( long time ) {
             return buffer.getTransition(time);        
         }
         
