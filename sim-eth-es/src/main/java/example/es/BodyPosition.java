@@ -40,7 +40,7 @@ import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.simsilica.es.EntityComponent;
 import com.simsilica.es.EntityId;
-import com.simsilica.mathd.trans.PositionTransition;
+import com.simsilica.mathd.trans.PositionTransition3f;
 import com.simsilica.mathd.trans.TransitionBuffer;
 
 
@@ -55,14 +55,14 @@ import com.simsilica.mathd.trans.TransitionBuffer;
  */
 public final class BodyPosition implements EntityComponent {
     private transient int size;
-    private transient TransitionBuffer<PositionTransition> position;
+    private transient TransitionBuffer<PositionTransition3f> position;
 
     public BodyPosition() {
     }
     
     public BodyPosition( int history ) {
         this.size = (byte)history;
-        this.position = PositionTransition.createBuffer(history);    
+        this.position = PositionTransition3f.createBuffer(history);    
     }
  
     /**
@@ -77,16 +77,16 @@ public final class BodyPosition implements EntityComponent {
         }
     }
     
-    public TransitionBuffer<PositionTransition> getBuffer() {
+    public TransitionBuffer<PositionTransition3f> getBuffer() {
         return position;
     }
  
     public void addFrame( long endTime, Vector3f pos, Quaternion quat, boolean visible ) {
-        PositionTransition trans = new PositionTransition(endTime, pos, quat, visible);
+        PositionTransition3f trans = new PositionTransition3f(endTime, pos, quat, visible);
         getBuffer().addTransition(trans);
     }        
  
-    public PositionTransition getFrame( long time ) {
+    public PositionTransition3f getFrame( long time ) {
         return getBuffer().getTransition(time);        
     }
     
