@@ -36,41 +36,29 @@
 
 package example.view;
 
-import java.util.*;
-import java.util.concurrent.*;
 
 import org.slf4j.*;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
-import com.jme3.asset.AssetManager;
 import com.jme3.math.*;
 import com.jme3.renderer.Camera;
-import com.jme3.material.Material;
-import com.jme3.renderer.Camera;
 import com.jme3.scene.*;
-import com.jme3.texture.Texture;
-import com.jme3.util.SafeArrayList;
 
 import com.simsilica.lemur.*;
 import com.simsilica.lemur.style.ElementId;
 
-import com.simsilica.ethereal.EtherealClient;
-import com.simsilica.ethereal.SharedObject;
-import com.simsilica.ethereal.SharedObjectListener;
 import com.simsilica.ethereal.TimeSource; 
 
 import com.simsilica.es.*;
 
-import com.simsilica.mathd.trans.PositionTransition;
+import com.simsilica.mathd.trans.PositionTransition3f;
 import com.simsilica.mathd.trans.TransitionBuffer;
 
 import example.ConnectionState;
 import example.GameSessionState;
 import example.Main;
 import example.es.BodyPosition;
-import example.net.GameSessionListener;
-import example.net.client.GameSessionClientService;
 
 /**
  *  Displays a HUD label for any entity with a BodyPosition and a Name.
@@ -160,7 +148,7 @@ public class HudLabelState extends BaseAppState {
         boolean visible;
         boolean isPlayerEntity;        
         
-        TransitionBuffer<PositionTransition> buffer;
+        TransitionBuffer<PositionTransition3f> buffer;
         
         public LabelHolder( Entity entity ) {
             this.entity = entity;
@@ -216,7 +204,7 @@ public class HudLabelState extends BaseAppState {
             // pull an interpolated value.  To do this, we grab the
             // span of time that contains the time we want.  PositionTransition
             // represents a starting and an ending pos+rot over a span of time.
-            PositionTransition trans = buffer.getTransition(time);
+            PositionTransition3f trans = buffer.getTransition(time);
             if( trans != null ) {
                 Vector3f pos = trans.getPosition(time, true);
                 setVisible(trans.getVisibility(time));                

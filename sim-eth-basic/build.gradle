@@ -10,7 +10,7 @@ repositories {
     jcenter()
 }
 
-ext.jmeVersion = "3.2.1-stable" 
+ext.jmeVersion = "[3.3,)" 
 
 project(":assets") {
     apply plugin: "java"
@@ -33,16 +33,20 @@ dependencies {
     compile "org.jmonkeyengine:jme3-core:$jmeVersion"
     compile "org.jmonkeyengine:jme3-desktop:$jmeVersion"
     compile "org.jmonkeyengine:jme3-lwjgl:$jmeVersion"
+    //Had to add this to get networking to update. Might be gradle bug from this version.
+    compile("org.jmonkeyengine:jme3-networking:$jmeVersion") {
+        force = true;
+    } 
  
     // We definitely want a UI
-    compile "com.simsilica:lemur:1.11.0"
-    compile "com.simsilica:lemur-proto:1.10.0"
+    compile "com.simsilica:lemur:1.13.0"
+    compile "com.simsilica:lemur-proto:1.11.0"
 
     // And our base code for sim-etheral, SiO2, etc.
     // (many of these need to be built locally and 'gradle install'ed as of this writing)
-    compile "com.simsilica:sio2:1.2.0"
-    compile "com.simsilica:sim-math:1.2.0"
-    compile "com.simsilica:sim-ethereal:1.3.0"
+    compile "com.simsilica:sio2:[1.0,)"
+    compile "com.simsilica:sim-math:[1.0,)"
+    compile "com.simsilica:sim-ethereal:[1.0,)"  
 
     // Standard utility stuff
     compile 'com.google.guava:guava:19.0'
@@ -90,4 +94,8 @@ distributions {
 // Either way we end up with dupes if we don't do this
 distZip {
     duplicatesStrategy = 'exclude'
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs = ["-Xlint:deprecation"]
 }

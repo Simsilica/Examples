@@ -10,7 +10,7 @@ repositories {
     jcenter()
 }
 
-ext.jmeVersion = "[3.1,)" 
+ext.jmeVersion = "[3.3,)" 
 
 project(":assets") {
     apply plugin: "java"
@@ -33,10 +33,14 @@ dependencies {
     compile "org.jmonkeyengine:jme3-core:$jmeVersion"
     compile "org.jmonkeyengine:jme3-desktop:$jmeVersion"
     compile "org.jmonkeyengine:jme3-lwjgl:$jmeVersion"
+    //Had to add this to get networking to update. Might be gradle bug from this version.
+    compile("org.jmonkeyengine:jme3-networking:$jmeVersion") {
+        force = true;
+    }    
  
     // We definitely want a UI
-    compile "com.simsilica:lemur:1.9.1"
-    compile "com.simsilica:lemur-proto:1.8.1"
+    compile "com.simsilica:lemur:1.13.0"
+    compile "com.simsilica:lemur-proto:1.11.0"
 
     // And our base code for sim-etheral, SiO2, etc.
     // (many of these need to be built locally and 'gradle install'ed as of this writing)
@@ -55,4 +59,6 @@ dependencies {
 task wrapper(type: Wrapper) {
 }
 
-
+tasks.withType(JavaCompile) {
+    options.compilerArgs = ["-Xlint:deprecation"]
+}

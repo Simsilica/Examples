@@ -43,8 +43,6 @@ import org.slf4j.*;
 import com.jme3.network.HostedConnection;
 import com.jme3.network.Network;
 import com.jme3.network.Server;
-import com.jme3.network.service.AbstractHostedService;
-import com.jme3.network.service.HostedServiceManager;
 import com.jme3.network.service.rmi.RmiHostedService;
 import com.jme3.network.service.rpc.RpcHostedService;
 
@@ -89,13 +87,7 @@ public class GameServer {
         
         // Create a separate channel to do chat stuff so it doesn't interfere
         // with any real game stuff.
-        server.addChannel(port + 1);
-
-        // Adding a delay for the connectionAdded right after the serializer registration
-        // service gets to run let's the client get a small break in the buffer that should
-        // generally prevent the RpcCall messages from coming too quickly and getting processed
-        // before the SerializerRegistrationMessage has had a chance to process.
-        server.getServices().addService(new DelayService());        
+        server.addChannel(port + 1);       
         
         server.getServices().addServices(new RpcHostedService(),
                                          new RmiHostedService(),
@@ -250,41 +242,5 @@ public class GameServer {
         
         gs.close();
     }
-    
-    // Just for debugging something
-    private class DelayService extends AbstractHostedService {
-
-        private void safeSleep( long ms ) {
-            try {
-                Thread.sleep(ms);
-            } catch( InterruptedException e ) {
-                throw new RuntimeException("Checked exceptions are lame", e);
-            }
-        }
-
-        @Override
-        protected void onInitialize( HostedServiceManager serviceManager ) {
-            System.out.println("DelayService.onInitialize()");
-            //safeSleep(2000);
-            //System.out.println("DelayService.delay done");
-        }
-        
-        @Override
-        public void start() {
-            System.out.println("DelayService.start()");
-            //safeSleep(2000);
-            //System.out.println("DelayService.delay done");
-        }
-                
-        @Override
-        public void connectionAdded(Server server, HostedConnection hc) {
-            // Just in case
-            super.connectionAdded(server, hc);
-            System.out.println("DelayService.connectionAdded(" + hc + ")");
-            safeSleep(500);
-            System.out.println("DelayService.delay done");
-        }
-    } 
+ 
 }
-
-

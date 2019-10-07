@@ -37,15 +37,13 @@
 package example.es;
 
 import com.simsilica.es.EntityId;
-import com.simsilica.mathd.trans.PositionTransition;
+import com.simsilica.mathd.trans.PositionTransition3f;
 import com.simsilica.mathd.trans.TransitionBuffer;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  *  BodyPosition components hold a buffer that should be shared
@@ -65,7 +63,7 @@ public class BodyPositionCache {
      *  Keeps track of the weak references that are ready to remove
      *  from our map.
      */
-    private ReferenceQueue<TransitionBuffer<PositionTransition>> refs = new ReferenceQueue<>();
+    private ReferenceQueue<TransitionBuffer<PositionTransition3f>> refs = new ReferenceQueue<>();
  
     /**
      *  A map with weakly referenced values.  We'll clean out the values
@@ -73,20 +71,20 @@ public class BodyPositionCache {
      *  is that garbage hanging around is less bad if no one is requesting
      *  it anyway.
      */
-    private Map<EntityId, WeakReference<TransitionBuffer<PositionTransition>>> map = new HashMap<>();
+    private Map<EntityId, WeakReference<TransitionBuffer<PositionTransition3f>>> map = new HashMap<>();
  
     
-    public static TransitionBuffer<PositionTransition> getBuffer( EntityId id, int size ) {
+    public static TransitionBuffer<PositionTransition3f> getBuffer( EntityId id, int size ) {
         return instance.get(id, size);
     }
  
-    protected synchronized TransitionBuffer<PositionTransition> get( EntityId id, int size ) {
+    protected synchronized TransitionBuffer<PositionTransition3f> get( EntityId id, int size ) {
     
         // See if we've already got one
-        WeakReference<TransitionBuffer<PositionTransition>> result = map.get(id);
+        WeakReference<TransitionBuffer<PositionTransition3f>> result = map.get(id);
         if( result == null || result.get() == null ) {
             // Need to create a new one
-            TransitionBuffer<PositionTransition> buffer = PositionTransition.createBuffer(size);
+            TransitionBuffer<PositionTransition3f> buffer = PositionTransition3f.createBuffer(size);
             result = new WeakReference<>(buffer);
             map.put(id, result);    
         }
