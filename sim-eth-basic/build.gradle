@@ -13,7 +13,9 @@ repositories {
 ext.jmeVersion = "[3.3,)" 
 
 project(":sim-eth-basic-assets") {
-    apply plugin: "java"
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
     
     buildDir = rootProject.file("build/assets")
     

@@ -4,6 +4,13 @@
 /*/.gradle/
 /*/build/
 
+# JME Downloaded Stuff
+/*/*.dll
+
+# Ignore Log files
+/*/*.log
+/*/logs
+
 # Ignore Eclipse stuff
 .project
 .classpath

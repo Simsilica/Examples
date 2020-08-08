@@ -12,7 +12,9 @@ repositories {
 
 ext.jmeVersion = "3.3.0-stable" 
 project(":sigem-assets") {
-    apply plugin: "java"
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
     
     buildDir = rootProject.file("build/assets")
     

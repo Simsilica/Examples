@@ -13,7 +13,9 @@ repositories {
 ext.jmeVersion = "[3.2,)" 
 
 project(":base-sio2-assets") {
-    apply plugin: "java"
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
     
     buildDir = rootProject.file("build/assets")
     
