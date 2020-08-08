@@ -39,7 +39,6 @@ package example.net;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.network.service.rmi.Asynchronous;
-
 import com.simsilica.es.EntityId;
 
 /**

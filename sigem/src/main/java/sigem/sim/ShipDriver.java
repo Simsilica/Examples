@@ -36,13 +36,12 @@
 
 package sigem.sim;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.jme3.math.*;
+import com.simsilica.mathd.Vec3d;
 
-import com.simsilica.mathd.*;
-
-import sigem.es.*;
+import sigem.es.ShipInput;
 
 /**
  *  Applies thrust values to a ship.
@@ -92,6 +91,7 @@ public class ShipDriver implements ControlDriver {
  
         // Grab local versions of the player settings in case another
         // thread sets them while we are calculating.
+        @SuppressWarnings("unused")
         Vec3d vec = thrust;
  
         // Add a threshold to thrust to make it easier to turn with the
@@ -106,7 +106,7 @@ public class ShipDriver implements ControlDriver {
  
             // We want to apply our acceleration to reach the target 
             // velocity... unless that acceleration would actually slow
-            // us down (ie: we're heading towards a gravity well)
+            // us down (i.e. we're heading towards a gravity well)
             // So we can't just subtract the tips of targetVel and velocity
             // and use that as acceleration.  It might slow us down.
             // But we _do_ want to apply any lateral acceleration.

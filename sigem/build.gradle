@@ -7,20 +7,14 @@ mainClassName='sigem.Main'
 
 repositories {
     mavenLocal()
-
-    if( JavaVersion.current() == JavaVersion.VERSION_1_7 ) {
-        // Fallback for JDK 7 that can no longer connect to jcenter with https
-        maven { url "http://jcenter.bintray.com" }
-    } else {
-        jcenter()
-    }
+    jcenter()
 }
 
-//ext.jmeVersion = "[3.2,)" 
-ext.jmeVersion = "3.3.0-SNAPSHOT" 
-
-project(":assets") {
-    apply plugin: "java"
+ext.jmeVersion = "3.3.0-stable" 
+project(":sigem-assets") {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
     
     buildDir = rootProject.file("build/assets")
     
@@ -54,9 +48,9 @@ dependencies {
     runtime 'org.apache.logging.log4j:log4j-slf4j-impl:2.5'
  
     
-    runtime project(':assets')    
+    runtime project(':sigem-assets')    
 }
 
-task wrapper(type: Wrapper) {
+tasks.withType(JavaCompile) {
+    options.compilerArgs = ["-Xlint:deprecation", "-Xlint:unchecked"]
 }
-

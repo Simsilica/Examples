@@ -38,7 +38,7 @@ package example;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.LogManager;
+
 import org.slf4j.bridge.SLF4JBridgeHandler;
 
 /**

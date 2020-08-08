@@ -54,6 +54,7 @@ import com.simsilica.mathd.trans.TransitionBuffer;
  *  @author    Paul Speed
  */
 public final class BodyPosition implements EntityComponent {
+    @SuppressWarnings("unused")
     private transient int size;
     private transient TransitionBuffer<PositionTransition3f> position;
 

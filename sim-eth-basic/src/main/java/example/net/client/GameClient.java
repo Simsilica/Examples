@@ -38,14 +38,14 @@ package example.net.client;
 
 import java.io.IOException;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.network.Client;
 import com.jme3.network.Network;
 import com.jme3.network.service.ClientService;
-import com.jme3.network.service.rpc.RpcClientService;
 import com.jme3.network.service.rmi.RmiClientService;
-
+import com.jme3.network.service.rpc.RpcClientService;
 import com.simsilica.ethereal.EtherealClient;
 import com.simsilica.ethereal.TimeSource;
 

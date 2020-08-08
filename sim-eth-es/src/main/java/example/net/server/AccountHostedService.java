@@ -36,22 +36,19 @@
 
 package example.net.server;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.network.HostedConnection;
-import com.jme3.network.MessageConnection;
-import com.jme3.network.Server;
 import com.jme3.network.service.AbstractHostedConnectionService;
 import com.jme3.network.service.HostedServiceManager;
 import com.jme3.network.service.rmi.RmiHostedService;
 import com.jme3.network.service.rmi.RmiRegistry;
-
-import com.simsilica.event.EventBus;
-
 import com.simsilica.es.EntityData;
 import com.simsilica.es.EntityId;
 import com.simsilica.es.Name;
 import com.simsilica.es.server.EntityDataHostedService;
+import com.simsilica.event.EventBus;
 
 import example.net.AccountSession;
 import example.net.AccountSessionListener;

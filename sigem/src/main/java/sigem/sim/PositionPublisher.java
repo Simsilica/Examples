@@ -36,9 +36,9 @@
 
 package sigem.sim;
 
-import com.simsilica.es.*;
-import com.simsilica.mathd.*;
-import com.simsilica.sim.*;
+import com.simsilica.es.EntityData;
+import com.simsilica.sim.AbstractGameSystem;
+import com.simsilica.sim.SimTime;
 
 import sigem.es.Position;
 
@@ -52,6 +52,7 @@ public class PositionPublisher extends AbstractGameSystem
                                implements PhysicsListener {
  
     private EntityData ed;
+    @SuppressWarnings("unused")
     private SimTime time;
     
     public PositionPublisher() { 

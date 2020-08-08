@@ -42,8 +42,6 @@ import com.jme3.network.Network;
 import com.jme3.network.Server;
 import com.jme3.network.serializing.Serializer;
 import com.jme3.network.serializing.serializers.FieldSerializer;
-
-import com.simsilica.es.EntityData;
 import com.simsilica.es.Name;
 import com.simsilica.es.base.DefaultEntityData;
 import com.simsilica.es.server.EntityDataHostedService;

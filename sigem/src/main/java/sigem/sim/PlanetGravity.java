@@ -36,10 +36,12 @@
 
 package sigem.sim;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.simsilica.mathd.*;
-import com.simsilica.sim.*;
+import com.simsilica.mathd.Vec3d;
+import com.simsilica.sim.AbstractGameSystem;
+import com.simsilica.sim.SimTime;
 
 /**
  *  Cheating a little... we'll use a physics listener to add 

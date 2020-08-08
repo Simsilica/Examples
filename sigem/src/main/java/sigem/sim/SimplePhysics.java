@@ -36,15 +36,22 @@
 
 package sigem.sim;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import com.jme3.util.SafeArrayList;
+import com.simsilica.es.Entity;
+import com.simsilica.es.EntityContainer;
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
+import com.simsilica.sim.AbstractGameSystem;
+import com.simsilica.sim.SimTime;
 
-import com.simsilica.es.*;
-import com.simsilica.sim.*;
-
-import sigem.es.*;
+import sigem.es.Impulse;
+import sigem.es.MassProperties;
+import sigem.es.Position;
+import sigem.es.SphereShape;
 
 /**
  *  Just a basic physics simulation that integrates acceleration, 
@@ -233,7 +240,7 @@ public class SimplePhysics extends AbstractGameSystem {
      *  Maps the appropriate entities to physics bodies.
      */
     private class BodyContainer extends EntityContainer<Body> {
- 
+        @SuppressWarnings("unchecked")
         public BodyContainer( EntityData ed ) {
             super(ed, Position.class, MassProperties.class, SphereShape.class);
         }

@@ -37,8 +37,7 @@
 package sigem.sim;
 
 import com.google.common.base.MoreObjects;
-
-import com.simsilica.mathd.*;
+import com.simsilica.mathd.Vec3d;
 
 /**
  *

@@ -36,7 +36,8 @@
 
 package example.view;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
@@ -45,7 +46,6 @@ import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.Camera;
 import com.jme3.scene.Spatial;
-
 import com.simsilica.lemur.GuiGlobals;
 import com.simsilica.lemur.core.VersionedHolder;
 import com.simsilica.lemur.input.AnalogFunctionListener;
@@ -53,11 +53,9 @@ import com.simsilica.lemur.input.FunctionId;
 import com.simsilica.lemur.input.InputMapper;
 import com.simsilica.lemur.input.InputState;
 import com.simsilica.lemur.input.StateFunctionListener;
-
 import com.simsilica.state.DebugHudState;
 
 import example.ConnectionState;
-import example.GameSessionState;
 import example.net.GameSession;
 import example.net.client.GameSessionClientService;
 

@@ -36,14 +36,16 @@
 
 package example.net.client;
 
-import org.slf4j.*;
+import java.io.IOException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.network.Client;
 import com.jme3.network.Network;
 import com.jme3.network.service.ClientService;
-import com.jme3.network.service.rpc.RpcClientService;
 import com.jme3.network.service.rmi.RmiClientService;
-import java.io.IOException;
+import com.jme3.network.service.rpc.RpcClientService;
 
 import example.GameConstants;
 

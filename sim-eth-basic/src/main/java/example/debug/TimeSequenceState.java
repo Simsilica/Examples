@@ -53,7 +53,10 @@ import com.jme3.scene.VertexBuffer;
 import com.jme3.scene.VertexBuffer.Type;
 import com.jme3.scene.shape.Line;
 import com.jme3.util.BufferUtils;
-
+import com.simsilica.ethereal.Statistics;
+import com.simsilica.ethereal.Statistics.Sequence;
+import com.simsilica.ethereal.Statistics.Tracker;
+import com.simsilica.ethereal.SynchedTimeSource;
 import com.simsilica.lemur.GuiGlobals;
 import com.simsilica.lemur.Label;
 import com.simsilica.lemur.input.InputMapper;
@@ -61,11 +64,6 @@ import com.simsilica.lemur.input.InputMapper;
 import example.Main;
 import example.MainGameFunctions;
 import example.TimeState;
-
-import com.simsilica.ethereal.Statistics;
-import com.simsilica.ethereal.Statistics.Sequence;
-import com.simsilica.ethereal.Statistics.Tracker;
-import com.simsilica.ethereal.SynchedTimeSource;
 
 
 
@@ -281,6 +279,7 @@ public class TimeSequenceState extends BaseAppState {
         private Material mat;
         private Label label;
         
+        @SuppressWarnings("unused")
         public SequenceEntry( String name, ColorRGBA color ) {
             this(name, color, 12);
         }
@@ -386,7 +385,8 @@ public class TimeSequenceState extends BaseAppState {
         
         private Mesh mesh;
 
-        public Graph( ColorRGBA color ) {
+        @SuppressWarnings("unused")
+		public Graph( ColorRGBA color ) {
             this(color, 1280);
         }
                 
@@ -419,6 +419,7 @@ public class TimeSequenceState extends BaseAppState {
             }       
         }
     
+        @SuppressWarnings("unused")
         public int getFrameCount() {
             return size;
         }
@@ -427,10 +428,12 @@ public class TimeSequenceState extends BaseAppState {
          *  Sets the number of nanoseconds to wait before updating the
          *  mesh.  By default this is once a millisecond, ie: 1000000 nanoseconds.
          */
+        @SuppressWarnings("unused")
         public void setUpdateInterval( long nanos ) {
             this.updateInterval = nanos;
         }
     
+        @SuppressWarnings("unused")
         public long getUpdateInterval() {
             return updateInterval;
         }
@@ -439,6 +442,7 @@ public class TimeSequenceState extends BaseAppState {
          *  Returns the mesh that contains the bar chart of tracked frame
          *  timings.
          */
+        @SuppressWarnings("unused")
         public Mesh getMesh() {
             return mesh;
         }

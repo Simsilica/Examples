@@ -39,7 +39,8 @@ package example.net.chat.client;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.network.MessageConnection;
 import com.jme3.network.service.AbstractClientService;
@@ -63,6 +64,7 @@ public class ChatClientService extends AbstractClientService
     private int channel;
     private ChatSession delegate;
     
+    @SuppressWarnings("unused")
     private String playerName;
 
     private ChatSessionCallback sessionCallback = new ChatSessionCallback();

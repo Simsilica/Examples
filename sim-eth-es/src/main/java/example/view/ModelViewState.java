@@ -36,23 +36,29 @@
 
 package example.view;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
 import com.jme3.asset.AssetManager;
-import com.jme3.math.*;
 import com.jme3.material.Material;
-import com.jme3.scene.*;
-import com.jme3.scene.shape.*;
+import com.jme3.math.ColorRGBA;
+import com.jme3.math.FastMath;
+import com.jme3.math.Vector2f;
+import com.jme3.scene.Geometry;
+import com.jme3.scene.Node;
+import com.jme3.scene.Spatial;
+import com.jme3.scene.shape.Sphere;
 import com.jme3.texture.Texture;
-
-import com.simsilica.lemur.*;
-
-import com.simsilica.es.*;
-
+import com.simsilica.es.Entity;
+import com.simsilica.es.EntityContainer;
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
+import com.simsilica.lemur.GuiGlobals;
 import com.simsilica.mathd.trans.PositionTransition3f;
 import com.simsilica.mathd.trans.TransitionBuffer;
 
@@ -60,7 +66,11 @@ import example.ConnectionState;
 import example.GameSessionState;
 import example.Main;
 import example.TimeState;
-import example.es.*;
+import example.es.BodyPosition;
+import example.es.ObjectType;
+import example.es.ObjectTypes;
+import example.es.Position;
+import example.es.SphereShape;
 
 /**
  *  Displays the models for the various physics objects.
@@ -313,6 +323,7 @@ public class ModelViewState extends BaseAppState {
     }
     
     private class MobContainer extends EntityContainer<Mob> {
+        @SuppressWarnings("unchecked")
         public MobContainer( EntityData ed ) {
             super(ed, ObjectType.class, BodyPosition.class);
         }
@@ -345,6 +356,7 @@ System.out.println("MobContainer.addObject(" + e + ")");
      *  MobContainer takes precedence.
      */
     private class ModelContainer extends EntityContainer<Spatial> {
+        @SuppressWarnings("unchecked")
         public ModelContainer( EntityData ed ) {
             super(ed, ObjectType.class, Position.class);
         }

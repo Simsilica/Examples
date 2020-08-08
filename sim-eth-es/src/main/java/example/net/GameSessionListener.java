@@ -36,9 +36,6 @@
 
 package example.net;
 
-import com.jme3.math.*;
-import com.jme3.network.service.rmi.Asynchronous;
-
 /**
  *  The asynchronous callbacks that the game back-end uses to
  *  send game-session information to the player.

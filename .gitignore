@@ -1,0 +1,22 @@
+# Ignore Gradle stuff
+/.gradle/
+/bulid/
+/*/.gradle/
+/*/build/
+
+# JME Downloaded Stuff
+/*/*.dll
+
+# Ignore Log files
+/*/*.log
+/*/logs
+
+# Ignore Eclipse stuff
+.project
+.classpath
+.settings/
+bin/
+/*/.project
+/*/.classpath
+/*/.settings/
+/*/bin/

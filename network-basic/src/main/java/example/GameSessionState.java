@@ -38,7 +38,6 @@ package example;
 
 import com.jme3.app.Application;
 import com.jme3.math.ColorRGBA;
-
 import com.simsilica.event.EventBus;
 import com.simsilica.lemur.GuiGlobals;
 import com.simsilica.lemur.input.InputMapper;

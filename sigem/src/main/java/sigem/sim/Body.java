@@ -36,12 +36,11 @@
 
 package sigem.sim;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 import com.google.common.base.MoreObjects;
-
 import com.simsilica.es.EntityId;
-import com.simsilica.mathd.*;
+import com.simsilica.mathd.AaBBox;
+import com.simsilica.mathd.Quatd;
+import com.simsilica.mathd.Vec3d;
 
 import sigem.es.Position;
 

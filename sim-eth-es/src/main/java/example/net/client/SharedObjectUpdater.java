@@ -36,20 +36,21 @@
 
 package example.net.client;
 
-import java.util.*;
+import java.util.Set;
 
-import com.jme3.math.Vector3f;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.jme3.network.service.AbstractClientService;
 import com.jme3.network.service.ClientServiceManager;
-
-import com.simsilica.es.*;
+import com.simsilica.es.Entity;
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
+import com.simsilica.es.EntitySet;
 import com.simsilica.es.client.EntityDataClientService;
-
 import com.simsilica.ethereal.EtherealClient;
 import com.simsilica.ethereal.SharedObject;
 import com.simsilica.ethereal.SharedObjectListener;
-
-import org.slf4j.*;
 
 import example.es.BodyPosition;
 

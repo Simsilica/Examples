@@ -1,1 +1,3 @@
-include 'assets'
+rootProject.name = 'base-sio2'
+include ':base-sio2-assets'
+project(":base-sio2-assets").projectDir = file("assets")

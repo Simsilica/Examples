@@ -36,37 +36,45 @@
 
 package example.net.server;
 
-import java.io.*; 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.network.HostedConnection;
 import com.jme3.network.Network;
-import com.jme3.network.Server;                                      
+import com.jme3.network.Server;
 import com.jme3.network.serializing.Serializer;
 import com.jme3.network.serializing.serializers.FieldSerializer;
 import com.jme3.network.service.rmi.RmiHostedService;
 import com.jme3.network.service.rpc.RpcHostedService;
-
-// To test something
-
-import com.simsilica.ethereal.EtherealHost;
-import com.simsilica.ethereal.NetworkStateListener;
-
 import com.simsilica.es.EntityData;
 import com.simsilica.es.Name;
 import com.simsilica.es.base.DefaultEntityData;
 import com.simsilica.es.server.EntityDataHostedService;
 import com.simsilica.es.server.EntityUpdater; // from SiO2
-import com.simsilica.ethereal.TimeSource;
 
+// To test something
+
+import com.simsilica.ethereal.EtherealHost;
+import com.simsilica.ethereal.NetworkStateListener;
+import com.simsilica.ethereal.TimeSource;
 import com.simsilica.sim.GameLoop;
 import com.simsilica.sim.GameSystemManager;
 
 import example.GameConstants;
+import example.es.BodyPosition;
+import example.es.ObjectType;
+import example.es.Position;
+import example.es.SphereShape;
 import example.net.chat.server.ChatHostedService;
-import example.es.*;
-import example.sim.*;
+import example.sim.BasicEnvironment;
+import example.sim.BodyPositionPublisher;
+import example.sim.SimplePhysics;
 
 /**
  *  The main GameServer that manages the back end game services, hosts
@@ -82,6 +90,7 @@ public class GameServer {
     private GameSystemManager systems;
     private GameLoop loop;
     
+    @SuppressWarnings("unused")
     private String description;
     
     public GameServer( int port, String description ) throws IOException {

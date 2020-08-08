@@ -37,7 +37,7 @@
 package sigem.es;
 
 import com.simsilica.es.EntityComponent;
-import com.simsilica.mathd.*;
+import com.simsilica.mathd.Vec3d;
 
 /**
  *  The current control input for a ship.  Consists of

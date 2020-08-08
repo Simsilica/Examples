@@ -36,28 +36,32 @@
 
 package example.view;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
 import com.jme3.asset.AssetManager;
-import com.jme3.math.*;
 import com.jme3.material.Material;
+import com.jme3.math.ColorRGBA;
+import com.jme3.math.Quaternion;
+import com.jme3.math.Vector3f;
 import com.jme3.renderer.Camera;
-import com.jme3.scene.*;
+import com.jme3.scene.Node;
+import com.jme3.scene.Spatial;
 import com.jme3.texture.Texture;
 import com.jme3.util.SafeArrayList;
-
-import com.simsilica.lemur.*;
-import com.simsilica.lemur.style.ElementId;
-
 import com.simsilica.ethereal.EtherealClient;
 import com.simsilica.ethereal.SharedObject;
 import com.simsilica.ethereal.SharedObjectListener;
-
+import com.simsilica.lemur.GuiGlobals;
+import com.simsilica.lemur.Label;
+import com.simsilica.lemur.style.ElementId;
 import com.simsilica.mathd.trans.PositionTransition3f;
 import com.simsilica.mathd.trans.TransitionBuffer;
 
@@ -244,8 +248,10 @@ public class ModelViewState extends BaseAppState {
     }
  
     private class PlayerInfo {
+        @SuppressWarnings("unused")
         int clientId;
         String playerName;
+        @SuppressWarnings("unused")
         int shipId;
         
         public PlayerInfo( int clientId, String playerName, int shipId ) {
@@ -267,7 +273,9 @@ public class ModelViewState extends BaseAppState {
         Label shipLabel;
         float labelOffset = 0.1f;
         
+        @SuppressWarnings("unused")
         volatile Vector3f updatePos;
+        @SuppressWarnings("unused")
         volatile Quaternion updateRot;
         
         TransitionBuffer<PositionTransition3f> buffer;
@@ -355,6 +363,7 @@ public class ModelViewState extends BaseAppState {
             buffer.addTransition(trans);
         }        
  
+        @SuppressWarnings("unused")
         public PositionTransition3f getFrame( long time ) {
             return buffer.getTransition(time);        
         }

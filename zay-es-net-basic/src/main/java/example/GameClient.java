@@ -42,7 +42,6 @@ import com.jme3.network.Client;
 import com.jme3.network.ClientStateListener;
 import com.jme3.network.MessageConnection;
 import com.jme3.network.Network;
-
 import com.simsilica.es.Entity;
 import com.simsilica.es.EntityData;
 import com.simsilica.es.EntitySet;

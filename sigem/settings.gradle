@@ -1,1 +1,3 @@
-include 'assets'
+rootProject.name = 'sigem'
+include 'sigem-assets'
+project(":sigem-assets").projectDir = file("assets")

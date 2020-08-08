@@ -36,7 +36,7 @@
 
 package sigem;
 
-import com.simsilica.mathd.*;
+import com.simsilica.mathd.Vec3d;
 
 /**
  *

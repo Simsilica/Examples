@@ -36,16 +36,16 @@
 
 package example;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
-import com.jme3.math.*;
-import com.jme3.scene.*;
-import com.jme3.util.SafeArrayList; 
-
-import com.simsilica.lemur.*;
+import com.jme3.math.ColorRGBA;
+import com.jme3.math.Vector3f;
+import com.jme3.scene.Node;
+import com.jme3.util.SafeArrayList;
+import com.simsilica.lemur.Label;
+import com.simsilica.lemur.Panel;
 import com.simsilica.lemur.style.ElementId;
 
 /**
@@ -173,6 +173,7 @@ public class MessageState extends BaseAppState {
  
     protected void refreshLayout() {
         int height = getApplication().getCamera().getHeight();
+        @SuppressWarnings("unused")
         int width = getApplication().getCamera().getWidth();
  
         float y = 0;

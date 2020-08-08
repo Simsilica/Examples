@@ -1,0 +1,23 @@
+tasks.register('clean') {
+    dependsOn gradle.includedBuilds*.task(':clean')
+}
+
+tasks.register('build') {
+    dependsOn gradle.includedBuilds*.task(':build')
+}
+
+tasks.register('eclipse') {
+    dependsOn gradle.includedBuilds*.task(':eclipse')
+}
+
+tasks.register('idea') {
+    dependsOn gradle.includedBuilds*.task(':idea')
+}
+
+tasks.register('distZip') {
+    dependsOn gradle.includedBuilds*.task(':distZip')
+}
+
+tasks.register('wrapper') {
+    dependsOn gradle.includedBuilds*.task(':distZip')
+}

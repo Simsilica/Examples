@@ -1,1 +1,3 @@
-include 'assets'
+rootProject.name = 'simple-jme'
+include 'simple-jme-assets'
+project(":simple-jme-assets").projectDir = file("assets")
