@@ -39,7 +39,8 @@ package example.net.client;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.network.service.AbstractClientService;
 import com.jme3.network.service.ClientServiceManager;
@@ -64,6 +65,7 @@ public class AccountClientService extends AbstractClientService
     private RmiClientService rmiService;
     private AccountSession delegate;
     
+    @SuppressWarnings("unused")
     private String playerName;
 
     private AccountSessionCallback sessionCallback = new AccountSessionCallback();

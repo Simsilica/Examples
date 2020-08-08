@@ -36,16 +36,21 @@
 
 package sigem.sim;
 
-import java.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import org.slf4j.*;
-
-import com.simsilica.es.*;
+import com.simsilica.es.Entity;
+import com.simsilica.es.EntityContainer;
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
 import com.simsilica.es.common.Decay;
-import com.simsilica.mathd.*;
-import com.simsilica.sim.*;
+import com.simsilica.mathd.Vec3d;
+import com.simsilica.sim.AbstractGameSystem;
+import com.simsilica.sim.SimTime;
 
-import sigem.es.*;
+import sigem.es.ObjectType;
+import sigem.es.Position;
+import sigem.es.ShipInput;
 
 /**
  *  Manages the various ShipInput entities and makes sure their
@@ -126,6 +131,7 @@ public class ShipInputSystem extends AbstractGameSystem {
     }
     
     private class ShipContainer extends EntityContainer<ShipDriver> {
+        @SuppressWarnings("unchecked")
         public ShipContainer( EntityData ed ) {
             super(ed, ShipInput.class);
         }

@@ -36,17 +36,21 @@
 
 package sigem.view;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
-
-import com.simsilica.es.*;
+import com.simsilica.es.EntityId;
 import com.simsilica.lemur.GuiGlobals;
-import com.simsilica.lemur.input.*;
-import com.simsilica.mathd.*;
+import com.simsilica.lemur.input.AnalogFunctionListener;
+import com.simsilica.lemur.input.FunctionId;
+import com.simsilica.lemur.input.InputMapper;
+import com.simsilica.lemur.input.InputState;
+import com.simsilica.lemur.input.StateFunctionListener;
+import com.simsilica.mathd.Vec3d;
 
-import sigem.es.*;
+import sigem.es.ShipInput;
 
 /**
  *  Maps player inputs to ships.

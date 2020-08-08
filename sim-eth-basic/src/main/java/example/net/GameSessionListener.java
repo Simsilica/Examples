@@ -36,7 +36,6 @@
 
 package example.net;
 
-import com.jme3.math.*;
 import com.jme3.network.service.rmi.Asynchronous;
 
 /**

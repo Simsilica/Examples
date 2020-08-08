@@ -36,35 +36,44 @@
 
 package sigem.view;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
 import com.jme3.asset.AssetManager;
-import com.jme3.math.*;
-import com.jme3.renderer.Camera;
 import com.jme3.material.Material;
 import com.jme3.material.RenderState.BlendMode;
-import com.jme3.renderer.Camera;
+import com.jme3.math.ColorRGBA;
+import com.jme3.math.FastMath;
+import com.jme3.math.Vector3f;
 import com.jme3.renderer.queue.RenderQueue.Bucket;
-import com.jme3.scene.*;
+import com.jme3.scene.Geometry;
+import com.jme3.scene.Node;
+import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
-import com.jme3.scene.shape.*;
+import com.jme3.scene.shape.Quad;
+import com.jme3.scene.shape.Sphere;
 import com.jme3.texture.Texture;
-import com.jme3.util.SafeArrayList;
-
-import com.simsilica.es.*;
-import com.simsilica.lemur.*;
-import com.simsilica.lemur.anim.*;
-import com.simsilica.lemur.style.ElementId;
-import com.simsilica.mathd.*;
-import com.simsilica.state.*;
+import com.simsilica.es.Entity;
+import com.simsilica.es.EntityContainer;
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
+import com.simsilica.lemur.GuiGlobals;
+import com.simsilica.lemur.LayerComparator;
+import com.simsilica.lemur.anim.AbstractTween;
+import com.simsilica.lemur.anim.AnimationState;
+import com.simsilica.lemur.anim.Tweens;
+import com.simsilica.mathd.Vec3d;
+import com.simsilica.state.GameSystemsState;
 
 import sigem.Main;
-import sigem.es.*;
+import sigem.es.ObjectType;
+import sigem.es.Position;
+import sigem.es.SphereShape;
 
 /**
  *  Displays the models for the various physics objects.
@@ -296,6 +305,7 @@ public class ModelViewState extends BaseAppState {
         Node result = new Node("thrust");    
         Geometry geom = createQuad(4, "Textures/missile.png", BlendMode.AlphaAdditive);
         geom.move(0, -1, 0);
+        @SuppressWarnings("unused")
         Material mat = geom.getMaterial();
         
         //ColorRGBA color = new ColorRGBA(2, 2, 0, 1);
@@ -445,6 +455,7 @@ public class ModelViewState extends BaseAppState {
      *  MobContainer takes precedence.
      */
     private class ModelContainer extends EntityContainer<Spatial> {
+        @SuppressWarnings("unchecked")
         public ModelContainer( EntityData ed ) {
             super(ed, ObjectType.class, Position.class);
         }

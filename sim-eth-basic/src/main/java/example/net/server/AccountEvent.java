@@ -37,9 +37,7 @@
 package example.net.server;
 
 import com.google.common.base.MoreObjects;
-
 import com.jme3.network.HostedConnection;
-
 import com.simsilica.event.EventType;
 
 /**

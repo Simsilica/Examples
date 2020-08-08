@@ -1,0 +1,8 @@
+rootProject.name = 'Simsilica-Examples'
+includeBuild 'base-sio2'
+includeBuild 'network-basic'
+includeBuild 'sigem'
+includeBuild 'sim-eth-basic'
+includeBuild 'sim-eth-es'
+includeBuild 'simple-jme'
+includeBuild 'zay-es-net-basic'

@@ -6,12 +6,13 @@ apply plugin: 'idea'
 mainClassName='mygame.Main'
 
 repositories {
+	mavenLocal()
     jcenter()
 }
 
 ext.jmeVersion = "[3.1,)" 
 
-project(":assets") {
+project(":simple-jme-assets") {
     apply plugin: "java"
     
     buildDir = rootProject.file("build/assets")
@@ -32,39 +33,40 @@ dependencies {
     compile "org.jmonkeyengine:jme3-desktop:$jmeVersion"
     compile "org.jmonkeyengine:jme3-lwjgl:$jmeVersion"
     
-    runtime project(':assets')    
+    runtime project(':simple-jme-assets')    
 }
 
-task wrapper(type: Wrapper) {
-}
-
-task createDirs << {
-    
-    def pkg = 'mygame'
-    def dirs = [
-        file("./src/main/java/$pkg"),
-        file("./src/main/resources"),
-        file("./assets/Interface"),
-        file("./assets/MatDefs"),
-        file("./assets/Materials"),
-        file("./assets/Models"),
-        file("./assets/Scenes"),
-        file("./assets/Shaders"),
-        file("./assets/Sounds"),
-        file("./assets/Textures"),    
-    ]
-    
-    dirs.each {
-        if( !it.exists() ) {
-            println "Creating " + it
-            it.mkdirs()
+task createDirs {
+    doLast {    
+        def pkg = 'mygame'
+            def dirs = [
+                file("./src/main/java/$pkg"),
+                file("./src/main/resources"),
+                file("./assets/Interface"),
+                file("./assets/MatDefs"),
+                file("./assets/Materials"),
+                file("./assets/Models"),
+                file("./assets/Scenes"),
+                file("./assets/Shaders"),
+                file("./assets/Sounds"),
+                file("./assets/Textures"),    
+            ]
+            
+            dirs.each {
+                if( !it.exists() ) {
+                    println "Creating " + it
+                    it.mkdirs()
+                }
+                if( it.listFiles().length == 0 ) {
+                    def stub = new File(it, 'removeme.txt') 
+                    println "Creating stub file to allow git checkin, file:$stub"
+                    stub.text = "Remove me when there are files here."
+                }
+            }
         }
-        if( it.listFiles().length == 0 ) {
-            def stub = new File(it, 'removeme.txt') 
-            println "Creating stub file to allow git checkin, file:$stub"
-            stub.text = "Remove me when there are files here."
-        }
-    }
 }
 
+tasks.withType(JavaCompile) {
+    options.compilerArgs = ["-Xlint:deprecation", "-Xlint:unchecked"]
+}
 

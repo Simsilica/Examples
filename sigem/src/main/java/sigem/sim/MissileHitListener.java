@@ -39,13 +39,13 @@ package sigem.sim;
 import java.util.Objects;
 import java.util.Random;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.simsilica.es.*;
-import com.simsilica.mathd.*;
-import com.simsilica.sim.*;
+import com.simsilica.es.EntityData;
+import com.simsilica.sim.AbstractGameSystem;
 
-import sigem.es.*;
+import sigem.es.ObjectType;
 
 /**
  *  Checks for any missile hits to create the hit effect and destroy
@@ -60,7 +60,8 @@ public class MissileHitListener extends AbstractGameSystem
  
     private EntityData ed;
     private GameEntities gameEntities;
-    private Random rand = new Random(0);
+    @SuppressWarnings("unused")
+	private Random rand = new Random(0);
                                  
     public MissileHitListener() {
     }

@@ -37,21 +37,23 @@
 package example.view;
 
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
-import com.jme3.math.*;
+import com.jme3.math.ColorRGBA;
+import com.jme3.math.Vector3f;
 import com.jme3.renderer.Camera;
-import com.jme3.scene.*;
-
-import com.simsilica.lemur.*;
+import com.jme3.scene.Node;
+import com.jme3.scene.Spatial;
+import com.simsilica.es.Entity;
+import com.simsilica.es.EntityContainer;
+import com.simsilica.es.EntityData;
+import com.simsilica.es.Name;
+import com.simsilica.ethereal.TimeSource;
+import com.simsilica.lemur.Label;
 import com.simsilica.lemur.style.ElementId;
-
-import com.simsilica.ethereal.TimeSource; 
-
-import com.simsilica.es.*;
-
 import com.simsilica.mathd.trans.PositionTransition3f;
 import com.simsilica.mathd.trans.TransitionBuffer;
 
@@ -234,6 +236,7 @@ public class HudLabelState extends BaseAppState {
     }
     
     private class LabelContainer extends EntityContainer<LabelHolder> {
+        @SuppressWarnings("unchecked")
         public LabelContainer( EntityData ed ) {
             super(ed, Name.class, BodyPosition.class);
         }

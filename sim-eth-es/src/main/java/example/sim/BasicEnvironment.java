@@ -36,11 +36,9 @@
 
 package example.sim;
 
-import com.simsilica.es.*;
-import com.simsilica.mathd.*;
-import com.simsilica.sim.*;
-
-import example.es.*;
+import com.simsilica.es.EntityData;
+import com.simsilica.mathd.Vec3d;
+import com.simsilica.sim.AbstractGameSystem;
 
 /**
  *  Creates a bunch of base entities in the environment.

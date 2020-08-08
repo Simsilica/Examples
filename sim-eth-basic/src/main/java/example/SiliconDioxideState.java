@@ -38,8 +38,9 @@ package example;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
-import com.jme3.math.*;
-import com.jme3.scene.*;
+import com.jme3.math.Vector3f;
+import com.jme3.scene.Node;
+import com.jme3.scene.Spatial;
 
 /**
  *  Just a spinning silicon dioxide molecule.

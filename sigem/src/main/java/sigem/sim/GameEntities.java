@@ -36,16 +36,23 @@
 
 package sigem.sim;
 
-import java.util.*;
+import java.util.Random;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.simsilica.es.*;
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
 import com.simsilica.es.common.Decay;
-import com.simsilica.mathd.*;
-import com.simsilica.sim.*;
+import com.simsilica.mathd.Vec3d;
+import com.simsilica.sim.AbstractGameSystem;
+import com.simsilica.sim.SimTime;
 
-import sigem.es.*;
+import sigem.es.Impulse;
+import sigem.es.MassProperties;
+import sigem.es.ObjectType;
+import sigem.es.Position;
+import sigem.es.SphereShape;
 
 /**
  *  Factory methods for common game entities.

@@ -39,17 +39,16 @@ package example;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Strings;
-
 import com.jme3.app.Application;
 import com.jme3.app.state.AppState;
 import com.jme3.network.Client;
 import com.jme3.network.ClientStateListener;
 import com.jme3.network.ClientStateListener.DisconnectInfo;
 import com.jme3.network.ErrorListener;
-
 import com.simsilica.lemur.Action;
 import com.simsilica.lemur.Button;
 import com.simsilica.lemur.OptionPanel;
@@ -178,7 +177,7 @@ public class ConnectionState extends CompositeAppState {
             }
             getState(OptionPanelState.class).show(title, m, new ExitAction(fatal));    
         } else {
-            getApplication().enqueue(new Callable() {
+            getApplication().enqueue(new Callable<>() {
                     public Object call() {
                         showError(title, e, fatal);
                         return null;
@@ -192,7 +191,7 @@ public class ConnectionState extends CompositeAppState {
         if( isRenderThread() ) {
             this.client = client;
         } else {
-            getApplication().enqueue(new Callable() {
+            getApplication().enqueue(new Callable<>() {
                     public Object call() {
                         setClient(client);
                         return null;
@@ -243,7 +242,7 @@ public class ConnectionState extends CompositeAppState {
     private class ConnectionObserver implements ClientStateListener, ErrorListener<Client> {
         public void clientConnected( final Client c ) {
             log.info("clientConnected(" + c + ")");
-            getApplication().enqueue(new Callable() {
+            getApplication().enqueue(new Callable<>() {
                     public Object call() {
                         onConnected();
                         return null;
@@ -253,7 +252,7 @@ public class ConnectionState extends CompositeAppState {
  
         public void clientDisconnected( final Client c, final DisconnectInfo info ) {
             log.info("clientDisconnected(" + c + ", " + info + ")");        
-            getApplication().enqueue(new Callable() {
+            getApplication().enqueue(new Callable<>() {
                     public Object call() {
                         onDisconnected(info);
                         return null;

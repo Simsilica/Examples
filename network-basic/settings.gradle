@@ -1,1 +1,3 @@
-include 'assets'
+rootProject.name = 'network-basic'
+include 'network-basic-assets'
+project(":network-basic-assets").projectDir = file("assets")

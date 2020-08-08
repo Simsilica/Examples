@@ -38,21 +38,20 @@ package example.net.client;
 
 import java.io.IOException;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.network.Client;
 import com.jme3.network.Message;
 import com.jme3.network.MessageListener;
 import com.jme3.network.Network;
 import com.jme3.network.service.ClientService;
-import com.jme3.network.service.rpc.RpcClientService;
 import com.jme3.network.service.rmi.RmiClientService;
-
-import com.simsilica.ethereal.EtherealClient;
-import com.simsilica.ethereal.TimeSource;
-
+import com.jme3.network.service.rpc.RpcClientService;
 import com.simsilica.es.EntityData;
 import com.simsilica.es.client.EntityDataClientService;
+import com.simsilica.ethereal.EtherealClient;
+import com.simsilica.ethereal.TimeSource;
 
 import example.GameConstants;
 import example.net.chat.client.ChatClientService;

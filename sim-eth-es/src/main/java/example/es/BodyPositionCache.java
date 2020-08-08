@@ -36,14 +36,15 @@
 
 package example.es;
 
-import com.simsilica.es.EntityId;
-import com.simsilica.mathd.trans.PositionTransition3f;
-import com.simsilica.mathd.trans.TransitionBuffer;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.simsilica.es.EntityId;
+import com.simsilica.mathd.trans.PositionTransition3f;
+import com.simsilica.mathd.trans.TransitionBuffer;
 
 /**
  *  BodyPosition components hold a buffer that should be shared
@@ -90,7 +91,7 @@ public class BodyPositionCache {
         }
  
         // Clean out any dead references to keep our map from growing and growing
-        Reference toRemove;
+        Reference<?> toRemove;
         while( (toRemove = refs.poll()) != null ) {
             map.values().remove(toRemove);
         }                    

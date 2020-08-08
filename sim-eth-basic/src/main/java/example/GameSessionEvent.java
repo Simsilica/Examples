@@ -36,7 +36,7 @@
 
 package example;
 
-import com.simsilica.event.*;
+import com.simsilica.event.EventType;
 
 /**
  *  Events that are sent to the event bus for different client side player-related

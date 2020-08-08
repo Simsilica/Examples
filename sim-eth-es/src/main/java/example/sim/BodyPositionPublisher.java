@@ -36,9 +36,9 @@
 
 package example.sim;
 
-import com.simsilica.es.*;
-import com.simsilica.mathd.*;
-import com.simsilica.sim.*;
+import com.simsilica.es.EntityData;
+import com.simsilica.sim.AbstractGameSystem;
+import com.simsilica.sim.SimTime;
 
 import example.es.BodyPosition;
 

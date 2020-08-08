@@ -7,18 +7,12 @@ mainClassName='rename.Main'
 
 repositories {
     mavenLocal()
-
-    if( JavaVersion.current() == JavaVersion.VERSION_1_7 ) {
-        // Fallback for JDK 7 that can no longer connect to jcenter with https
-        maven { url "http://jcenter.bintray.com" }
-    } else {
-        jcenter()
-    }
+    jcenter()
 }
 
 ext.jmeVersion = "[3.2,)" 
 
-project(":assets") {
+project(":base-sio2-assets") {
     apply plugin: "java"
     
     buildDir = rootProject.file("build/assets")
@@ -51,12 +45,10 @@ dependencies {
     compile 'com.google.guava:guava:19.0'
     compile 'org.slf4j:slf4j-api:1.7.13'
     runtime 'org.apache.logging.log4j:log4j-slf4j-impl:2.5'
- 
     
-    runtime project(':assets')    
+    runtime project(':base-sio2-assets')
 }
 
-task wrapper(type: Wrapper) {
+tasks.withType(JavaCompile) {
+    options.compilerArgs = ["-Xlint:deprecation", "-Xlint:unchecked"]
 }
-
-

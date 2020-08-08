@@ -39,7 +39,8 @@ package example.net.client;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
@@ -61,6 +62,7 @@ public class GameSessionClientService extends AbstractClientService
     static Logger log = LoggerFactory.getLogger(GameSessionClientService.class);
     
     private RmiClientService rmiService;
+    @SuppressWarnings("unused")
     private AccountClientService accountService;
     private GameSession delegate;
     

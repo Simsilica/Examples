@@ -38,7 +38,9 @@ package example.sim;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import com.simsilica.mathd.*;
+import com.simsilica.mathd.AaBBox;
+import com.simsilica.mathd.Quatd;
+import com.simsilica.mathd.Vec3d;
 
 /**
  *  A physical body in space.  These are modeled as a "point mass"

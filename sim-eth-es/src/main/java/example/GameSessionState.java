@@ -36,25 +36,23 @@
 
 package example;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
-import com.jme3.math.*;
-
+import com.jme3.math.ColorRGBA;
+import com.simsilica.es.EntityId;
+import com.simsilica.ethereal.TimeSource;
 import com.simsilica.event.EventBus;
 import com.simsilica.lemur.GuiGlobals;
 import com.simsilica.lemur.input.InputMapper;
 import com.simsilica.state.CompositeAppState;
 
-import com.simsilica.ethereal.TimeSource;
-
-import com.simsilica.es.EntityId;
-
 import example.debug.TimeSequenceState;
 import example.net.GameSessionListener;
-import example.net.client.GameSessionClientService;
 import example.net.chat.ChatSessionListener;
 import example.net.chat.client.ChatClientService;
+import example.net.client.GameSessionClientService;
 import example.view.HudLabelState;
 import example.view.ModelViewState;
 import example.view.PlayerListState;
@@ -78,8 +76,10 @@ public class GameSessionState extends CompositeAppState {
 
     // Temporary reference FIXME
     private PlayerMovementState us;
+    @SuppressWarnings("unused")
     private int clientId;
     
+    @SuppressWarnings("unused")
     private EntityId playerId;
     private EntityId shipId;
 

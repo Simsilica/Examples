@@ -38,28 +38,43 @@ package sigem.view;
 
 import java.util.Random;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
-import com.jme3.app.state.BaseAppState;
-import com.jme3.math.*;
-
-import com.simsilica.es.*;
+import com.simsilica.es.CreatedBy;
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
+import com.simsilica.es.Name;
 import com.simsilica.es.base.DefaultEntityData;
 import com.simsilica.es.common.Decay;
-import com.simsilica.event.*;
+import com.simsilica.event.EventBus;
 import com.simsilica.lemur.GuiGlobals;
 import com.simsilica.lemur.input.InputMapper;
-import com.simsilica.mathd.*;
+import com.simsilica.mathd.Vec3d;
 import com.simsilica.sim.SimTime;
 import com.simsilica.sim.common.DecaySystem;
-import com.simsilica.state.*;
+import com.simsilica.state.CompositeAppState;
+import com.simsilica.state.GameSystemsState;
 
 import sigem.GameConstants;
 import sigem.GameSessionEvent;
 import sigem.MainGameFunctions;
-import sigem.es.*;
-import sigem.sim.*;
+import sigem.es.Impulse;
+import sigem.es.MassProperties;
+import sigem.es.ObjectType;
+import sigem.es.Position;
+import sigem.es.ShipInput;
+import sigem.es.SphereShape;
+import sigem.sim.ArenaBoundary;
+import sigem.sim.AsteroidHitListener;
+import sigem.sim.CollisionSystem;
+import sigem.sim.GameEntities;
+import sigem.sim.MissileHitListener;
+import sigem.sim.PlanetGravity;
+import sigem.sim.PositionPublisher;
+import sigem.sim.ShipInputSystem;
+import sigem.sim.SimplePhysics;
 
 /**
  *

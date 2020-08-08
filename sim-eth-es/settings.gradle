@@ -1,1 +1,3 @@
-include 'assets'
+rootProject.name = 'sim-eth-es'
+include 'sim-eth-es-assets'
+project(":sim-eth-es-assets").projectDir = file("assets")

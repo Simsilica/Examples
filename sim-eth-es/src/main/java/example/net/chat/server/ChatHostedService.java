@@ -36,20 +36,19 @@
 
 package example.net.chat.server;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.network.HostedConnection;
 import com.jme3.network.MessageConnection;
-import com.jme3.network.Server;
 import com.jme3.network.service.AbstractHostedConnectionService;
 import com.jme3.network.service.HostedServiceManager;
 import com.jme3.network.service.rmi.RmiHostedService;
 import com.jme3.network.service.rmi.RmiRegistry;
-
-import com.simsilica.event.EventBus;
 
 import example.net.chat.ChatSession;
 import example.net.chat.ChatSessionListener;

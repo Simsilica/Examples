@@ -36,14 +36,25 @@
 
 package example;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
-import com.jme3.math.*;
-import com.jme3.scene.*;
-
-import com.simsilica.lemur.*;
+import com.jme3.math.ColorRGBA;
+import com.jme3.math.Vector3f;
+import com.jme3.scene.Node;
+import com.simsilica.lemur.ActionButton;
+import com.simsilica.lemur.Axis;
+import com.simsilica.lemur.CallMethodAction;
+import com.simsilica.lemur.Container;
+import com.simsilica.lemur.FillMode;
+import com.simsilica.lemur.GuiGlobals;
+import com.simsilica.lemur.HAlignment;
+import com.simsilica.lemur.Insets3f;
+import com.simsilica.lemur.Label;
+import com.simsilica.lemur.OptionPanelState;
+import com.simsilica.lemur.TextField;
 import com.simsilica.lemur.component.SpringGridLayout;
 import com.simsilica.lemur.style.ElementId;
 

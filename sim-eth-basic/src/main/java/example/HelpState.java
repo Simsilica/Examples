@@ -40,14 +40,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.common.base.Joiner;
-
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
 import com.jme3.input.KeyNames;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
-
-import com.simsilica.lemur.*;
+import com.simsilica.lemur.ActionButton;
+import com.simsilica.lemur.CallMethodAction;
+import com.simsilica.lemur.Container;
+import com.simsilica.lemur.GuiGlobals;
+import com.simsilica.lemur.Insets3f;
+import com.simsilica.lemur.Label;
 import com.simsilica.lemur.input.FunctionId;
 import com.simsilica.lemur.input.InputMapper;
 import com.simsilica.lemur.input.InputMapper.Mapping;
@@ -66,6 +69,7 @@ public class HelpState extends BaseAppState {
     private Container helpWindow;
     private boolean movementState = false;
     
+    @SuppressWarnings("unused")
     private String[][] keyHelpStrings = {
         {"F1", 
          "Opens this help window."},

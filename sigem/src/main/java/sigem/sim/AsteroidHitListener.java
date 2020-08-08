@@ -38,13 +38,17 @@ package sigem.sim;
 
 import java.util.Random;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.simsilica.es.*;
-import com.simsilica.mathd.*;
-import com.simsilica.sim.*;
+import com.simsilica.es.CreatedBy;
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
+import com.simsilica.es.Name;
+import com.simsilica.mathd.Vec3d;
+import com.simsilica.sim.AbstractGameSystem;
 
-import sigem.es.*;
+import sigem.es.ObjectType;
 
 /**
  *  Checks for missile-asteroid hits or high energy asteroid
@@ -126,9 +130,11 @@ public class AsteroidHitListener extends AbstractGameSystem
             Vec3d loc1 = asteroid.pos.add(offset.mult(asteroid.radius * 0.5));
             Vec3d loc2 = asteroid.pos.subtract(offset.mult(asteroid.radius * 0.5));
  
+            @SuppressWarnings("unused")
             EntityId ast1 = gameEntities.createAsteroid(loc1, offset.add(asteroid.velocity), 
                                         new Vec3d(rand.nextDouble() + 1, rand.nextDouble(), 0),
                                         size);
+            @SuppressWarnings("unused")
             EntityId ast2 = gameEntities.createAsteroid(loc2, offset.subtract(asteroid.velocity), 
                                         new Vec3d(rand.nextDouble() + 1, rand.nextDouble(), 0),
                                         size);
@@ -145,6 +151,7 @@ public class AsteroidHitListener extends AbstractGameSystem
             Vec3d dir = new Vec3d(x, 0, z);
             double size = 0.2 + rand.nextDouble() * 0.4;
             
+            @SuppressWarnings("unused")
             EntityId chunk = gameEntities.createAsteroidChunk(debrisLoc.add(dir), dir,
                                         new Vec3d(rand.nextDouble() + 1, rand.nextDouble(), 0),
                                         size);            

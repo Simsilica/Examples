@@ -36,10 +36,16 @@
 
 package example.sim;
 
-import com.simsilica.mathd.*;
-import com.simsilica.es.*;
+import com.simsilica.es.EntityData;
+import com.simsilica.es.EntityId;
+import com.simsilica.es.Name;
+import com.simsilica.mathd.Quatd;
+import com.simsilica.mathd.Vec3d;
 
-import example.es.*;
+import example.es.MassProperties;
+import example.es.ObjectTypes;
+import example.es.Position;
+import example.es.SphereShape;
 
 /**
  *  Utility methods for creating the common game entities used by 

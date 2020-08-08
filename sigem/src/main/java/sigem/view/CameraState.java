@@ -36,25 +36,33 @@
 
 package sigem.view;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
 import com.jme3.material.Material;
-import com.jme3.math.*;
+import com.jme3.math.ColorRGBA;
+import com.jme3.math.FastMath;
+import com.jme3.math.Quaternion;
+import com.jme3.math.Vector2f;
+import com.jme3.math.Vector3f;
 import com.jme3.renderer.Camera;
-import com.jme3.scene.*;
-import com.jme3.scene.shape.*;
+import com.jme3.scene.Geometry;
+import com.jme3.scene.Node;
+import com.jme3.scene.shape.Quad;
 import com.jme3.texture.Texture;
-
+import com.simsilica.es.Entity;
+import com.simsilica.es.EntityContainer;
+import com.simsilica.es.EntityData;
 import com.simsilica.lemur.GuiGlobals;
-import com.simsilica.mathd.*;
-import com.simsilica.es.*;
-import com.simsilica.state.*;
+import com.simsilica.mathd.Vec3d;
+import com.simsilica.state.GameSystemsState;
 
 import sigem.GameConstants;
 import sigem.Main;
-import sigem.es.*;
+import sigem.es.Position;
+import sigem.es.ShipInput;
 
 /**
  *  Manages the camera location and the background star field based on the
@@ -241,6 +249,7 @@ public class CameraState extends BaseAppState {
      *  this is really just a membership set.
      */   
     private class ShipContainer extends EntityContainer<Entity> {
+        @SuppressWarnings("unchecked")
         public ShipContainer( EntityData ed ) {
             super(ed, ShipInput.class, Position.class);           
         }

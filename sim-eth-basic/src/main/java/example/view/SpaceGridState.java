@@ -36,16 +36,20 @@
 
 package example.view;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
-import com.jme3.material.*;
-import com.jme3.math.*;
-import com.jme3.renderer.Camera;
+import com.jme3.material.Material;
+import com.jme3.material.RenderState;
+import com.jme3.math.ColorRGBA;
+import com.jme3.math.Vector3f;
 import com.jme3.renderer.queue.RenderQueue.Bucket;
-import com.jme3.scene.*;
-
+import com.jme3.scene.Geometry;
+import com.jme3.scene.Mesh;
+import com.jme3.scene.VertexBuffer;
 import com.simsilica.lemur.GuiGlobals;
 
 import example.Main;
@@ -92,6 +96,7 @@ public class SpaceGridState extends BaseAppState {
         float yCenter = cellSize * 0.5f;
         float zCenter = cellSize * 0.5f;
         float maxDist = gridRadius * cellSize; // just short of full grid
+        @SuppressWarnings("unused")
         float maxDistSq = maxDist * maxDist;
         //float maxDist = gridRadius; //maxDistSq * maxDistSq;
         

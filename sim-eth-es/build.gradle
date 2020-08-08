@@ -12,7 +12,7 @@ repositories {
 
 ext.jmeVersion = "[3.3,)" 
 
-project(":assets") {
+project(":sim-eth-es-assets") {
     apply plugin: "java"
     
     buildDir = rootProject.file("build/assets")
@@ -56,10 +56,7 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.13'
     runtime 'org.apache.logging.log4j:log4j-slf4j-impl:2.5'
     
-    runtime project(':assets')    
-}
-
-task wrapper(type: Wrapper) {
+    runtime project(':sim-eth-es-assets')    
 }
 
 task runServer(type: JavaExec) {
@@ -100,5 +97,5 @@ distZip {
 }
 
 tasks.withType(JavaCompile) {
-    options.compilerArgs = ["-Xlint:deprecation"]
+    options.compilerArgs = ["-Xlint:deprecation", "-Xlint:unchecked"]
 }

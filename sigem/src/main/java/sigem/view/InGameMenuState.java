@@ -36,19 +36,24 @@
 
 package sigem.view;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
-import com.jme3.math.*;
-import com.jme3.scene.*;
-
-import com.simsilica.lemur.*;
-import com.simsilica.lemur.component.SpringGridLayout;
+import com.jme3.math.Vector3f;
+import com.simsilica.lemur.Action;
+import com.simsilica.lemur.ActionButton;
+import com.simsilica.lemur.CallMethodAction;
+import com.simsilica.lemur.Container;
+import com.simsilica.lemur.EmptyAction;
+import com.simsilica.lemur.GuiGlobals;
+import com.simsilica.lemur.OptionPanelState;
+import com.simsilica.lemur.TabbedPanel;
 import com.simsilica.lemur.input.InputMapper;
-import com.simsilica.lemur.style.ElementId;
 
 import sigem.MainGameFunctions;
 import sigem.MainMenuState;
@@ -68,6 +73,7 @@ public class InGameMenuState extends BaseAppState {
     private List<Action> sessionActions = new ArrayList<>();
     private Container sessionButtons;
 
+    @SuppressWarnings("unused")
     private boolean movementState = false;
 
     public InGameMenuState( boolean enabled ) {

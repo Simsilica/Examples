@@ -36,12 +36,13 @@
 
 package example.sim;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import com.jme3.util.SafeArrayList;
-
-import com.simsilica.sim.*;
+import com.simsilica.sim.AbstractGameSystem;
+import com.simsilica.sim.SimTime;
 
 /**
  *  Just a basic physics simulation that integrates acceleration, 

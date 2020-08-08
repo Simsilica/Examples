@@ -1,0 +1,15 @@
+# Ignore Gradle stuff
+/.gradle/
+/bulid/
+/*/.gradle/
+/*/build/
+
+# Ignore Eclipse stuff
+.project
+.classpath
+.settings/
+bin/
+/*/.project
+/*/.classpath
+/*/.settings/
+/*/bin/

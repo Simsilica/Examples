@@ -36,41 +36,34 @@
 
 package example.net.server;
 
-import org.slf4j.*;
-
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.network.HostedConnection;
-import com.jme3.network.MessageConnection;
-import com.jme3.network.Server;
 import com.jme3.network.serializing.Serializer;
 import com.jme3.network.serializing.serializers.FieldSerializer;
 import com.jme3.network.service.AbstractHostedConnectionService;
 import com.jme3.network.service.HostedServiceManager;
 import com.jme3.network.service.rmi.RmiHostedService;
 import com.jme3.network.service.rmi.RmiRegistry;
-
-import com.simsilica.event.EventBus;
-import com.simsilica.mathd.Vec3d;
-import com.simsilica.sim.GameSystemManager;
-import com.simsilica.sim.SimTime;
-
-import com.simsilica.ethereal.EtherealHost;
-
 import com.simsilica.es.EntityData;
 import com.simsilica.es.EntityId;
 import com.simsilica.es.server.EntityDataHostedService;
+import com.simsilica.ethereal.EtherealHost;
+import com.simsilica.event.EventBus;
+import com.simsilica.mathd.Vec3d;
+import com.simsilica.sim.GameSystemManager;
 
 import example.es.Position;
 import example.net.GameSession;
 import example.net.GameSessionListener;
 import example.net.chat.server.ChatHostedService;
-import example.sim.Body;
 import example.sim.GameEntities;
-import example.sim.PhysicsListener;
 import example.sim.ShipDriver;
 import example.sim.SimplePhysics;
 
@@ -206,11 +199,13 @@ public class GameSessionHostedService extends AbstractHostedConnectionService {
     
     private class AccountObserver {
         
+        @SuppressWarnings("unused")
         public void onPlayerLoggedOn( AccountEvent event ) {
             log.debug("onPlayerLoggedOn()");
             startHostingOnConnection(event.getConnection(), event.getPlayerEntity());            
         }
         
+        @SuppressWarnings("unused")
         public void onPlayerLoggedOff( AccountEvent event ) {
             log.debug("onPlayerLoggedOff()");
             stopHostingOnConnection(event.getConnection());   
@@ -282,6 +277,7 @@ System.out.println("Set position on:" + shipEntity);
             shipDriver.applyMovementState(rotation, thrust);
         }
         
+        @SuppressWarnings("unused")
         protected GameSessionListener getCallback() {
             if( callback == null ) {
                 RmiRegistry rmi = rmiService.getRmiRegistry(conn);

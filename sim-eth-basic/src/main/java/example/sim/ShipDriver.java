@@ -36,9 +36,9 @@
 
 package example.sim;
 
-import com.jme3.math.*;
-
-import com.simsilica.mathd.*;
+import com.jme3.math.Quaternion;
+import com.jme3.math.Vector3f;
+import com.simsilica.mathd.Vec3d;
 
 /**
  *  Uses rotation and a 3-axis thrust vector to supply

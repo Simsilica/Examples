@@ -36,16 +36,18 @@
 
 package example.net.server;
 
-import java.io.*; 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jme3.network.HostedConnection;
 import com.jme3.network.Network;
 import com.jme3.network.Server;
 import com.jme3.network.service.rmi.RmiHostedService;
 import com.jme3.network.service.rpc.RpcHostedService;
-
 import com.simsilica.sim.GameLoop;
 import com.simsilica.sim.GameSystemManager;
 
@@ -65,6 +67,7 @@ public class GameServer {
     private GameSystemManager systems;
     private GameLoop loop;
     
+    @SuppressWarnings("unused")
     private String description;
     
     public GameServer( int port, String description ) throws IOException {
